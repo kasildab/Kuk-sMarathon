@@ -1,0 +1,496 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10Km</title>
+  <link rel="icon" href="icona.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+  <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: auto 0px; 
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 5px;
+  }
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 150px;
+  }
+  .navbar-logo img {
+    height: 80px;
+  }
+  .navbar-links {
+    display: flex;
+    gap: 15px;
+    margin-right: 50px;
+  }
+  .navbar-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 20px 10px;
+    transition: color 0.3s ease;
+  }
+  .navbar-links a:hover {
+    color: #f56a00;
+  }
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 10;
+  }
+  .dropdown a {
+    padding: 10px;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #333;
+    font-size:  14px;
+    transition: background-color 0.3s;
+  }
+  .dropdown a:hover {
+    background-color: #f56a00;
+    color: white;
+  }
+  .navbar-item {
+    position: relative;
+    margin-top: 10px;
+  }
+  .navbar-item:hover .dropdown {
+    display: flex;
+  }
+  .navbar-register {
+    background-color: #f56a00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  .navbar-register:hover {
+    background-color: #ff7e26;
+  }
+  #runn {
+    background: url('10km.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 20%;
+  }
+  .info-text, .info-video, .info-winner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  .banner-title {
+    position: absolute;
+    top: 40%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    background-color: #f56a00;
+    color: white;
+    padding: 10px 20px;
+    font-size: 35px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-family: "Anton", serif;
+    font-style: normal;
+  }
+
+  .button {
+    height: 50px;
+    width: 190px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 50px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+
+  .button:hover {
+    box-shadow: .1px .1px 10px #252525;
+  }
+
+  .type1::after {
+    content: "THANK YOU!";
+    height: 50px;
+    width: 190px;
+    background-color: #4617ec;
+    color: #fff;
+    transform: translateY(100px);
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+  }
+
+  .type1::before {
+    content: "REGISTER NOW";
+    height: 50px;
+    width: 190px;
+    background-color: rgb(240, 9, 9);
+    color: #f5f8f8;
+    position: absolute;
+    transform: translateY(0px) scale(1.1);
+    font-size: 1.2rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+  }
+
+  .type1:hover::after {
+    transform: translateY(-2px) scale(1.2) rotate(0deg);
+  }
+
+  .type1:hover::before {
+    transform: translateY(-50px)  rotate(290deg);
+  }
+
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fafafa;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  .footer-logo img {
+    height: 98px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+  }
+  .footer-info {
+    color: black;
+    font-size: 14px;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+  }
+  .footer-contact {
+    text-align: left;
+    color: black;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 50px;
+  }
+  .footer-contact p {
+    margin: 2px 0;
+    font-size: 14px;
+  }
+  .footer-contact a {
+    color: #f56a00;
+    text-decoration: none;
+  }
+  .footer-contact a:hover {
+    text-decoration: underline;
+  }
+  .top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    aspect-ratio: 1;
+    background: #ff8b24;
+    border-radius: 10px;
+    z-index: 1000;
+    display: none;
+  }
+  .top:before {
+    content: "";
+    position: absolute;
+    inset: 30%;
+    transform: translateY(20%) rotate(-45deg);
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .card {
+   flex: 0 0 30%;
+   position: relative;
+   display: inline-block;
+   margin-right: 50px;
+ }
+
+ .remove-when-use {
+  text-align: center;
+}
+
+.remove-when-use img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.details {
+  color: white;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  height: 2.6em;
+  transition: height .5s ease-in-out;
+  padding: 0.6em;
+  overflow: hidden;
+}
+
+.details > p {
+  font-size: 0.8em;
+  margin-top: 0.5em;
+}
+
+.card:hover > .details {
+  height: 6.7em;
+}
+
+</style>
+</head>
+<body>
+  <div>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="index.html"><img src="ben.jpg" alt="Kukës Marathon Logo"></a>
+      </div>
+      <div class="navbar-links">
+        <div class="navbar-item">
+          <a href="#">The Races</a>
+          <div class="dropdown">
+            <a href="Half Marathon.html">Half Marathon</a>
+            <a href="10Km.html">10Km</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <a href="#">Get Involved</a>
+          <div class="dropdown">
+            <a href ="Sponsors.html">Sponsors</a>
+            <a href="Volunteers.html">Volunteers</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <a href="agenda.jpeg" download="agenda.jpeg">Schedule of Events</a>
+        </div>
+        <button class="navbar-register">Register</button>
+      </div>
+    </nav>
+    <div class="info-text" id="runn">
+      <div class="banner-title">10Km Marathon</div>
+    </div>
+    <div class="info-text">
+      <h2 style="margin-left:200px; font-size:40px; font-family: 'Unbounded', serif; font-weight: 400;">Welcome to the Kukës 10Km Marathon!</h2>
+    </div>
+    <div class="info-text">
+      <div style="display:flex; justify-content:space-between; margin-left:100px;">
+        <div class="w3-content w3-section" style="max-width:500px; max-height:600px;">
+          <img class="mySlides" src="01.jpg" style="width:100%">
+          <img class="mySlides" src="02.jpg" style="width:100%">
+          <img class="mySlides" src="03.jpg" style="width:100%">
+          <img class="mySlides" src="04.jpg" style="width:100%">
+          <img class="mySlides" src="05.jpg" style="width:100%">
+        </div>
+        <div style="margin-left:20px;">
+          <h2 style="margin-left:50px; margin-top:20px; margin-bottom:10px;color:#f56a00; font-size:25px; font-family: 'Monoton', serif;
+          font-weight: 400; font-style: normal; word-spacing: 10px">RACE FEATURES:</h2>
+          <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
+            font-style: normal; font-size:13px; color:#282928;">&#10139;Exclusive race t-shirt to commemorate your achievement</p>
+            <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
+              font-style: normal; font-size:13px; color:#282928;">&#10139;Collectable finishing medal as a token of your success</p>
+              <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
+                font-style: normal; font-size:13px; color:#282928;">&#10139;Post-race celebration with live music, delicious food, and local vendors</p>
+                  <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
+                    font-style: normal; font-size:13px; color:#282928;">&#10139;City and countryside race route at the foot of Mount Gjallica</p>
+                    <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
+                      font-style: normal; font-size:13px; color:#282928;">&#10139;Water stations along the race route to stay energized</p>
+                        <h4 style="margin-left:50px;margin-top:30px;color:#f56a00; font-size:15px; font-family:'Arvo', serif;
+                        font-weight: 700; font-style: normal;">Price:<span style="font-size:30px; margin-left:10px;font-family:'Lumanosimo', serif; font-weight: 400; font-style: normal;color:#f56a00;">€5<a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank"><button class="button type1">
+                      </button></a></span></h4>
+                    </div>
+                  </div>
+                </div>
+                <!--
+                <div class="info-video">
+                  <div>
+                    <h2 style="text-align:center; margin-top:20px; margin-bottom:10px;color:#f56a00; font-size:55px; font-family: 'Nothing You Could Do', serif;
+                    font-weight: 700;
+                    font-style: normal;">AWARDS and MEDALS</h2>
+                    <div class="cards" style="width:100vw">
+                      <div class="card" style="position:relative;">
+                        <div class="remove-when-use" style="position:absolute;bottom:0;">
+                          <img src="500euro.png" style="width:30vw"/>
+                        </div>
+                        <div class="details">
+                          <label>Prize for 1st Winner</label>
+                          <p>
+                           Run for it! The first across the finish line will earn this:
+                           <br>
+                           <i>Kukës, AL</i>
+                         </p>
+                       </div>
+                     </div>
+                     <div class="card" style="margin-bottom:40px;">
+                      <div class="remove-when-use" >
+                        <img src="250euro.png"  style="width:30vw"/>
+                      </div>
+                      <div class="details">
+                        <label>Prize for 2nd Winner</label>
+                        <p>
+                         For an outstanding performance, the runner who secures second place in the 10km marathon will be rewarded with this:
+                         <br>
+                         <i>Kukës, AL</i>
+                       </p>
+                     </div>
+                   </div>
+                   <div class="card" style="position:relative">
+                    <div class="remove-when-use" style="position:absolute;bottom:0">
+                      <img src="100euro.png" style="width:30vw" />
+                    </div>
+                    <div class="details">
+                      <label>Prize for 3rd Winner</label>
+                      <p>
+                       A strong showing! The third place finisher in our 10km marathon will be awarded 100 euro!
+                       <br>
+                       <i>Kukës, AL</i>
+                     </p>
+                   </div>
+                 </div>
+               </div>
+               <div class="cards" style="width:100vw">
+                <div class="card" style="position:relative;">
+                  <div class="remove-when-use" style="position:absolute;bottom:0;">
+                    <img src="1st.jpg" style="width:30vw"/>
+                  </div>
+                  <div class="details">
+                    <label>Medal for 1st Winner</label>
+                    <p>
+                     A symbol of victory for the 10km champion.
+                     <br>
+                     <i>Kukës, AL</i>
+                   </p>
+                 </div>
+               </div>
+               <div class="card">
+                <div class="remove-when-use" >
+                  <img src="2nd.jpeg"  style="width:30vw"/>
+                </div>
+                <div class="details">
+                  <label>Medal for 2nd Winner</label>
+                  <p>
+                   2nd Place Medal: A testament to your incredible effort.
+                   <br>
+                   <i>Kukës, AL</i>
+                 </p>
+               </div>
+             </div>
+             <div class="card" style="position:relative">
+              <div class="remove-when-use" style="position:absolute;bottom:0">
+                <img src="3rd.jpg" style="width:30vw" />
+              </div>
+              <div class="details">
+                <label>Medal for 3rd Winner</label>
+                <p>
+                 Wear this medal with pride – a symbol of your 3rd Place finish.
+                 <br>
+                 <i>Kukës, AL</i>
+               </p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>-->
+     <footer class="footer">
+      <div class="footer-logo">
+        <img src="icona.png" alt="Kukës Marathon Logo">
+      </div>
+      <div class="footer-info">
+        <p>Kukës<br>May, 2025</p>
+        <p>&copy; 2024 Kukës Marathon</p>
+      </div>
+      <div class="footer-contact">
+        <p>Contact Us:</p>
+        <p>
+          <a href="mailto:kukesmarathon@gmail.com">kukesmarathon@gmail.com</a><br>
+          <a href="mailto:orgcyp@hotmail.com">orgcyp@hotmail.com</a><br>
+        </p>
+      </div>
+    </footer>
+  </div>
+  <a href="#" class="top"></a>
+  <script>
+  var myIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000);
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    const topButton = document.querySelector(".top");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        topButton.style.display = "block";
+      } else {
+        topButton.style.display = "none";
+      }
+    });
+
+    topButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+  </script>
+</body>
+</html>
