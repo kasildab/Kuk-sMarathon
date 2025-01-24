@@ -1,0 +1,347 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsors</title>
+  <link rel="icon" href="icona.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: auto 0px; 
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 5px;
+  }
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 150px;
+  }
+  .navbar-logo img {
+    height: 80px;
+  }
+  .navbar-links {
+    display: flex;
+    gap: 15px;
+    margin-right: 50px;
+  }
+  .navbar-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 20px 10px;
+    transition: color 0.3s ease;
+  }
+  .navbar-links a:hover {
+    color: #f56a00;
+  }
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 10;
+  }
+  .dropdown a {
+    padding: 10px;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #333;
+    font-size:  14px;
+    transition: background-color 0.3s;
+  }
+  .dropdown a:hover {
+    background-color: #f56a00;
+    color: white;
+  }
+  .navbar-item {
+    position: relative;
+    margin-top: 10px;
+  }
+  .navbar-item:hover .dropdown {
+    display: flex;
+  }
+  .navbar-register {
+    background-color: #f56a00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  .navbar-register:hover {
+    background-color: #ff7e26;
+  }
+  #runn {
+    background: url('Sponsors.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 20%;
+  }
+  .info-text, .info-video, .info-winner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  button {
+    border: 2px solid #24b4fb;
+    background-color: #24b4fb;
+    border-radius: 0.9em;
+    cursor: pointer;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
+    font-size: 16px;
+  }
+
+  button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  button:hover {
+    background-color: #0071e2;
+  }
+
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fafafa;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  .footer-logo img {
+    height: 98px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+  }
+  .footer-info {
+    color: black;
+    font-size: 14px;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+  }
+  .footer-contact {
+    text-align: left;
+    color: black;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 50px;
+  }
+  .footer-contact p {
+    margin: 2px 0;
+    font-size: 14px;
+  }
+  .footer-contact a {
+    color: #f56a00;
+    text-decoration: none;
+  }
+  .footer-contact a:hover {
+    text-decoration: underline;
+  }
+  .top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    aspect-ratio: 1;
+    background: #ff8b24;
+    border-radius: 10px;
+    z-index: 1000;
+    display: none;
+  }
+  .top:before {
+    content: "";
+    position: absolute;
+    inset: 30%;
+    transform: translateY(20%) rotate(-45deg);
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .card {
+   flex: 0 0 30%;
+   position: relative;
+   display: inline-block;
+   margin-right: 50px;
+ }
+
+ .remove-when-use {
+  text-align: center;
+}
+
+.remove-when-use img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.details {
+  color: white;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  height: 2.6em;
+  transition: height .5s ease-in-out;
+  padding: 0.6em;
+  overflow: hidden;
+}
+
+.details > p {
+  font-size: 0.8em;
+  margin-top: 0.5em;
+}
+
+.card:hover > .details {
+  height: 6.7em;
+}
+
+</style>
+</head>
+<body>
+  <div>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="index.html"><img src="ben.jpg" alt="Kukës Marathon Logo"></a>
+      </div>
+      <div class="navbar-links">
+        <div class="navbar-item">
+          <a href="#">The Races</a>
+          <div class="dropdown">
+            <a href="Half Marathon.html">Half Marathon</a>
+            <a href="10Km.html">10Km</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <a href="#">Get Involved</a>
+          <div class="dropdown">
+            <a href ="Sponsors.html">Sponsors</a>
+            <a href="Volunteers.html">Volunteers</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <a href="agenda.jpeg" download="agenda.jpeg">Schedule of Events</a>
+        </div>
+        <button class="navbar-register">Register</button>
+      </div>
+    </nav>
+    <div class="info-text" id="runn">
+    </div>
+    <div class="info-text" style="padding-bottom:60px;">
+      <div style="display:flex;margin-right:100px; margin-left:50px;">
+        <div style="margin-right:100px;">
+          <h2 style=" margin-top:20px; margin-bottom:10px; font-size:50px; font-family: 'Bebas Neue', serif;
+          font-weight: 500; font-style: normal;">Your Brand In Front Of Our Audience</h2>
+          <p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: 400;
+          font-style: normal; font-size:15px; color:#282928;">Be a part of something extraordinary! Kukës Marathon is more
+          than just a race—it's a celebration of athleticism, community, and the breathtaking beauty of Kukës. By sponsoring this event, your brand will gain unparalleled exposure to a diverse and engaged audience.</p>
+          <p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: <weight>;
+            font-style: normal; font-size:15px; color:#282928;">
+            Here's why partnering with us is a win for your business:</p>
+            <ul><li><p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: <weight>;font-style: normal; font-size:13px; color:#282928;"><strong>Local and Global Reach:</strong> The Kukës Marathon attracts participants and spectators from across Albania and beyond, giving your brand visibility on both local and international stages.</p></li>
+              <li><p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: <weight>;
+                font-style: normal; font-size:13px; color:#282928;"><strong>Connect With an Active Audience:</strong> Align your brand with health-conscious, goal-oriented individuals passionate about sports, fitness, and adventure.</p></li>
+                <li><p style="  font-family: 'Rubik', serif; font-weight: <weight>;
+                  font-style: normal; font-size:13px; color:#282928;"><strong>Marketing That Moves:</strong> From event-day banners and digital promotions to race-day materials, your logo and messaging will be prominently featured throughout our platforms and events.</p></li>
+                  <li><p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: <weight>;
+                    font-style: normal; font-size:13px; color:#282928;"><strong>A Community Impact:</strong> Showcase your commitment to supporting local events, tourism, and a healthy lifestyle by contributing to a memorable experience for participants and visitors.</p></li>
+                  </ul>
+                  <br>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTJMP63aBrA4bjYBRiMiKkQ9twbwCxjx23KiwXm-9fWz2Zmw/viewform" target="_blank">
+                    <button style="margin-left:20px; margin-right:50px;">
+                      <span>
+                        <svg
+                        height="24"
+                        width="24"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path>
+                      </svg>
+                      Become Our Sponsor
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div style="max-width:400px; max-height:500px;margin-bottom:30px;">
+                <img src="bashkia.jpg" style="width:120%;margin-bottom:10px;">
+                <img src="drini.jpg" style="width:100%">
+              </div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="footer-logo">
+              <img src="icona.png" alt="Kukës Marathon Logo">
+            </div>
+            <div class="footer-info">
+              <p>Kukës<br>May, 2025</p>
+              <p>&copy; 2024 Kukës Marathon</p>
+            </div>
+            <div class="footer-contact">
+              <p>Contact Us:</p>
+              <p>
+                <a href="mailto:kukesmarathon@gmail.com">kukesmarathon@gmail.com</a><br>
+                <a href="mailto:orgcyp@hotmail.com">orgcyp@hotmail.com</a><br>
+              </p>
+            </div>
+          </footer>
+        </div>
+        <a href="#" class="top"></a>
+        <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const topButton = document.querySelector(".top");
+
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+              topButton.style.display = "block";
+            } else {
+              topButton.style.display = "none";
+            }
+          });
+
+          topButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        });
+        </script>
+      </body>
+      </html>
