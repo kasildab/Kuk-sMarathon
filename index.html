@@ -604,9 +604,6 @@
     /* Tablets (Kindle or small tablets) */
 @media (min-width: 768px) and (max-width: 1023px) {
   body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: grid;
     grid-template-columns: auto 0px; 
   }
   
@@ -660,12 +657,20 @@
   .lable {
     font-size: 15px;
   }
+    @keyframes slope {
+    0% { }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% { }
+  }
+  
   .info-text, .info-video, .info-winner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    padding: 12px;
   }
 
   .cards {
