@@ -841,14 +841,42 @@
     }
 
     /* Very Small Screens (e.g., smaller mobile devices) */
-    @media (max-width: 480px) {
-      .navbar-logo img {
-        height: 50px;
-      }
-      .navbar-register {
-        padding: 8px 12px;
-      }
-    }
+@media (max-width: 480px) {
+  .navbar {
+    padding: 5px;
+  }
+  .navbar-logo img {
+    height: 40px;
+  }
+  .navbar-links a {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .banner-title {
+    font-size: 16px;
+  }
+  .button {
+    width: 140px;
+    height: 28px;
+  }
+  .info-text, .info-video, .info-winner {
+    flex-direction: column;
+    padding: 8px;
+  }
+  .cards {
+    height: 100px;
+  }
+  .outlinePage {
+    width: 180px;
+    height: 100px;
+  }
+  .ranking_number {
+    font-size: 40px;
+  }
+  .countdown-section h1 {
+    font-size: 1.5rem;
+  }
+}
 
 
 
