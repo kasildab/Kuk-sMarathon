@@ -604,7 +604,10 @@
     /* Tablets (Kindle or small tablets) */
 @media (min-width: 768px) and (max-width: 1023px) {
   body {
-    grid-template-columns: auto 0px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: auto 0px; 
   }
   
   .navbar {
@@ -657,14 +660,6 @@
   .lable {
     font-size: 15px;
   }
-   @keyframes slope {
-    0% { }
-    50% {
-      transform: rotate(10deg);
-    }
-    100% { }
-  }
-
   .info-text, .info-video, .info-winner {
     display: flex;
     align-items: center;
