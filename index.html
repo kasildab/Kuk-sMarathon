@@ -913,12 +913,119 @@
 
 
     /* Tablets (Kindle or small tablets) */
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .navbar-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    grid-template-columns: auto 0px;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .navbar-logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-logo img {
+    height: 60px;
+  }
+  
+  .navbar-links {
+    gap: 10px;
+    margin-right: 0;
+  }
+  
+  .navbar-links a {
+    font-size: 14px;
+    padding: 15px 8px;
+  }
+  
+  .dropdown {
+    position: static;
+    box-shadow: none;
+  }
+  
+  .dropdown a {
+    font-size: 12px;
+  }
+  
+  .navbar-register {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+  
+  .banner-title {
+    font-size: 20px;
+  }
+  
+  .button {
+    width: 180px;
+    height: 35px;
+  }
+  
+  .lable {
+    font-size: 15px;
+  }
+  
+  .info-text, .info-video, .info-winner {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .video-container {
+    height: auto;
+    margin-left: 0;
+  }
+  
+  .video-container video {
+    max-width: 100%;
+  }
+  
+  .cards {
+    height: 130px;
+  }
+  
+  .cards:hover {
+    height: 230px;
+  }
+  
+  .outlinePage {
+    width: 250px;
+    height: 130px;
+  }
+  
+  .detailPage {
+    width: 250px;
+    height: 100px;
+  }
+  
+  .ranking_number {
+    font-size: 60px;
+  }
+  
+  .ranking_word {
+    font-size: 30px;
+  }
+  
+  .countdown-section h1 {
+    font-size: 2rem;
+  }
+  
+  .countdown-item {
+    width: 70px;
+  }
+  
+  .countdown-item span {
+    font-size: 1.8rem;
+  }
+  
+  .countdown-item p {
+    font-size: 0.9rem;
+  }
+}
+
 
     /* Mobile Phones */
     @media (max-width: 767px) {
