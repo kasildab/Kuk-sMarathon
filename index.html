@@ -829,6 +829,20 @@ body {
   
 }
 }
+#language-switcher {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#lang-select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 
 
@@ -914,30 +928,39 @@ function closeModal() {
       </div>
       <div class="navbar-links">
         <div class="navbar-item">
-          <a href="#">The Races</a>
+          <a href="#" id="race">The Races</a>
           <div class="dropdown">
-            <a href="Half Marathon.html">Half Marathon</a>
-            <a href="10Km.html">10Km</a>
+            <a href="Half Marathon.html" id="half">Half Marathon</a>
+            <a href="10Km.html" id="km">10Km</a>
           </div>
         </div>
         <div class="navbar-item">
-          <a href="Sponsors.html">Sponsors</a>
-          <a href="Volunteers.html">Volunteers</a>
+          <a href="Sponsors.html" id="spon">Sponsors</a>
+          <a href="Volunteers.html" id="vol">Volunteers</a>
         </div>
         <div class="navbar-item">
-          <a href="#" onclick="openModal()">Schedule of Events</a>
+          <a href="#" onclick="openModal()" id="agend">Schedule of Events</a>
         </div>
-        <button class="navbar-register"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;">Register</a></button>
+        <button class="navbar-register"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;" id="reg">Register</a></button>
       </div>
+          <div id="language-switcher">
+            <select id="lang-select">
+                <option value="">Select Language</option>
+                <option value="en">English</option>
+                <option value="sq">Shqip</option>
+                <option value="es">Español</option>
+                <option value="tr">Türkçe</option>
+            </select>
+          </div>
     </nav>
     <div class="banner">
       <div class="banner-content">
       </div>
       <div class="banner-title">
-        <div class="shine">Kukës <br>Half-Marathon</div>
+        <div class="shine" id="titull">Kukës <br>Half-Marathon</div>
         <button class="button" style="margin-left:130px; margin-top:10px;">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none" class="svg-icon"><g stroke-width="2" stroke-linecap="round" stroke="#fff"><rect y="5" x="4" width="16" rx="2" height="16"></rect><path d="m8 3v4"></path><path d="m16 3v4"></path><path d="m4 11h16"></path></g></svg>
-          <span class="lable"><a href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Reminder+of+Kuk%C3%ABs+Half+Marathon+Event&dates=20250413T080000/20250413T083000&details=Get+ready+for+today!+See+more+in:+https://www.instagram.com/qendra_per_progres_rinor/&location=Kuk%C3%ABs,+Albania" style="text-decoration:none; color:white;" target="_blank">Add to Calendar</a></span>
+          <span class="lable"><a href="https://calendar.google.com/calendar/u/0/r/eventedit?text=Reminder+of+Kuk%C3%ABs+Half+Marathon+Event&dates=20250413T080000/20250413T083000&details=Get+ready+for+today!+See+more+in:+https://www.instagram.com/qendra_per_progres_rinor/&location=Kuk%C3%ABs,+Albania" style="text-decoration:none; color:white;" target="_blank" id="alarm">Add to Calendar</a></span>
         </button>
       </div>
     </div>
@@ -948,16 +971,16 @@ function closeModal() {
     </div>
     <div style="margin-left:50px;">
       <h2 style="margin-top:-50px; color:#f56a00; font-size:45px; font-family:'Arvo', serif;
-      font-weight: 700; font-style: normal;">Join us &#127941; <br> In May 2025!</h2>
+      font-weight: 700; font-style: normal;" id="title">Join us &#127941; <br> In May 2025!</h2>
       <p style="  font-family: 'Montserrat', serif; font-optical-sizing: auto; font-weight: <weight>;
-        font-style: normal; font-size:12px;">
+        font-style: normal; font-size:12px;" id="intro">
         Get ready to be part of history for the first-ever Kukës Marathon!<br>
         Discover the breathtaking beauty of Kukës as you run through its <br> stunning landscapes, from serene lakeshores to picturesque mountains and charming city streets. <br>
         Enjoy a lively festival featuring traditional Albanian music, delicious local cuisine, and a bustling village of vendors and activities.<br>
         Awards will be presented to top finishers, making it a day to remember <br> for participants and spectators alike.<br><br>
         <i>Don’t miss this historic event—register today and make your mark at the inaugural Kukës Marathon!</i>
       </p><br>      
-      <button class="styled-button">
+      <button class="styled-button" id="bt">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;">
           Register Now
           <div class="inner-button">
@@ -984,6 +1007,124 @@ function closeModal() {
       </button>
     </div>
   </div>
+  <script>
+const translations = {
+  "sq": () => ({
+    "race": `Garat`,
+    "half": `Gjysmë maratona`,
+    "km": `10 km gara`,
+    "spon": `Sponsorët`,
+    "vol": `Vullnetarët`,
+    "agend": `Agjenda`,
+    "reg": `Regjistrohu`,
+    "titull": `Gjysmë maratona <br> e Kukësit`,
+    "alarm": `Shto në kalendar`,
+    "title": `Bashkohuni me ne 🏅 <br>Në maj 2025!`,
+    "intro": `Bëhuni gati të jeni pjesë e historisë për Maratonën e parë të Kukësit!<br>
+    Zbuloni bukurinë mahnitëse të Kukësit ndërsa kaloni nëpër <br>
+    peizazhet e tij mahnitëse, nga brigjet e qeta të liqeneve deri te malet piktoreske dhe rrugët simpatike të qytetit.<br>
+    Shijoni një festival të gjallë me muzikë tradicionale shqiptare, kuzhinë të shijshme vendase dhe një fshat plot gjallëri shitësish dhe aktivitetesh.<br>
+    Çmimet do t'u jepen fituesve më të mirë, duke e bërë atë një ditë për t'u mbajtur mend
+    si për pjesëmarrësit ashtu edhe për spektatorët.<br><br>
+    <i>Mos e humbisni këtë ngjarje historike — regjistrohu sot dhe lër gjurmë në Maratonën inauguruese të Kukësit!</i>`,
+    "bt": `Regjistrohu tani`,
+        "fund": `Kukës<br>Maj, 2025`,
+    "fundi": `&copy; 2024 Kukës Maraton`,
+    "kontakt": `Na kontaktoni:`,
+    "lajm": `SHIHEMI MË 25 MAJ, 2025!`,
+    "dit": `DITË`,
+    "ore": `ORË`,
+    "minuta": `MINUTA`,
+    "sek": `SEKONDA`
+  }),
+  "en": () => ({
+    "race": `The Races`,
+    "half": `Half Marathon`,
+    "km": `10Km`,
+    "spon": `Sponsors`,
+    "vol": `Volunteers`,
+    "agend": `Schedule of Events`,
+    "reg": `Register`,
+    "titull": `Kukës <br>Half Marathon`,
+    "alarm": `Add to Calendar`,
+    "title": `Join us 🏅 <br>In May 2025!`,
+    "intro": `Get ready to be part of history for the first-ever Kukës Marathon!<br>
+    Discover the breathtaking beauty of Kukës as you run through its <br> stunning landscapes, from serene lakeshores to picturesque mountains and charming city streets.<br>
+    Enjoy a lively festival featuring traditional Albanian music, delicious local cuisine, and a bustling village of vendors and activities.<br>
+    Awards will be presented to top finishers, making it a day to remember <br> for participants and spectators alike.<br><br>
+    <i>Don’t miss this historic event—register today and make your mark at the inaugural Kukës Marathon!</i>`,
+    "bt": `Register now`,
+    "fund": `Kukës<br>May, 2025`,
+    "fundi": `&copy; 2024 Kukës Marathon`,
+    "kontakt": `Contact Us:`,
+    "lajm": `SEE YOU ON MAY 25, 2025!`,
+    "dit": `DAYS`,
+    "ore": `HOURS`,
+    "minuta": `MINUTES`,
+    "sek": `SECONDS`
+  }),
+    "es": () => ({
+    "race": `Las razas`,
+    "half": `Media Maraton`,
+    "km": `10Km`,
+    "spon": `Patrocinadores`,
+    "vol": `Voluntarios`,
+    "agend": `Calendario de eventos`,
+    "reg": `Registro`,
+    "titull": `Media Maratón <br> de Kukës`,
+    "alarm": `Agregar al calendario`,
+    "title": `¡Únete a nosotros 🏅<br>en mayo de 2025!`,
+    "intro": `¡Prepárate para ser parte de la historia en el primer Maratón de Kukës!<br>
+    Descubre la impresionante belleza de Kukës mientras corres por sus <br>
+impresionantes paisajes, desde las serenas orillas de los lagos hasta las pintorescas montañas y las encantadoras calles de la ciudad. <br>
+Disfruta de un animado festival con música tradicional albanesa,<br> deliciosa cocina local y un animado pueblo lleno de vendedores y actividades.
+Se entregarán premios a los primeros finalistas, lo que hará que sea <br> un día inolvidable
+tanto para los participantes como para los espectadores.<br> <br>
+<i>¡No te pierdas este evento histórico, regístrate hoy y deja tu huella en el Maratón inaugural de Kukës!</i>`,
+"bt": `Registrate ahora`,
+    "fund": `Kukës<br>Mayo de 2025`,
+    "fundi": `&copy; 2024 Maratón de Kukës`,
+    "kontakt": `Contáctenos:`,
+    "lajm": `¡NOS VEMOS EL 25 DE MAYO DE 2025!`,
+    "dit": `DÍAS`,
+    "ore": `HORAS`,
+    "minuta": `MINUTOS`,
+    "sek": `ARTÍCULOS DE SEGUNDA CLASE`
+  })
+};
+
+function updateContent(language) {
+  const translation = translations[language]();
+  document.getElementById("title").innerHTML = translation.title;
+  document.getElementById("intro").innerHTML = translation.intro;
+  document.getElementById("bt").innerHTML = translation.bt;
+  document.getElementById("race").innerHTML = translation.race;
+  document.getElementById("half").innerHTML = translation.half;
+  document.getElementById("km").innerHTML = translation.km;
+  document.getElementById("spon").innerHTML = translation.spon;
+  document.getElementById("vol").innerHTML = translation.vol;
+  document.getElementById("agend").innerHTML = translation.agend;
+  document.getElementById("reg").innerHTML = translation.reg;
+  document.getElementById("titull").innerHTML = translation.titull;
+  document.getElementById("alarm").innerHTML = translation.alarm;
+  document.getElementById("fund").innerHTML = translation.fund;
+  document.getElementById("fundi").innerHTML = translation.fundi;
+  document.getElementById("kontakt").innerHTML = translation.kontakt;
+  document.getElementById("lajm").innerHTML = translation.lajm;
+  document.getElementById("dit").innerHTML = translation.dit;
+  document.getElementById("ore").innerHTML = translation.ore;
+  document.getElementById("minuta").innerHTML = translation.minuta;
+  document.getElementById("sek").innerHTML = translation.sek;
+}
+
+function handleLanguageChange(event) {
+  const selectedLanguage = event.target.value;
+  updateContent(selectedLanguage);
+}
+document.getElementById("lang-select").addEventListener("change", handleLanguageChange);
+updateContent("en");
+
+  </script>
 <div class="info-text">
   <section class="countdown-section">
     <h1>SEE YOU ON MAY 25, 2025!</h1>
