@@ -328,7 +328,145 @@
   text-decoration: none;
   cursor: pointer;
 }
+    /* Mobile Phones */
+    @media (max-width: 767px) {
+body {
+    grid-template-columns: auto 0px; 
+  }
+  
+  .navbar {
+    flex-direction: column;
+    padding: 8px;
+  }
+  
+  .navbar-logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-logo img {
+    height: 60px;
+  }
+  
+  .navbar-links {
+    gap: 10px;
+    margin-right: 0;
+  }
+  
+  .navbar-links a {
+    font-size: 14px;
+    padding: 14px 7px;
+  }
+  
+  .dropdown {
+    position: static;
+    box-shadow: none;
+  }
+  
+  .dropdown a {
+    font-size: 12px;
+  }
+  
+  .navbar-register {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+  
+  .banner-title {
+    font-size: 20px;
+  }
+  
+  .button {
+    width: 180px;
+    height: 35px;
+  }
+  
+  .lable {
+    font-size: 15px;
+  }
+    @keyframes slope {
+    0% { }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% { }
+  }
+  
+  .info-text, .info-video, .info-winner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-top: -340px;
+  }
 
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px; /* Adjust padding */
+    background-color: #fafafa;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-logo img {
+    height: 85px; /* Adjust logo size */
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-info {
+    color: black;
+    font-size: 13px; /* Adjust font size */
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-contact {
+    text-align: left;
+    color: black;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 30px;
+  }
+
+  .footer-contact p {
+    margin: 5px 0;
+    font-size: 13px; /* Adjust font size */
+  }
+
+  .footer-contact a {
+    color: #f56a00;
+    text-decoration: none;
+  }
+
+  .footer-contact a:hover {
+    text-decoration: underline;
+  }
+  
+}
+    }
+#language-switcher {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#lang-select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -339,27 +477,36 @@
       </div>
       <div class="navbar-links">
         <div class="navbar-item">
-          <a href="#">The Races</a>
+          <a href="#" id="race">The Races</a>
           <div class="dropdown">
-            <a href="Half Marathon.html">Half Marathon</a>
-            <a href="10Km.html">10Km</a>
+            <a href="Half Marathon.html" id="half">Half Marathon</a>
+            <a href="10Km.html" id="km">10Km</a>
           </div>
         </div>
         <div class="navbar-item">
-          <a href="Sponsors.html">Sponsors</a>
-          <a href="Volunteers.html">Volunteers</a>
+          <a href="Sponsors.html" id="spon">Sponsors</a>
+          <a href="Volunteers.html" id="vol">Volunteers</a>
         </div>
         <div class="navbar-item">
-          <a href="#" onclick="openModal()">Schedule of Events</a>
+          <a href="#" onclick="openModal()" id="agend">Schedule of Events</a>
         </div>
-        <button class="navbar-register"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;">Register</a></button>
+        <button class="navbar-register"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;" id="reg">Register</a></button>
       </div>
+                      <div id="language-switcher">
+            <select id="lang-select">
+                <option value="">Select Language</option>
+                <option value="en">English</option>
+                <option value="sq">Shqip</option>
+                <option value="es">Español</option>
+                <option value="tr">Türkçe</option>
+            </select>
+          </div>
     </nav>
     <div class="info-text" id="runn">
-      <div class="banner-title">10Km Race</div>
+      <div class="banner-title" id="pjesa">10Km Race</div>
     </div>
     <div class="info-text">
-      <h2 style="margin-left:200px; font-size:40px; font-family: 'Unbounded', serif; font-weight: 400;">Welcome to the Kukës 10Km Race!</h2>
+      <h2 style="margin-left:200px; font-size:40px; font-family: 'Unbounded', serif; font-weight: 400;" id="title">Welcome to the Kukës 10Km Race!</h2>
     </div>
     <div class="info-text">
       <div style="display:flex; justify-content:space-between; margin-left:100px;">
@@ -372,19 +519,19 @@
         </div>
         <div style="margin-left:20px;">
           <h2 style="margin-left:50px; margin-top:20px; margin-bottom:10px;color:#f56a00; font-size:25px; font-family: 'Monoton', serif;
-          font-weight: 400; font-style: normal; word-spacing: 10px">RACE FEATURES:</h2>
+          font-weight: 400; font-style: normal; word-spacing: 10px" id="vec">RACE FEATURES:</h2>
           <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-            font-style: normal; font-size:13px; color:#282928;">&#10139;Exclusive race t-shirt to commemorate your achievement</p>
+            font-style: normal; font-size:13px; color:#282928;" id="p1">&#10139;Exclusive race t-shirt to commemorate your achievement</p>
             <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-              font-style: normal; font-size:13px; color:#282928;">&#10139;Collectable finishing medal as a token of your success</p>
+              font-style: normal; font-size:13px; color:#282928;" id="p2">&#10139;Collectable finishing medal as a token of your success</p>
               <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-                font-style: normal; font-size:13px; color:#282928;">&#10139;Post-race celebration with live music, delicious food, and local vendors</p>
+                font-style: normal; font-size:13px; color:#282928;" id="p3">&#10139;Post-race celebration with live music, delicious food, and local vendors</p>
                   <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-                    font-style: normal; font-size:13px; color:#282928;">&#10139;City and countryside race route at the foot of Mount Gjallica</p>
+                    font-style: normal; font-size:13px; color:#282928;" id="p4">&#10139;City and countryside race route at the foot of Mount Gjallica</p>
                     <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-                      font-style: normal; font-size:13px; color:#282928;">&#10139;Water stations along the race route to stay energized</p>
+                      font-style: normal; font-size:13px; color:#282928;" id="p5">&#10139;Water stations along the race route to stay energized</p>
                         <h4 style="margin-left:50px;margin-top:30px;color:#f56a00; font-size:15px; font-family:'Arvo', serif;
-                        font-weight: 700; font-style: normal;">Price:<span style="font-size:30px; margin-left:10px;font-family:'Lumanosimo', serif; font-weight: 400; font-style: normal;color:#f56a00;">€5<a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank"><button class="button type1">
+                        font-weight: 700; font-style: normal;"><strong id="p6">Price:</strong><span style="font-size:30px; margin-left:10px;font-family:'Lumanosimo', serif; font-weight: 400; font-style: normal;color:#f56a00;">€5<a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank"><button class="button type1">
                       </button></a></span></h4>
                     </div>
                   </div>
@@ -479,16 +626,137 @@
          </div>
        </div>
      </div>-->
+         <script>
+const translations = {
+  "sq": () => ({
+    "race": `Garat`,
+    "half": `Gjysmë maratona`,
+    "km": `10 km gara`,
+    "spon": `Sponsorët`,
+    "vol": `Vullnetarët`,
+    "agend": `Agjenda`,
+    "reg": `Regjistrohu`,
+    "pjesa": `Gara 10Km`,
+    "title": `Mirë se vini në gjysmëmaratonën e Kukësit!`,
+    "vec": `KARAKTERISTIKAT E GARAVE:`,
+    "p1": `&#10139;T-shirt ekskluzive garash për të përkujtuar arritjen tuaj`,
+    "p2": `&#10139;Medalje përfundimi e koleksionueshme si shenjë e suksesit tuaj`,
+    "p3": `&#10139;Festë pas garës me muzikë live, ushqime të shijshme dhe shitës vendas`,
+    "p4": `&#10139;Rruga e garave në qytet dhe fshat në rrëzë të malit Gjallicë`,
+    "p5": `&#10139;Stacione ujore përgjatë rrugës së garës për të qëndruar me energji`,
+    "p6": `Çmimi:`,
+    "fund": `Kukës<br>Maj, 2025`,
+    "fundi": `&copy; 2024 Kukës Maraton`,
+    "kontakt": `Na kontaktoni:`
+  }),
+
+  "en": () => ({
+    "race": `The Races`,
+    "half": `Half Marathon`,
+    "km": `10Km`,
+    "spon": `Sponsors`,
+    "vol": `Volunteers`,
+    "agend": `Schedule of Events`,
+    "reg": `Register`,
+    "pjesa": `10Km Marathon`,
+    "title": `Welcome to the Kukës Half Marathon!`,
+    "vec": `RACE FEATURES:`,
+    "p1": `&#10139;Exclusive race t-shirt to commemorate your achievement`,
+    "p2": `&#10139;Collectable finishing medal as a token of your success`,
+    "p3": `&#10139;Post-race celebration with live music, delicious food, and local vendors`,
+    "p4": `&#10139;City and countryside race route at the foot of Mount Gjallica`,
+    "p5": `&#10139;Water stations along the race route to stay energized`,
+    "p6": `Price:`,
+    "fund": `Kukës<br>May, 2025`,
+    "fundi": `&copy; 2024 Kukës Marathon`,
+    "kontakt": `Contact Us:`
+  }),
+  "es": () => ({
+    "race": `Las razas`,
+    "half": `Media Maraton`,
+    "km": `10Km`,
+    "spon": `Patrocinadores`,
+    "vol": `Voluntarios`,
+    "agend": `Calendario de eventos`,
+    "reg": `Registro`,
+    "pjesa": `Maratón de 10 km`,
+    "title": `¡Bienvenidos a la Media Maratón de Kukës!`,
+    "vec": `CARACTERÍSTICAS DE LA CARRERA:`,
+    "p1": `&#10139;Camiseta de carrera exclusiva para conmemorar tu logro`,
+    "p2": `&#10139;Medalla de finalización coleccionable como muestra de tu éxito`,
+    "p3": `&#10139;Celebración posterior a la carrera con música en vivo, comida deliciosa y vendedores locales.`,
+    "p4": `&#10139;Ruta de carrera por la ciudad y el campo al pie del monte Gjallica`,
+    "p5": `&#10139;Puestos de agua a lo largo del recorrido de la carrera para mantener la energía.`,
+    "p6": `Precio:`,
+    "fund": `Kukës<br>Mayo de 2025`,
+    "fundi": `&copy; 2024 Maratón de Kukës`,
+    "kontakt": `Contáctenos:`
+  }),
+  "tr": () => ({
+    "race": `Yarışlar`,
+    "half": `Yari Maraton`,
+    "km": `10Km`,
+    "spon": `Sponsorlar`,
+    "vol": `Gönüllüler`,
+    "agend": `Etkinlik Takvimi`,
+    "reg": `Kayit olmak`,
+    "pjesa": `10Km Maraton`,
+    "title": `Kukës Yarı Maratonuna hoş geldiniz!`,
+    "vec": `YARIŞ ÖZELLİKLERİ:`,
+    "p1": `&#10139;Başarınızı anmak için özel yarış tişörtü`,
+    "p2": `&#10139;Başarınızın bir göstergesi olarak koleksiyonluk bitirme madalyası`,
+    "p3": `&#10139;Canlı müzik, lezzetli yemekler ve yerel satıcılarla yarış sonrası kutlama`,
+    "p4": `&#10139;Gjallica Dağı eteklerinde şehir ve kırsal yarış rotası`,
+    "p5": `&#10139;Yarış güzergahı boyunca enerjik kalmanızı sağlayacak su istasyonları`,
+    "p6": `Fiyat:`,
+    "fund": `Kukës<br>Mayıs 2025`,
+    "fundi": `&copy; 2024 Kukës Maratonu`,
+    "kontakt": `Bize Ulaşın:`
+  })
+};
+
+function updateContent(language) {
+  const translation = translations[language]();
+  document.getElementById("race").innerHTML = translation.race;
+  document.getElementById("half").innerHTML = translation.half;
+  document.getElementById("km").innerHTML = translation.km;
+  document.getElementById("spon").innerHTML = translation.spon;
+  document.getElementById("vol").innerHTML = translation.vol;
+  document.getElementById("agend").innerHTML = translation.agend;
+  document.getElementById("reg").innerHTML = translation.reg;
+  document.getElementById("title").innerHTML = translation.title;
+  document.getElementById("pjesa").innerHTML = translation.pjesa;
+  document.getElementById("vec").innerHTML = translation.vec;
+  document.getElementById("p1").innerHTML = translation.p1;
+  document.getElementById("p2").innerHTML = translation.p2;
+  document.getElementById("p3").innerHTML = translation.p3;
+  document.getElementById("p4").innerHTML = translation.p4;
+  document.getElementById("p5").innerHTML = translation.p5;
+  document.getElementById("p6").innerHTML = translation.p6;
+  document.getElementById("fund").innerHTML = translation.fund;
+  document.getElementById("fundi").innerHTML = translation.fundi;
+  document.getElementById("kontakt").innerHTML = translation.kontakt;
+
+}
+
+function handleLanguageChange(event) {
+  const selectedLanguage = event.target.value;
+  updateContent(selectedLanguage);
+}
+document.getElementById("lang-select").addEventListener("change", handleLanguageChange);
+updateContent("en");
+
+    </script>
      <footer class="footer">
       <div class="footer-logo">
         <img src="icona.png" alt="Kukës Marathon Logo">
       </div>
       <div class="footer-info">
-        <p>Kukës<br>May, 2025</p>
-        <p>&copy; 2024 Kukës Marathon</p>
+        <p id="fund">Kukës<br>May, 2025</p>
+        <p id="fundi">&copy; 2024 Kukës Marathon</p>
       </div>
       <div class="footer-contact">
-        <p>Contact Us:</p>
+        <p id="kontakt">Contact Us:</p>
         <p>
           <a href="mailto:kukesmarathon@gmail.com">kukesmarathon@gmail.com</a><br>
           <a href="mailto:orgcyp@hotmail.com">orgcyp@hotmail.com</a><br>
