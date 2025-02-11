@@ -50,6 +50,7 @@
     font-size: 16px;
     padding: 20px 10px;
     transition: color 0.3s ease;
+
   }
   .navbar-links a:hover {
     color: #f56a00;
@@ -71,7 +72,7 @@
     white-space: nowrap;
     text-decoration: none;
     color: #333;
-    font-size:  14px;
+    font-size: 14px;
     transition: background-color 0.3s;
   }
   .dropdown a:hover {
@@ -674,7 +675,269 @@
   text-decoration: none;
   cursor: pointer;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    grid-template-columns: auto 0px; 
+  }
+  
+  .navbar {
+    flex-direction: column;
+    padding: 8px;
+  }
+  
+  .navbar-logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-logo img {
+    height: 60px;
+  }
+  
+  .navbar-links {
+    gap: 10px;
+    margin-right: 0;
+  }
+  
+  .navbar-links a {
+    font-size: 14px;
+    padding: 14px 7px;
+  }
+  
+  .dropdown {
+    position: static;
+    box-shadow: none;
+  }
+  
+  .dropdown a {
+    font-size: 12px;
+  }
+  
+  .navbar-register {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+  
+  .banner-title {
+    font-size: 20px;
+  }
+  
+  .button {
+    width: 180px;
+    height: 35px;
+  }
+  
+  .lable {
+    font-size: 15px;
+  }
+    @keyframes slope {
+    0% { }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% { }
+  }
+  
+  .info-text, .info-video, .info-winner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-top: -340px;
+  }
 
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px; /* Adjust padding */
+    background-color: #fafafa;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-logo img {
+    height: 85px; /* Adjust logo size */
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-info {
+    color: black;
+    font-size: 13px; /* Adjust font size */
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-contact {
+    text-align: left;
+    color: black;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 30px;
+  }
+
+  .footer-contact p {
+    margin: 5px 0;
+    font-size: 13px; /* Adjust font size */
+  }
+
+  .footer-contact a {
+    color: #f56a00;
+    text-decoration: none;
+  }
+
+  .footer-contact a:hover {
+    text-decoration: underline;
+  }
+  
+}
+
+    /* Mobile Phones */
+    @media (max-width: 767px) {
+body {
+    grid-template-columns: auto 0px; 
+  }
+  
+  .navbar {
+    flex-direction: column;
+    padding: 8px;
+  }
+  
+  .navbar-logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-logo img {
+    height: 60px;
+  }
+  
+  .navbar-links {
+    gap: 10px;
+    margin-right: 0;
+  }
+  
+  .navbar-links a {
+    font-size: 14px;
+    padding: 14px 7px;
+  }
+  
+  .dropdown {
+    position: static;
+    box-shadow: none;
+  }
+  
+  .dropdown a {
+    font-size: 12px;
+  }
+  
+  .navbar-register {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+  
+  .banner-title {
+    font-size: 20px;
+  }
+  
+  .button {
+    width: 180px;
+    height: 35px;
+  }
+  
+  .lable {
+    font-size: 15px;
+  }
+    @keyframes slope {
+    0% { }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% { }
+  }
+  
+  .info-text, .info-video, .info-winner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-top: -340px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px; /* Adjust padding */
+    background-color: #fafafa;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-logo img {
+    height: 85px; /* Adjust logo size */
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-info {
+    color: black;
+    font-size: 13px; /* Adjust font size */
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-contact {
+    text-align: left;
+    color: black;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 30px;
+  }
+
+  .footer-contact p {
+    margin: 5px 0;
+    font-size: 13px; /* Adjust font size */
+  }
+
+  .footer-contact a {
+    color: #f56a00;
+    text-decoration: none;
+  }
+
+  .footer-contact a:hover {
+    text-decoration: underline;
+  }
+  
+}
+    }
+#language-switcher {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#lang-select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 </style>
 
@@ -687,27 +950,36 @@
       </div>
       <div class="navbar-links">
         <div class="navbar-item">
-          <a href="#">The Races</a>
+          <a href="#" id="race">The Races</a>
           <div class="dropdown">
-            <a href="Half Marathon.html">Half Marathon</a>
-            <a href="10Km.html">10Km</a>
+            <a href="Half Marathon.html" id="half">Half Marathon</a>
+            <a href="10Km.html" id="km">10Km</a>
           </div>
         </div>
         <div class="navbar-item">
-          <a href="Sponsors.html">Sponsors</a>
-          <a href="Volunteers.html">Volunteers</a>
+          <a href="Sponsors.html" id="spon">Sponsors</a>
+          <a href="Volunteers.html" id="vol">Volunteers</a>
         </div>
         <div class="navbar-item">
-          <a href="#" onclick="openModal()">Schedule of Events</a>
+          <a href="#" onclick="openModal()" id="agend">Schedule of Events</a>
         </div>
-        <button class="navbar-register"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;">Register</a></button>
+        <button class="navbar-register"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;" id="reg">Register</a></button>
       </div>
+                <div id="language-switcher">
+            <select id="lang-select">
+                <option value="">Select Language</option>
+                <option value="en">English</option>
+                <option value="sq">Shqip</option>
+                <option value="es">Español</option>
+                <option value="tr">Türkçe</option>
+            </select>
+          </div>
     </nav>
     <div class="info-text" id="runn">
-      <div class="banner-title">Half Marathon</div>
+      <div class="banner-title" id="pjesa">Half Marathon</div>
     </div>
     <div class="info-text">
-      <h2 style="margin-left:200px;  font-size:40px; font-family: 'Unbounded', serif; font-weight: 400;">Welcome to the Kukës Half Marathon!</h2>
+      <h2 style="margin-left:200px;  font-size:40px; font-family: 'Unbounded', serif; font-weight: 400;" id="title">Welcome to the Kukës Half Marathon!</h2>
     </div>
     <div class="info-text">
       <div style="display:flex; justify-content:space-between; margin-left:100px;">
@@ -721,19 +993,20 @@
         </div>
         <div style="margin-left:20px;">
           <h2 style="margin-left:50px; margin-top:20px; margin-bottom:10px;color:#f56a00; font-size:25px; font-family: 'Monoton', serif;
-          font-weight: 400; font-style: normal; word-spacing: 10px;">RACE FEATURES:</h2>
+          font-weight: 400; font-style: normal; word-spacing: 10px;" id="vec">RACE FEATURES:</h2>
           <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-            font-style: normal; font-size:13px; color:#282928;">&#10139;Exclusive race t-shirt to commemorate your achievement</p>
+            font-style: normal; font-size:13px; color:#282928;" id="p1">&#10139;Exclusive race t-shirt to commemorate your achievement</p>
             <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-              font-style: normal; font-size:13px; color:#282928;">&#10139;Collectable finishing medal as a token of your success</p>
+              font-style: normal; font-size:13px; color:#282928;" id="p2">&#10139;Collectable finishing medal as a token of your success</p>
               <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-                font-style: normal; font-size:13px; color:#282928;">&#10139;Post-race celebration with live music, delicious food, and local vendors</p>
+                font-style: normal; font-size:13px; color:#282928;" id="p3">&#10139;Post-race celebration with live music, delicious food, and local vendors</p>
                   <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-                    font-style: normal; font-size:13px; color:#282928;">&#10139;City and countryside race route at the foot of Mount Gjallica</p>
+                    font-style: normal; font-size:13px; color:#282928;" id="p4">&#10139;City and countryside race route at the foot of Mount Gjallica</p>
                     <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-                      font-style: normal; font-size:13px; color:#282928;">&#10139;Water stations along the race route to stay energized</p>
+                      font-style: normal; font-size:13px; color:#282928;" id="p5">&#10139;Water stations along the race route to stay energized</p>
                         <h4 style="margin-left:50px;margin-top:30px;color:#f56a00; font-size:15px; font-family:'Arvo', serif;
-                        font-weight: 700; font-style: normal;">Price:<span style="font-size:30px; margin-left:10px;font-family:'Lumanosimo', serif; font-weight: 400; font-style: normal;color:#f56a00;">€10<a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;"><button class="button type1">
+                        font-weight: 700; font-style: normal;">
+                        <strong id="p6">Price:</strong><span style="font-size:30px; margin-left:10px;font-family:'Lumanosimo', serif; font-weight: 400; font-style: normal;color:#f56a00;">€10<a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;"><button class="button type1">
                       </button></a></span></h4>
                     </div>
                   </div>
@@ -833,29 +1106,31 @@
 
             <section class="open-book">
               <header>
-                <h1>Kukës 1/2 Marathon</h1>
-                <h6>by ORGCYP</h6>
+                <h1 id="tit">Kukës 1/2 Marathon</h1>
+                <h6 id="nga">by ORGCYP</h6>
               </header>
               <article>
-                <h2 class="chapter-title">COURSE INFORMATION</h2>
-                <p>
-                  <a href="#">The Kukës Half Marathon</a> offers a challenging and scenic 21-kilometer race set in the beautiful region of Kukës. 
+                <h2 class="chapter-title" id="chap">COURSE INFORMATION</h2>
+                <p >
+                  <a href="#" id="ppp1">The Kukës Half Marathon</a>
+                  <span id="pp1">offers a challenging and scenic 21-kilometer race set in the beautiful region of Kukës.</span>
                 </p>
-                <p>
+                <p id="pp2">
                   The course is designed to showcase the area’s stunning natural landscapes, rich cultural heritage, and vibrant local community. Participants will experience an inspiring event that promotes health, wellness, and tourism while enjoying the unique charm of the Kukës region. A shorter 10-kilometer option is also available, ensuring a race for everyone.
                 </p>
                 <p>
                   <img src="bora.jpg" style="margin-left:-45px;" >
                 </p>                <dl>
-                <dt><strong>half-marathon</strong></dt>
+                <dt><strong id="fjal">half-marathon</strong></dt>
                 <dd>
-                  <em>noun</em><br>
-                  a long-distance running race, strictly one of 13 miles 192 yards (21.0975 km).
+                  <em id="emer">noun</em><br>
+                  <span id="per">a long-distance running race, strictly one of 13 miles 192 yards (21.0975 km).</span>
                 </dd>
               </dl>
-              <p><strong>Map of movement for competitors:</strong>
+              <p><strong id="fjali">Map of movement for competitors:</strong>
                 <img src="Race_Route_Map.jpeg" style="cursor: zoom-in;">
-                The race will start in the square in front of the former New Tourism Hotel, moving through Gostil, the road to the Kukes Airport, to return to the village of Shtiqen (to the Mosque), continuing the movement along the road that passes by the school to Kodër-Lumë, to return to Kukës by the old Prizren road, to Shote Galica, Lugi i Prizrenit, Lagje Zabel – 6-storey, R. Spahui until closing at 9-storey. This will give participants a wonderful view of the Gjallica mountain and the villages they pass through.
+                <span id="pp3">
+                The race will start in the square in front of the former New Tourism Hotel, moving through Gostil, the road to the Kukes Airport, to return to the village of Shtiqen (to the Mosque), continuing the movement along the road that passes by the school to Kodër-Lumë, to return to Kukës by the old Prizren road, to Shote Galica, Lugi i Prizrenit, Lagje Zabel – 6-storey, R. Spahui until closing at 9-storey. This will give participants a wonderful view of the Gjallica mountain and the villages they pass through.</span>
               </p><br><!--
               <p>
                 <ol type="1">
@@ -873,21 +1148,131 @@
               </ol>
             </footer>
           </section>
-
         </div>
       </div>
-
     </div>
+    <script>
+const translations = {
+  "sq": () => ({
+    "race": `Garat`,
+    "half": `Gjysmë maratona`,
+    "km": `10 km gara`,
+    "spon": `Sponsorët`,
+    "vol": `Vullnetarët`,
+    "agend": `Agjenda`,
+    "reg": `Regjistrohu`,
+    "pjesa": `Gjysmë maratona`,
+    "title": `Mirë se vini në gjysmëmaratonën e Kukësit!`,
+    "vec": `KARAKTERISTIKAT E GARAVE:`,
+    "p1": `&#10139;T-shirt ekskluzive garash për të përkujtuar arritjen tuaj`,
+    "p2": `&#10139;Medalje përfundimi e koleksionueshme si shenjë e suksesit tuaj`,
+    "p3": `&#10139;Festë pas garës me muzikë live, ushqime të shijshme dhe shitës vendas`,
+    "p4": `&#10139;Rruga e garave në qytet dhe fshat në rrëzë të malit Gjallicë`,
+    "p5": `&#10139;Stacione ujore përgjatë rrugës së garës për të qëndruar me energji`,
+    "p6": `Çmimi:`,
+    "tit": `Kukës 1/2 Maraton`,
+    "nga": `nga QPR`,
+    "chap": `INFORMACION I GARËS`,
+    "pp1": `ofron një garë sfiduese dhe piktoreske prej 21 kilometrash në rajonin e bukur të Kukësit.`,
+    "ppp1": `Gjysma Maratona e Kukësit`,
+    "pp2": `Kursi është krijuar për të shfaqur peizazhet natyrore mahnitëse të zonës, trashëgiminë e pasur kulturore dhe komunitetin e gjallë lokal. Pjesëmarrësit do të përjetojnë një ngjarje frymëzuese që promovon shëndetin, mirëqenien dhe turizmin duke shijuar bukurinë unike të rajonit të Kukësit. Një opsion më i shkurtër prej 10 kilometrash është gjithashtu i disponueshëm, duke siguruar një garë për të gjithë.`,
+    "pp3": `Gara do të nisë në sheshin përballë ish-Hotel Turizmit të Ri, duke lëvizur përmes Gostilit, rruga për në Aeroportin e Kukësit, për tu kthyer në fshatin Shtiqen (në Xhami), duke vazhduar lëvizjen përgjatë rrugës që kalon nga shkolla për në Kodër-Lumë, për tu kthyer në Kukës nga rruga e vjetër, në Shotegi i Prizrenit, Rr. Prizrenit, Rr. Spahui deri në mbyllje në 9-katëshe. Kjo do tu japë pjesëmarrësve një pamje të mrekullueshme të malit të Gjallicës dhe fshatrave nëpër të cilat kalojnë.`,
+    "fjal": `gjysmë-maratonë`,
+    "emer": `emër`,
+    "per": `një garë vrapimi në distanca të gjata, rreptësisht një nga 13 milje 192 jardë (21,0975 km).`,
+    "fjali": `Harta e lëvizjes për garuesit:`,
+    "fund": `Kukës<br>Maj, 2025`,
+    "fundi": `&copy; 2024 Kukës Maraton`,
+    "kontakt": `Na kontaktoni:`
+  }),
+
+  "en": () => ({
+    "race": `The Races`,
+    "half": `Half Marathon`,
+    "km": `10Km`,
+    "spon": `Sponsors`,
+    "vol": `Volunteers`,
+    "agend": `Schedule of Events`,
+    "reg": `Register`,
+    "pjesa": `Half Marathon`,
+    "title": `Welcome to the Kukës Half Marathon!`,
+    "vec": `RACE FEATURES:`,
+    "p1": `&#10139;Exclusive race t-shirt to commemorate your achievement`,
+    "p2": `&#10139;Collectable finishing medal as a token of your success`,
+    "p3": `&#10139;Post-race celebration with live music, delicious food, and local vendors`,
+    "p4": `&#10139;City and countryside race route at the foot of Mount Gjallica`,
+    "p5": `&#10139;Water stations along the race route to stay energized`,
+    "p6": `Price:`,
+    "tit": `Kukës 1/2 Marathon`,
+    "nga": `by ORGCYP`,
+    "chap": `COURSE INFORMATION`,
+    "pp1": `offers a challenging and scenic 21-kilometer race set in the beautiful region of Kukës.`,
+    "ppp1": `The Kukës Half Marathon`,
+    "pp2": `The course is designed to showcase the area’s stunning natural landscapes, rich cultural heritage, and vibrant local community. Participants will experience an inspiring event that promotes health, wellness, and tourism while enjoying the unique charm of the Kukës region. A shorter 10-kilometer option is also available, ensuring a race for everyone.`,
+    "pp3": `The race will start in the square in front of the former New Tourism Hotel, moving through Gostil, the road to the Kukes Airport, to return to the village of Shtiqen (to the Mosque), continuing the movement along the road that passes by the school to Kodër-Lumë, to return to Kukës by the old Prizren road, to Shote Galica, Lugi i Prizrenit, Lagje Zabel – 6-storey, R. Spahui until closing at 9-storey. This will give participants a wonderful view of the Gjallica mountain and the villages they pass through.`,
+    "fjal": `half-marathon`,
+    "emer": `noun`,
+    "per": `a long-distance running race, strictly one of 13 miles 192 yards (21.0975 km).`,
+    "fjali": `Map of movement for competitors:`,
+    "fund": `Kukës<br>May, 2025`,
+    "fundi": `&copy; 2024 Kukës Marathon`,
+    "kontakt": `Contact Us:`
+  })
+};
+
+function updateContent(language) {
+  const translation = translations[language]();
+  document.getElementById("race").innerHTML = translation.race;
+  document.getElementById("half").innerHTML = translation.half;
+  document.getElementById("km").innerHTML = translation.km;
+  document.getElementById("spon").innerHTML = translation.spon;
+  document.getElementById("vol").innerHTML = translation.vol;
+  document.getElementById("agend").innerHTML = translation.agend;
+  document.getElementById("reg").innerHTML = translation.reg;
+  document.getElementById("title").innerHTML = translation.title;
+  document.getElementById("pjesa").innerHTML = translation.pjesa;
+  document.getElementById("vec").innerHTML = translation.vec;
+  document.getElementById("p1").innerHTML = translation.p1;
+  document.getElementById("p2").innerHTML = translation.p2;
+  document.getElementById("p3").innerHTML = translation.p3;
+  document.getElementById("p4").innerHTML = translation.p4;
+  document.getElementById("p5").innerHTML = translation.p5;
+  document.getElementById("p6").innerHTML = translation.p6;
+  document.getElementById("tit").innerHTML = translation.tit;
+  document.getElementById("nga").innerHTML = translation.nga;
+  document.getElementById("chap").innerHTML = translation.chap;
+  document.getElementById("pp1").innerHTML = translation.pp1;
+  document.getElementById("pp2").innerHTML = translation.pp2;
+  document.getElementById("ppp1").innerHTML = translation.ppp1;
+  document.getElementById("pp3").innerHTML = translation.pp3;
+  document.getElementById("fjal").innerHTML = translation.fjal;
+  document.getElementById("emer").innerHTML = translation.emer;
+  document.getElementById("per").innerHTML = translation.per;
+  document.getElementById("fjali").innerHTML = translation.fjali;
+  document.getElementById("fund").innerHTML = translation.fund;
+  document.getElementById("fundi").innerHTML = translation.fundi;
+  document.getElementById("kontakt").innerHTML = translation.kontakt;
+
+}
+
+function handleLanguageChange(event) {
+  const selectedLanguage = event.target.value;
+  updateContent(selectedLanguage);
+}
+document.getElementById("lang-select").addEventListener("change", handleLanguageChange);
+updateContent("en");
+
+    </script>
     <footer class="footer">
       <div class="footer-logo">
         <img src="icona.png" alt="Kukës Marathon Logo">
       </div>
       <div class="footer-info">
-        <p>Kukës<br>May, 2025</p>
-        <p>&copy; 2024 Kukës Marathon</p>
+        <p id="fund">Kukës<br>May, 2025</p>
+        <p id="fundi">&copy; 2024 Kukës Marathon</p>
       </div>
       <div class="footer-contact">
-        <p>Contact Us:</p>
+        <p id="kontakt">Contact Us:</p>
         <p>
           <a href="mailto:kukesmarathon@gmail.com">kukesmarathon@gmail.com</a><br>
           <a href="mailto:orgcyp@hotmail.com">orgcyp@hotmail.com</a><br>
