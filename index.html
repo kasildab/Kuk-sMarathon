@@ -180,6 +180,11 @@
   video::-webkit-media-controls-panel {
     display: none;
   }
+  
+
+  .slide-in-top {
+    animation: slide-in-top 1s cubic-bezier(0.65, 0.05, 0.36, 1) both;
+  }
 
   @keyframes slide-in-top {
     0% {
@@ -935,8 +940,11 @@ function closeModal() {
           </div>
         </div>
         <div class="navbar-item">
-          <a href="Sponsors.html" id="spon">Sponsors</a>
-          <a href="Volunteers.html" id="vol">Volunteers</a>
+            <a href="Sponsors.html" id="spon">Sponsors</a>
+            <a href="Volunteers.html" id="vol">Volunteers</a>
+          <div class="dropdown">
+
+          </div>
         </div>
         <div class="navbar-item">
           <a href="#" onclick="openModal()" id="agend">Schedule of Events</a>
@@ -979,7 +987,8 @@ function closeModal() {
         Enjoy a lively festival featuring traditional Albanian music, delicious local cuisine, and a bustling village of vendors and activities.<br>
         Awards will be presented to top finishers, making it a day to remember <br> for participants and spectators alike.<br><br>
         <i>Don’t miss this historic event—register today and make your mark at the inaugural Kukës Marathon!</i>
-      </p><br>      
+      </p><br>
+
       <button class="styled-button" id="bt">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;">
           Register Now
@@ -1007,7 +1016,7 @@ function closeModal() {
       </button>
     </div>
   </div>
-  <script>
+<script>
 const translations = {
   "sq": () => ({
     "race": `Garat`,
@@ -1125,25 +1134,26 @@ document.getElementById("lang-select").addEventListener("change", handleLanguage
 updateContent("en");
 
   </script>
+
 <div class="info-text">
   <section class="countdown-section">
-    <h1>SEE YOU ON MAY 25, 2025!</h1>
+    <h1 id="lajm">SEE YOU ON MAY 25, 2025!</h1>
     <div class="countdown-container">
       <div class="countdown-item">
         <span id="days">00</span>
-        <p>DAYS</p>
+        <p id="dit">DAYS</p>
       </div>
       <div class="countdown-item">
         <span id="hours">00</span>
-        <p>HOURS</p>
+        <p id="ore">HOURS</p>
       </div>
       <div class="countdown-item">
         <span id="minutes">00</span>
-        <p>MINUTES</p>
+        <p id="minuta">MINUTES</p>
       </div>
       <div class="countdown-item">
         <span id="seconds">00</span>
-        <p>SECONDS</p>
+        <p id="sek">SECONDS</p>
       </div>
     </div>
   </section></div>
@@ -1152,11 +1162,11 @@ updateContent("en");
       <img src="icona.png" alt="Kukës Marathon Logo">
     </div>
     <div class="footer-info">
-      <p>Kukës<br>May, 2025</p>
-      <p>&copy; 2024 Kukës Marathon</p>
+      <p id="fund">Kukës<br>May, 2025</p>
+      <p id="fundi">&copy; 2024 Kukës Marathon</p>
     </div>
     <div class="footer-contact">
-      <p>Contact Us:</p>
+      <p id="kontakt">Contact Us:</p>
       <p>
         <a href="mailto:kukesmarathon@gmail.com">kukesmarathon@gmail.com</a><br>
         <a href="mailto:orgcyp@hotmail.com">orgcyp@hotmail.com</a><br>
