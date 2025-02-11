@@ -271,6 +271,145 @@
   text-decoration: none;
   cursor: pointer;
 }
+    @media (max-width: 767px) {
+body {
+    grid-template-columns: auto 0px; 
+  }
+  
+  .navbar {
+    flex-direction: column;
+    padding: 8px;
+  }
+  
+  .navbar-logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-logo img {
+    height: 60px;
+  }
+  
+  .navbar-links {
+    gap: 10px;
+    margin-right: 0;
+  }
+  
+  .navbar-links a {
+    font-size: 14px;
+    padding: 14px 7px;
+  }
+  
+  .dropdown {
+    position: static;
+    box-shadow: none;
+  }
+  
+  .dropdown a {
+    font-size: 12px;
+  }
+  
+  .navbar-register {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+  
+  .banner-title {
+    font-size: 20px;
+  }
+  
+  .button {
+    width: 180px;
+    height: 35px;
+  }
+  
+  .lable {
+    font-size: 15px;
+  }
+    @keyframes slope {
+    0% { }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% { }
+  }
+  
+  .info-text, .info-video, .info-winner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-top: -340px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px; /* Adjust padding */
+    background-color: #fafafa;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-logo img {
+    height: 85px; /* Adjust logo size */
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-info {
+    color: black;
+    font-size: 13px; /* Adjust font size */
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-contact {
+    text-align: left;
+    color: black;
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 30px;
+  }
+
+  .footer-contact p {
+    margin: 5px 0;
+    font-size: 13px; /* Adjust font size */
+  }
+
+  .footer-contact a {
+    color: #f56a00;
+    text-decoration: none;
+  }
+
+  .footer-contact a:hover {
+    text-decoration: underline;
+  }
+  
+}
+    }
+#language-switcher {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#lang-select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 
 </style>
 </head>
@@ -282,21 +421,30 @@
       </div>
       <div class="navbar-links">
         <div class="navbar-item">
-          <a href="#">The Races</a>
+          <a href="#" id="race">The Races</a>
           <div class="dropdown">
-            <a href="Half Marathon.html">Half Marathon</a>
-            <a href="10Km.html">10Km</a>
+            <a href="Half Marathon.html" id="half">Half Marathon</a>
+            <a href="10Km.html" id="km">10Km</a>
           </div>
         </div>
         <div class="navbar-item">
-          <a href="Sponsors.html">Sponsors</a>
-          <a href="Volunteers.html">Volunteers</a>
+          <a href="Sponsors.html" id="spon">Sponsors</a>
+          <a href="Volunteers.html" id="vol">Volunteers</a>
         </div>
         <div class="navbar-item">
-          <a href="#" onclick="openModal()">Schedule of Events</a>
+          <a href="#" onclick="openModal()" id="agend">Schedule of Events</a>
         </div>
-        <button class="navbar-register"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;">Register</a></button>
+        <button class="navbar-register"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;" id="reg">Register</a></button>
       </div>
+          <div id="language-switcher">
+            <select id="lang-select">
+                <option value="">Select Language</option>
+                <option value="en">English</option>
+                <option value="sq">Shqip</option>
+                <option value="es">Español</option>
+                <option value="tr">Türkçe</option>
+            </select>
+          </div>
     </nav>
     <div class="info-text" id="runn">
     </div>
@@ -304,20 +452,20 @@
       <div style="display:flex;margin-right:100px; margin-left:50px;">
         <div style="margin-right:100px;">
           <h2 style=" margin-top:20px; margin-bottom:10px; font-size:50px; font-family: 'Bebas Neue', serif;
-          font-weight: 500; font-style: normal;">Your Brand In Front Of Our Audience</h2>
+          font-weight: 500; font-style: normal;" id="title">Your Brand In Front Of Our Audience</h2>
           <p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: 400;
-          font-style: normal; font-size:15px; color:#282928;">Be a part of something extraordinary! Kukës Marathon is more
+          font-style: normal; font-size:15px; color:#282928;" id="p1">Be a part of something extraordinary! Kukës Marathon is more
           than just a race—it's a celebration of athleticism, community, and the breathtaking beauty of Kukës. By sponsoring this event, your brand will gain unparalleled exposure to a diverse and engaged audience.</p>
           <p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: <weight>;
-            font-style: normal; font-size:15px; color:#282928;">
+            font-style: normal; font-size:15px; color:#282928;" id="p2">
             Here's why partnering with us is a win for your business:</p>
-            <ul><li><p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: <weight>;font-style: normal; font-size:13px; color:#282928;"><strong>Local and Global Reach:</strong> The Kukës Marathon attracts participants and spectators from across Albania and beyond, giving your brand visibility on both local and international stages.</p></li>
+            <ul><li><p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: <weight>;font-style: normal; font-size:13px; color:#282928;"><strong id="p3">Local and Global Reach:</strong> <span id="p4">The Kukës Marathon attracts participants and spectators from across Albania and beyond, giving your brand visibility on both local and international stages.</span></p></li>
               <li><p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: <weight>;
-                font-style: normal; font-size:13px; color:#282928;"><strong>Connect With an Active Audience:</strong> Align your brand with health-conscious, goal-oriented individuals passionate about sports, fitness, and adventure.</p></li>
+                font-style: normal; font-size:13px; color:#282928;"><strong id="p5">Connect With an Active Audience:</strong> <span id="p6">Align your brand with health-conscious, goal-oriented individuals passionate about sports, fitness, and adventure.</span></p></li>
                 <li><p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-                  font-style: normal; font-size:13px; color:#282928;"><strong>Marketing That Moves:</strong> From event-day banners and digital promotions to race-day materials, your logo and messaging will be prominently featured throughout our platforms and events.</p></li>
+                  font-style: normal; font-size:13px; color:#282928;"><strong id="p7">Marketing That Moves:</strong> <span id="p8">From event-day banners and digital promotions to race-day materials, your logo and messaging will be prominently featured throughout our platforms and events.</span></p></li>
                   <li><p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: <weight>;
-                    font-style: normal; font-size:13px; color:#282928;"><strong>A Community Impact:</strong> Showcase your commitment to supporting local events, tourism, and a healthy lifestyle by contributing to a memorable experience for participants and visitors.</p></li>
+                    font-style: normal; font-size:13px; color:#282928;"><strong id="p9">A Community Impact:</strong> <span id="p10">Showcase your commitment to supporting local events, tourism, and a healthy lifestyle by contributing to a memorable experience for participants and visitors.</span></p></li>
                   </ul>
                   <br>
                   <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTJMP63aBrA4bjYBRiMiKkQ9twbwCxjx23KiwXm-9fWz2Zmw/viewform" target="_blank">
@@ -332,7 +480,9 @@
                         <path d="M0 0h24v24H0z" fill="none"></path>
                         <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path>
                       </svg>
+                      <span id="p11">
                       Become Our Sponsor
+                    </span>
                     </span>
                   </button>
                 </a>
@@ -343,16 +493,153 @@
               </div>
             </div>
           </div>
+                          <script>
+const translations = {
+  "sq": () => ({
+    "race": `Garat`,
+    "half": `Gjysmë maratona`,
+    "km": `10 km gara`,
+    "spon": `Sponsorët`,
+    "vol": `Vullnetarët`,
+    "agend": `Agjenda`,
+    "reg": `Regjistrohu`,
+    "title": `Marka juaj përballë audiencës sonë`,
+    "p1": `Bëhu pjesë e diçkaje të jashtëzakonshme! Maratona e Kukësit është më shumë se thjesht një garë—është një festë e atletikës, komunitetit dhe bukurisë befasuese të Kukësit. Duke sponsorizuar këtë ngjarje, marka juaj do të fitojë ekspozim të pashembullt ndaj një audiencë të larmishme dhe të angazhuar.`,
+    "p2": `Ja pse partneriteti me ne është një fitore për biznesin tuaj:`,
+    "p3": `Arritje lokale dhe globale: `,
+    "p4": `Maratona e Kukësit tërheq pjesëmarrës dhe spektatorë nga e gjithë Shqipëria dhe më gjerë, duke i dhënë shikueshmëri markës suaj si në skenat lokale ashtu edhe ato ndërkombëtare.`,
+    "p5": `Lidhuni me një audiencë aktive: `,
+    "p6": `Përafroni markën tuaj me individë të ndërgjegjshëm për shëndetin, të orientuar drejt qëllimeve, të pasionuar pas sportit, fitnesit dhe aventurës.`,
+    "p7": `Marketingu që lëviz: `,
+    "p8": `Nga banderolat e ditëve të ngjarjeve dhe promovimet dixhitale te materialet e ditës së garës, logoja dhe mesazhet tuaja do të shfaqen dukshëm në platformat dhe ngjarjet tona.`,
+    "p9": `Një ndikim në komunitet:: `,
+    "p10": `Shfaqni angazhimin tuaj për të mbështetur ngjarjet lokale, turizmin dhe një mënyrë jetese të shëndetshme duke kontribuar në një përvojë të paharrueshme për pjesëmarrësit dhe vizitorët.`,
+    "p11": `Bëhuni sponsori ynë`,
+    "fund": `Kukës<br>Maj, 2025`,
+    "fundi": `&copy; 2024 Kukës Maraton`,
+    "kontakt": `Na kontaktoni:`
+  }),
+
+  "en": () => ({
+    "race": `The Races`,
+    "half": `Half Marathon`,
+    "km": `10Km`,
+    "spon": `Sponsors`,
+    "vol": `Volunteers`,
+    "agend": `Schedule of Events`,
+    "reg": `Register`,
+    "title": `Your Brand In Front Of Our Audience`,
+    "p1": `Be a part of something extraordinary! Kukës Marathon is more than just a race—it is a celebration of athleticism, community, and the breathtaking beauty of Kukës. By sponsoring this event, your brand will gain unparalleled exposure to a diverse and engaged audience.`,
+    "p2": `Here is why partnering with us is a win for your business:`,
+    "p3": `Be Inspired: `,
+    "p4": `Witness the determination, energy, and spirit of marathon runners as they conquer the scenic trails of Kukës.`,
+    "p5": `Learn and Grow: `,
+    "p6": `Gain valuable event management experience and skills while working alongside a motivated team.`,
+    "p7": `Meet New People: `,
+    "p8": `Connect with like-minded individuals, make friends, and feel the camaraderie of being part of a shared mission.`,
+    "p9": `Make an Impact: `,
+    "p10": `Your time and effort will directly contribute to the success of an event that promotes fitness, tourism, and community pride in Kukës.`,
+    "p11": `Become Our Volunteer`,
+    "docs": `Volunteer Guide`,
+    "fund": `Kukës<br>May, 2025`,
+    "fundi": `&copy; 2024 Kukës Marathon`,
+    "kontakt": `Contact Us:`
+  }),
+  "es": () => ({
+    "race": `Las razas`,
+    "half": `Media Maraton`,
+    "km": `10Km`,
+    "spon": `Patrocinadores`,
+    "vol": `Voluntarios`,
+    "agend": `Calendario de eventos`,
+    "reg": `Registro`,
+    "title": `Tu marca frente a nuestra audiencia`,
+      "p1": `¡Sé parte de algo extraordinario! El Maratón de Kukës es más que una carrera: es una celebración del atletismo, la comunidad y la impresionante belleza de Kukës. Al patrocinar este evento, tu marca obtendrá una exposición incomparable ante una audiencia diversa y comprometida.`,
+    "p2": `He aquí por qué asociarse con nosotros es una victoria para su negocio:`,
+    "p3": `Alcance local y global: `,
+    "p4": `el Maratón de Kukës atrae a participantes y espectadores de toda Albania y más allá, lo que le da visibilidad a su marca tanto en el escenario local como internacional.`,
+    "p5": `Conéctese con una audiencia activa: `,
+    "p6": `alinee su marca con personas conscientes de la salud y orientadas a objetivos, apasionadas por los deportes, el fitness y la aventura.`,
+    "p7": `Marketing que mueve: `,
+    "p8": `desde banners del día del evento y promociones digitales hasta materiales del día de la carrera, su logotipo y mensaje ocuparán un lugar destacado en nuestras plataformas y eventos.`,
+    "p9": `Un impacto comunitario: `,
+    "p10": `muestre su compromiso de apoyar eventos locales, turismo y un estilo de vida saludable contribuyendo a una experiencia memorable para los participantes y visitantes.`,
+    "p11": `Conviértete en nuestro patrocinador`,
+    "fund": `Kukës<br>Mayo de 2025`,
+    "fundi": `&copy; 2024 Maratón de Kukës`,
+    "kontakt": `Contáctenos:`
+  }),
+  "tr": () => ({
+    "race": `Yarışlar`,
+    "half": `Yari Maraton`,
+    "km": `10Km`,
+    "spon": `Sponsorlar`,
+    "vol": `Gönüllüler`,
+    "agend": `Etkinlik Takvimi`,
+    "reg": `Kayit olmak`,
+    "title": `Markanız Hedef Kitlemizin Önünde`,
+    "p1": `Olağanüstü bir şeyin parçası olun! Kukës Maratonu sadece bir yarıştan daha fazlasıdır; atletizmin, topluluğun ve Kukësin nefes kesici güzelliğinin bir kutlamasıdır. Bu etkinliğe sponsor olarak, markanız çeşitli ve ilgili bir kitleye eşsiz bir şekilde tanıtılacaktır.`,
+    "p2": `Bizimle ortaklık kurmanın işletmeniz için neden bir kazanç olduğunu açıklıyoruz:`,
+    "p3": `Yerel ve Küresel Erişim: `,
+    "p4": `Kukës Maratonu, Arnavutlukun dört bir yanından ve dünyanın dört bir yanından katılımcı ve seyirci çekerek markanıza hem yerel hem de uluslararası sahnelerde görünürlük kazandırıyor.`,
+    "p5": `Aktif Bir Hedef Kitleyle Bağlantı Kurun: `,
+    "p6": `Markanızı spor, fitness ve maceraya tutkulu, sağlık bilincine sahip, hedef odaklı bireylerle uyumlu hale getirin.`,
+    "p7": `Hareket Eden Pazarlama:  `,
+    "p8": `Etkinlik günü pankartlarından ve dijital promosyonlardan yarış günü materyallerine kadar, logonuz ve mesajlarınız platformlarımızda ve etkinliklerimizde belirgin bir şekilde yer alacaktır.`,
+    "p9": `Topluma Etki: `,
+    "p10": `Katılımcılar ve ziyaretçiler için unutulmaz bir deneyime katkıda bulunarak yerel etkinlikleri, turizmi ve sağlıklı bir yaşam tarzını destekleme konusundaki kararlılığınızı gösterin.`,
+    "p11": `Sponsorumuz Olun`,
+    "fund": `Kukës<br>Mayıs 2025`,
+    "fundi": `&copy; 2024 Kukës Maratonu`,
+    "kontakt": `Bize Ulaşın:`
+  })
+};
+
+function updateContent(language) {
+  const translation = translations[language]();
+  document.getElementById("race").innerHTML = translation.race;
+  document.getElementById("half").innerHTML = translation.half;
+  document.getElementById("km").innerHTML = translation.km;
+  document.getElementById("spon").innerHTML = translation.spon;
+  document.getElementById("vol").innerHTML = translation.vol;
+  document.getElementById("agend").innerHTML = translation.agend;
+  document.getElementById("reg").innerHTML = translation.reg;
+  document.getElementById("title").innerHTML = translation.title;
+  document.getElementById("p1").innerHTML = translation.p1;
+  document.getElementById("p2").innerHTML = translation.p2;
+  document.getElementById("p3").innerHTML = translation.p3;
+  document.getElementById("p4").innerHTML = translation.p4;
+  document.getElementById("p5").innerHTML = translation.p5;
+  document.getElementById("p6").innerHTML = translation.p6;
+  document.getElementById("p7").innerHTML = translation.p7;
+  document.getElementById("p8").innerHTML = translation.p8;
+  document.getElementById("p9").innerHTML = translation.p9;
+  document.getElementById("p10").innerHTML = translation.p10;
+  document.getElementById("p11").innerHTML = translation.p11;
+  document.getElementById("fund").innerHTML = translation.fund;
+  document.getElementById("fundi").innerHTML = translation.fundi;
+  document.getElementById("kontakt").innerHTML = translation.kontakt;
+
+}
+
+function handleLanguageChange(event) {
+  const selectedLanguage = event.target.value;
+  updateContent(selectedLanguage);
+}
+document.getElementById("lang-select").addEventListener("change", handleLanguageChange);
+updateContent("en");
+
+    </script>
           <footer class="footer">
             <div class="footer-logo">
               <img src="icona.png" alt="Kukës Marathon Logo">
             </div>
             <div class="footer-info">
-              <p>Kukës<br>May, 2025</p>
-              <p>&copy; 2024 Kukës Marathon</p>
+              <p id="fund">Kukës<br>May, 2025</p>
+              <p id="fundi">&copy; 2024 Kukës Marathon</p>
             </div>
             <div class="footer-contact">
-              <p>Contact Us:</p>
+              <p id="kontakt">Contact Us:</p>
               <p>
                 <a href="mailto:kukesmarathon@gmail.com">kukesmarathon@gmail.com</a><br>
                 <a href="mailto:orgcyp@hotmail.com">orgcyp@hotmail.com</a><br>
