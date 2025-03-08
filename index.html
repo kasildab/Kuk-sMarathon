@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <style>
   body {
     margin: 0;
@@ -270,6 +270,14 @@
     justify-content: center;
     border: 1px solid #292929;
   }
+#title{
+  margin-top:-50px; 
+  color:#f56a00; 
+  font-size:45px;
+  font-family:'Arvo', serif;
+  font-weight: 700;
+  font-style: normal;
+}
   .countdown-section {
     background: url('kukes.jpg') no-repeat center center/cover;
     width: 100%;
@@ -295,7 +303,7 @@
     background: rgba(255, 255, 255, 0.2);
     padding: 20px;
     border-radius: 40px;
-    width: 80px;
+    width: 120px;
   }
 
   .countdown-item span {
@@ -303,13 +311,13 @@
     font-weight: bold;
     display: block;
   }
-
   .countdown-item p {
-    font-size: 1rem;
+    font-size: 1rem !important;
     margin-top: 10px;
     font-weight: bold;
     text-transform: uppercase;
   }
+
   .styled-button::before {
     content: "";
     position: absolute;
@@ -417,7 +425,7 @@
     bottom: 20px;      
     margin-right:10px; 
     place-self: end;
-    margin-top: calc(100vh + var(--offset));
+    margin-top: calc(100vh + var (--offset));
     width:45px;
     aspect-ratio:1;
     background:#ff8b24;
@@ -547,7 +555,7 @@
     justify-content: space-between;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    margin-top: -340px;
+    margin-top: -180px;
   }
 
   .footer {
@@ -797,8 +805,23 @@ body {
     justify-content: space-between;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    margin-top: -210px;
+    margin-top: -60px;
   }
+  #title{
+    font-size: 25px;
+    margin-top: -50px;
+  }
+  #intro{
+    font-size: 12px;
+  }
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 100px;
+  }
+
 .video-container video{
   margin-left: -100px;
   max-height: 130%;
@@ -864,8 +887,8 @@ body {
   
 }
 #language-switcher {
-    position: absolute;
-    top: 10px;
+    position: relative;
+    top: 5px;
     right: 20px;
     z-index: 1000;
 }
@@ -877,9 +900,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-
-
-
   </style>
   <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -1007,8 +1027,7 @@ function closeModal() {
       </video>
     </div>
     <div style="margin-left:50px;">
-      <h2 style="margin-top:-50px; color:#f56a00; font-size:45px; font-family:'Arvo', serif;
-      font-weight: 700; font-style: normal;" id="title">Join us &#127941; <br> In May 2025!</h2>
+      <h2 id="title">Join us &#127941; <br> In May 2025!</h2>
       <p style="font-family: 'Montserrat', serif; font-optical-sizing: auto; font-weight: 400;
         font-style: normal; font-size:12px;" id="intro">
         Get ready to be part of history for the first-ever Kukës Marathon!<br>
