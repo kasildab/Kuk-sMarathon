@@ -156,7 +156,7 @@
     }
 
     100% {
-    }
+  }
   }
   .info-text, .info-video,.info-winner {
     display: flex;
@@ -218,13 +218,31 @@
       transparent 60%,
       transparent 100%
       );
+    background-clip: text;
     -webkit-background-clip: text;
+    background-size: 50px;
     -webkit-background-size: 50px;
+    animation: zezzz;
     -webkit-animation: zezzz;
+    animation-duration: 5s;
     -webkit-animation-duration: 5s;
+    animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
   }
   @-webkit-keyframes zezzz {
+    0%,
+    10% {
+      background-position: -200px;
+    }
+    20% {
+      background-position: top left;
+    }
+    100% {
+      background-position: 200px;
+    }
+  }
+
+  @keyframes zezzz {
     0%,
     10% {
       background-position: -200px;
@@ -708,7 +726,6 @@ body {
   }
   
 }
-    }
 
     /* Very Small Screens (e.g., smaller mobile devices) */
 @media (max-width: 480px) {
@@ -791,7 +808,7 @@ body {
   p {
     font-family: 'Montserrat', serif;
     font-optical-sizing: auto;
-    font-weight:<weight>;
+    font-weight: 400;
     font-style: normal;
     font-size: 10px;
   }
@@ -845,7 +862,6 @@ body {
     text-decoration: underline;
   }
   
-}
 }
 #language-switcher {
     position: absolute;
@@ -993,7 +1009,7 @@ function closeModal() {
     <div style="margin-left:50px;">
       <h2 style="margin-top:-50px; color:#f56a00; font-size:45px; font-family:'Arvo', serif;
       font-weight: 700; font-style: normal;" id="title">Join us &#127941; <br> In May 2025!</h2>
-      <p style="  font-family: 'Montserrat', serif; font-optical-sizing: auto; font-weight: <weight>;
+      <p style="font-family: 'Montserrat', serif; font-optical-sizing: auto; font-weight: 400;
         font-style: normal; font-size:12px;" id="intro">
         Get ready to be part of history for the first-ever Kukës Marathon!<br>
         Discover the breathtaking beauty of Kukës as you run through its <br> stunning landscapes, from serene lakeshores to picturesque mountains and charming city streets. <br>
