@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+</html>  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sponsors</title>
   <link rel="icon" href="icona.ico">
@@ -94,9 +94,9 @@
     background-color: #ff7e26;
   }
   #runn {
-    background: url('Sponsors.jpg') no-repeat center center/cover;
+    background: url('https://nc.assp.org/wp-content/uploads/sites/425/2018/05/A-New-Design-2.png') no-repeat center center/cover;
     width: 100%;
-    height: 20%;
+    height: 40%;
   }
   .info-text, .info-video, .info-winner {
     display: flex;
@@ -127,7 +127,10 @@
     background-color: #0071e2;
   }
 
-
+#title{
+  margin-top:20px; margin-bottom:10px; font-size:50px; font-family: 'Bebas Neue', serif;
+          font-weight: 500; font-style: normal;
+}
   .footer {
     display: flex;
     justify-content: center;
@@ -271,129 +274,6 @@
   text-decoration: none;
   cursor: pointer;
 }
-    @media (max-width: 767px) {
-body {
-    grid-template-columns: auto 0px; 
-  }
-  
-  .navbar {
-    flex-direction: column;
-    padding: 8px;
-  }
-  
-  .navbar-logo {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-  
-  .navbar-logo img {
-    height: 60px;
-  }
-  
-  .navbar-links {
-    gap: 10px;
-    margin-right: 0;
-  }
-  
-  .navbar-links a {
-    font-size: 14px;
-    padding: 14px 7px;
-  }
-  
-  .dropdown {
-    position: static;
-    box-shadow: none;
-  }
-  
-  .dropdown a {
-    font-size: 12px;
-  }
-  
-  .navbar-register {
-    padding: 8px 15px;
-    font-size: 12px;
-  }
-  
-  .banner-title {
-    font-size: 20px;
-  }
-  
-  .button {
-    width: 180px;
-    height: 35px;
-  }
-  
-  .lable {
-    font-size: 15px;
-  }
-    @keyframes slope {
-    0% { }
-    50% {
-      transform: rotate(10deg);
-    }
-    100% { }
-  }
-  
-  .info-text, .info-video, .info-winner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    margin-top: -340px;
-  }
-
-  .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px; /* Adjust padding */
-    background-color: #fafafa;
-    color: #fff;
-    font-family: Arial, sans-serif;
-  }
-
-  .footer-logo img {
-    height: 85px; /* Adjust logo size */
-    margin-left: 30px;
-    margin-bottom: 30px;
-  }
-
-  .footer-info {
-    color: black;
-    font-size: 13px; /* Adjust font size */
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 30px;
-  }
-
-  .footer-contact {
-    text-align: left;
-    color: black;
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-    margin-bottom: 30px;
-  }
-
-  .footer-contact p {
-    margin: 5px 0;
-    font-size: 13px; /* Adjust font size */
-  }
-
-  .footer-contact a {
-    color: #f56a00;
-    text-decoration: none;
-  }
-
-  .footer-contact a:hover {
-    text-decoration: underline;
-  }
-  
-}
     }
 #language-switcher {
     position: absolute;
@@ -409,7 +289,60 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+@media (max-width: 768px) {
+  #btn{
+  margin-bottom: 50px;
+}
+  #kb{
+  display: flex;
+    margin-right: 100px;
+    margin-left: 50px;
+    flex-direction: column;
+    align-items: center;
+}
+#runn {
+    background: url('https://t4.ftcdn.net/jpg/07/69/99/07/360_F_769990774_cTE1tjyTq45aSBlL8tnqZzDQZ82YTU7R.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 50%;
+  }
+  
+}
 
+@media (max-width: 480px) {
+  #btn{
+  margin-bottom: 50px;
+}
+#kb{
+  display: flex;
+    margin-right: 100px;
+    margin-left: 50px;
+    flex-direction: column;
+    align-items: center;
+}
+#runn {
+    background: url('https://t4.ftcdn.net/jpg/07/69/99/07/360_F_769990774_cTE1tjyTq45aSBlL8tnqZzDQZ82YTU7R.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 50%;
+  }
+}
+
+@media (max-width: 912px) {
+#kb{
+  display: flex;
+    margin-right: 100px;
+    margin-left: 50px;
+    flex-direction: column;
+    align-items: center;
+}
+#btn{
+  margin-bottom: 50px;
+}
+#runn {
+    background: url('https://t4.ftcdn.net/jpg/07/69/99/07/360_F_769990774_cTE1tjyTq45aSBlL8tnqZzDQZ82YTU7R.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 50%;
+  }
+}
 
 </style>
 </head>
@@ -449,10 +382,9 @@ body {
     <div class="info-text" id="runn">
     </div>
     <div class="info-text" style="padding-bottom:60px;">
-      <div style="display:flex;margin-right:100px; margin-left:50px;">
+      <div style="display:flex;margin-right:100px; margin-left:50px;" id="kb">
         <div style="margin-right:100px;">
-          <h2 style=" margin-top:20px; margin-bottom:10px; font-size:50px; font-family: 'Bebas Neue', serif;
-          font-weight: 500; font-style: normal;" id="title">Your Brand In Front Of Our Audience</h2>
+          <h2 id="title">Your Brand In Front Of Our Audience</h2>
           <p style="text-align: justify; text-justify: inter-word; font-family: 'Rubik', serif; font-weight: 400;
           font-style: normal; font-size:15px; color:#282928;" id="p1">Be a part of something extraordinary! Kukës Marathon is more
           than just a race—it's a celebration of athleticism, community, and the breathtaking beauty of Kukës. By sponsoring this event, your brand will gain unparalleled exposure to a diverse and engaged audience.</p>
@@ -469,7 +401,7 @@ body {
                   </ul>
                   <br>
                   <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTJMP63aBrA4bjYBRiMiKkQ9twbwCxjx23KiwXm-9fWz2Zmw/viewform" target="_blank">
-                    <button style="margin-left:20px; margin-right:50px;">
+                    <button style="margin-left:20px; margin-right:50px;" id="btn">
                       <span>
                         <svg
                         height="24"
@@ -487,13 +419,13 @@ body {
                   </button>
                 </a>
               </div>
-              <div style="max-width:400px; max-height:500px;margin-bottom:30px;">
+              <div style="max-width:400px; max-height:500px;margin-bottom:30px;" id="img">
                 <img src="bashkia.jpg" style="width:120%;margin-bottom:10px;">
                 <img src="drini.jpg" style="width:100%">
               </div>
             </div>
           </div>
-                          <script>
+<script>
 const translations = {
   "sq": () => ({
     "race": `Garat`,
@@ -539,7 +471,7 @@ const translations = {
     "p8": `Connect with like-minded individuals, make friends, and feel the camaraderie of being part of a shared mission.`,
     "p9": `Make an Impact: `,
     "p10": `Your time and effort will directly contribute to the success of an event that promotes fitness, tourism, and community pride in Kukës.`,
-    "p11": `Become Our Volunteer`,
+    "p11": `Become Our Sponsor`,
     "docs": `Volunteer Guide`,
     "fund": `Kukës<br>May, 2025`,
     "fundi": `&copy; 2024 Kukës Marathon`,
