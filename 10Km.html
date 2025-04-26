@@ -101,19 +101,21 @@
   #runn {
     background: url('10km.jpg') no-repeat center center/cover;
     width: 100%;
-    height: 20%;
+    height: 300px;
+    position: relative;
   }
   .info-text, .info-video, .info-winner {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    margin: 20px 0;
   }
   .banner-title {
     position: absolute;
-    top: 40%;
-    left: 90%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background-color: #f56a00;
     color: white;
@@ -124,8 +126,19 @@
     border-radius: 5px;
     font-family: "Anton", serif;
     font-style: normal;
+    text-align: center;
+    width: 80%;
+    max-width: 300px;
   }
-
+  .info-text #title {
+  font-size: 40px;
+  font-family: 'Unbounded', serif;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto; /* This centers the element horizontally */
+  padding: 20px 0; /* Add some vertical padding if needed */
+}
   .button {
     height: 50px;
     width: 190px;
@@ -185,7 +198,6 @@
     transform: translateY(-50px)  rotate(290deg);
   }
 
-
   .footer {
     display: flex;
     justify-content: center;
@@ -194,6 +206,7 @@
     background-color: #fafafa;
     color: #fff;
     font-family: Arial, sans-serif;
+    flex-wrap: wrap;
   }
   .footer-logo img {
     height: 98px;
@@ -291,7 +304,6 @@
   height: 6.7em;
 }
 
-
 .modale {
   display: none;
   position: fixed;
@@ -302,14 +314,15 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black with transparency */
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
 }
 
 .imazhe {
   margin: auto;
   display: block;
   width: 70%;
+  max-width: 700px;
 }
 
 .clos {
@@ -327,132 +340,8 @@
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
-}
-    /* Mobile Phones */
-    @media (max-width: 767px) {
-body {
-    grid-template-columns: auto 0px; 
-  }
-  
-  .navbar {
-    flex-direction: column;
-    padding: 8px;
-  }
-  
-  .navbar-logo {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-  
-  .navbar-logo img {
-    height: 60px;
-  }
-  
-  .navbar-links {
-    gap: 10px;
-    margin-right: 0;
-  }
-  
-  .navbar-links a {
-    font-size: 14px;
-    padding: 14px 7px;
-  }
-  
-  .dropdown {
-    position: static;
-    box-shadow: none;
-  }
-  
-  .dropdown a {
-    font-size: 12px;
-  }
-  
-  .navbar-register {
-    padding: 8px 15px;
-    font-size: 12px;
-  }
-  
-  .banner-title {
-    font-size: 20px;
-  }
-  
-  .button {
-    width: 180px;
-    height: 35px;
-  }
-  
-  .lable {
-    font-size: 15px;
-  }
-    @keyframes slope {
-    0% { }
-    50% {
-      transform: rotate(10deg);
-    }
-    100% { }
-  }
-  
-  .info-text, .info-video, .info-winner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    margin-top: -340px;
-  }
+}}
 
-  .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px; /* Adjust padding */
-    background-color: #fafafa;
-    color: #fff;
-    font-family: Arial, sans-serif;
-  }
-
-  .footer-logo img {
-    height: 85px; /* Adjust logo size */
-    margin-left: 30px;
-    margin-bottom: 30px;
-  }
-
-  .footer-info {
-    color: black;
-    font-size: 13px; /* Adjust font size */
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 30px;
-  }
-
-  .footer-contact {
-    text-align: left;
-    color: black;
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-    margin-bottom: 30px;
-  }
-
-  .footer-contact p {
-    margin: 5px 0;
-    font-size: 13px; /* Adjust font size */
-  }
-
-  .footer-contact a {
-    color: #f56a00;
-    text-decoration: none;
-  }
-
-  .footer-contact a:hover {
-    text-decoration: underline;
-  }
-  
-}
-    }
 #language-switcher {
     position: absolute;
     top: 10px;
@@ -466,6 +355,124 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .navbar-logo {
+    margin-right: 50px;
+  }
+  .navbar-links {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .navbar-logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 0;
+    gap: 5px;
+  }
+  .navbar-item {
+    margin-top: 5px;
+  }
+  .navbar-links a {
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+  .navbar-register {
+    margin-top: 10px;
+  }
+  #runn {
+    height: 200px;
+  }
+  .banner-title {
+    font-size: 24px;
+    padding: 8px 15px;
+  }
+  .info-text {
+    flex-direction: column;
+    padding: 15px;
+  }
+  .info-text > div {
+    margin-left: 0;
+    width: 100%;
+  }
+  .w3-content {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .foto{
+margin-right: 100px;
+  }
+  .button {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .footer-logo img,
+  .footer-info,
+  .footer-contact {
+    margin: 10px 0;
+  }
+  .footer-contact {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo img {
+    height: 60px;
+  }
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar-item {
+    width: 100%;
+    text-align: center;
+  }
+  .dropdown {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+  }
+  #runn {
+    height: 150px;
+  }
+  .banner-title {
+    font-size: 20px;
+    padding: 5px 10px;
+  }
+  .info-text #title {
+    font-size: 25px;
+  }
+  .imazhe {
+    width: 90%;
+  }
+  .clos {
+    font-size: 30px;
+    top: 5px;
+    right: 15px;
+  }
+  #language-switcher {
+    top: 5px;
+    right: 5px;
+  }
 }
 </style>
 </head>
@@ -492,24 +499,24 @@ body {
         </div>
         <button class="navbar-register"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;" id="reg">Register</a></button>
       </div>
-                      <div id="language-switcher">
-            <select id="lang-select">
-                <option value="">Select Language</option>
-                <option value="en">English</option>
-                <option value="sq">Shqip</option>
-                <option value="es">Español</option>
-                <option value="tr">Türkçe</option>
-            </select>
-          </div>
+      <div id="language-switcher">
+        <select id="lang-select">
+          <option value="">Select Language</option>
+          <option value="en">English</option>
+          <option value="sq">Shqip</option>
+          <option value="es">Español</option>
+          <option value="tr">Türkçe</option>
+        </select>
+      </div>
     </nav>
     <div class="info-text" id="runn">
       <div class="banner-title" id="pjesa">10Km Race</div>
     </div>
     <div class="info-text">
-      <h2 style="margin-left:200px; font-size:40px; font-family: 'Unbounded', serif; font-weight: 400;" id="title">Welcome to the Kukës 10Km Race!</h2>
+      <h2 id="title">Welcome to the Kukës 10Km Race!</h2>
     </div>
     <div class="info-text">
-      <div style="display:flex; justify-content:space-between; margin-left:100px;">
+      <div style="display:flex; justify-content:space-between; margin-left:100px; flex-wrap: wrap;" id="foto">
         <div class="w3-content w3-section" style="max-width:500px; max-height:600px;">
           <img class="mySlides" src="01.jpg" style="width:100%">
           <img class="mySlides" src="02.jpg" style="width:100%">
@@ -517,7 +524,7 @@ body {
           <img class="mySlides" src="04.jpg" style="width:100%">
           <img class="mySlides" src="05.jpg" style="width:100%">
         </div>
-        <div style="margin-left:20px;">
+        <div style="margin-left:20px; flex: 1; min-width: 300px;">
           <h2 style="margin-left:50px; margin-top:20px; margin-bottom:10px;color:#f56a00; font-size:25px; font-family: 'Monoton', serif;
           font-weight: 400; font-style: normal; word-spacing: 10px" id="vec">RACE FEATURES:</h2>
           <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
@@ -536,98 +543,70 @@ body {
                     </div>
                   </div>
                 </div>
-                <!--
-                <div class="info-video">
-                  <div>
-                    <h2 style="text-align:center; margin-top:20px; margin-bottom:10px;color:#f56a00; font-size:55px; font-family: 'Nothing You Could Do', serif;
-                    font-weight: 700;
-                    font-style: normal;">AWARDS and MEDALS</h2>
-                    <div class="cards" style="width:100vw">
-                      <div class="card" style="position:relative;">
-                        <div class="remove-when-use" style="position:absolute;bottom:0;">
-                          <img src="500euro.png" style="width:30vw"/>
-                        </div>
-                        <div class="details">
-                          <label>Prize for 1st Winner</label>
-                          <p>
-                           Run for it! The first across the finish line will earn this:
-                           <br>
-                           <i>Kukës, AL</i>
-                         </p>
-                       </div>
-                     </div>
-                     <div class="card" style="margin-bottom:40px;">
-                      <div class="remove-when-use" >
-                        <img src="250euro.png"  style="width:30vw"/>
-                      </div>
-                      <div class="details">
-                        <label>Prize for 2nd Winner</label>
-                        <p>
-                         For an outstanding performance, the runner who secures second place in the 10km marathon will be rewarded with this:
-                         <br>
-                         <i>Kukës, AL</i>
-                       </p>
-                     </div>
-                   </div>
-                   <div class="card" style="position:relative">
-                    <div class="remove-when-use" style="position:absolute;bottom:0">
-                      <img src="100euro.png" style="width:30vw" />
-                    </div>
-                    <div class="details">
-                      <label>Prize for 3rd Winner</label>
-                      <p>
-                       A strong showing! The third place finisher in our 10km marathon will be awarded 100 euro!
-                       <br>
-                       <i>Kukës, AL</i>
-                     </p>
-                   </div>
-                 </div>
-               </div>
-               <div class="cards" style="width:100vw">
-                <div class="card" style="position:relative;">
-                  <div class="remove-when-use" style="position:absolute;bottom:0;">
-                    <img src="1st.jpg" style="width:30vw"/>
-                  </div>
-                  <div class="details">
-                    <label>Medal for 1st Winner</label>
-                    <p>
-                     A symbol of victory for the 10km champion.
-                     <br>
-                     <i>Kukës, AL</i>
-                   </p>
-                 </div>
-               </div>
-               <div class="card">
-                <div class="remove-when-use" >
-                  <img src="2nd.jpeg"  style="width:30vw"/>
-                </div>
-                <div class="details">
-                  <label>Medal for 2nd Winner</label>
-                  <p>
-                   2nd Place Medal: A testament to your incredible effort.
-                   <br>
-                   <i>Kukës, AL</i>
-                 </p>
-               </div>
-             </div>
-             <div class="card" style="position:relative">
-              <div class="remove-when-use" style="position:absolute;bottom:0">
-                <img src="3rd.jpg" style="width:30vw" />
-              </div>
-              <div class="details">
-                <label>Medal for 3rd Winner</label>
-                <p>
-                 Wear this medal with pride – a symbol of your 3rd Place finish.
-                 <br>
-                 <i>Kukës, AL</i>
-               </p>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>-->
+                <footer class="footer">
+      <div class="footer-logo">
+        <img src="icona.png" alt="Kukës Marathon Logo">
+      </div>
+      <div class="footer-info">
+        <p id="fund">Kukës<br>May, 2025</p>
+        <p id="fundi">&copy; 2024 Kukës Marathon</p>
+      </div>
+      <div class="footer-contact">
+        <p id="kontakt">Contact Us:</p>
+        <p>
+          <a href="mailto:kukesmarathon@gmail.com">kukesmarathon@gmail.com</a><br>
+          <a href="mailto:orgcyp@hotmail.com">orgcyp@hotmail.com</a><br>
+          <a href="https://www.instagram.com/kukes_half_marathon_2025/" style="color: #e80778;">Instagram</a>
+        <a href="https://www.facebook.com/people/KUK%C3%8BS-Half-Marathon/61570543991137/" style="color: #17195e;">Facebook</a> <br>
+        <a href="https://www.gofundme.com/f/mbeshtes-maratonen-e-kukesit?attribution_id=sl%3Ac08c3037-05ae-47ae-b301-98e10be1addc&lang=en_US&utm_campaign=fp_sharesheet&utm_content=amp13_c&utm_medium=customer&utm_source=whatsapp&fbclid=PAY2xjawJaGWJleHRuA2FlbQIxMQABpg2DAybFMXjWvOpBOtQTo-ay-kl1hveAtMU2wRLFo8aMauwiskt-nNGv5Q_aem_SuOU8iXzGSp-g-0DRoQIQg" style="color: #008000;"> Contribute for the page</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+  <a href="#" class="top"></a>
+  <div id="kasi" class="modale">
+  <span class="clos" onclick="closeModal()">&times;</span>
+  <img class="imazhe" id="img01" src="agenda.jpeg">
+</div>
+  <script>
+  var myIndex = 0;
+  carousel();
 
-         <script>
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000);
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    const topButton = document.querySelector(".top");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        topButton.style.display = "block";
+      } else {
+        topButton.style.display = "none";
+      }
+    });
+
+    topButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+  function openModal() {
+  document.getElementById("kasi").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("kasi").style.display = "none";
+}
+
 const translations = {
   "sq": () => ({
     "race": `Garat`,
@@ -737,80 +716,16 @@ function updateContent(language) {
   document.getElementById("fund").innerHTML = translation.fund;
   document.getElementById("fundi").innerHTML = translation.fundi;
   document.getElementById("kontakt").innerHTML = translation.kontakt;
-
 }
 
 function handleLanguageChange(event) {
   const selectedLanguage = event.target.value;
-  updateContent(selectedLanguage);
+  if (selectedLanguage) {
+    updateContent(selectedLanguage);
+  }
 }
 document.getElementById("lang-select").addEventListener("change", handleLanguageChange);
 updateContent("en");
-
-    </script>
-     <footer class="footer">
-      <div class="footer-logo">
-        <img src="icona.png" alt="Kukës Marathon Logo">
-      </div>
-      <div class="footer-info">
-        <p id="fund">Kukës<br>May, 2025</p>
-        <p id="fundi">&copy; 2024 Kukës Marathon</p>
-      </div>
-      <div class="footer-contact">
-        <p id="kontakt">Contact Us:</p>
-        <p>
-          <a href="mailto:kukesmarathon@gmail.com">kukesmarathon@gmail.com</a><br>
-          <a href="mailto:orgcyp@hotmail.com">orgcyp@hotmail.com</a><br>
-          <a href="https://www.instagram.com/kukes_half_marathon_2025/" style="color: #e80778;">Instagram</a>
-        <a href="https://www.facebook.com/people/KUK%C3%8BS-Half-Marathon/61570543991137/" style="color: #17195e;">Facebook</a> <br>
-        <a href="https://www.gofundme.com/f/mbeshtes-maratonen-e-kukesit?attribution_id=sl%3Ac08c3037-05ae-47ae-b301-98e10be1addc&lang=en_US&utm_campaign=fp_sharesheet&utm_content=amp13_c&utm_medium=customer&utm_source=whatsapp&fbclid=PAY2xjawJaGWJleHRuA2FlbQIxMQABpg2DAybFMXjWvOpBOtQTo-ay-kl1hveAtMU2wRLFo8aMauwiskt-nNGv5Q_aem_SuOU8iXzGSp-g-0DRoQIQg" style="color: #008000;"> Contribute for the page</a>
-        </p>
-      </div>
-    </footer>
-  </div>
-  <a href="#" class="top"></a>
-  <div id="kasi" class="modale">
-  <span class="clos" onclick="closeModal()">&times;</span>
-  <img class="imazhe" id="img01" src="agenda.jpeg">
-</div>
-  <script>
-  var myIndex = 0;
-  carousel();
-
-  function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-      x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000);
-  }
-  document.addEventListener("DOMContentLoaded", () => {
-    const topButton = document.querySelector(".top");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        topButton.style.display = "block";
-      } else {
-        topButton.style.display = "none";
-      }
-    });
-
-    topButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  });
-  function openModal() {
-  document.getElementById("kasi").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("kasi").style.display = "none";
-}
   </script>
 </body>
 </html>
