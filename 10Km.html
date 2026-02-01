@@ -1,731 +1,715 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>10Km</title>
-  <link rel="icon" href="icona.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
-  <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: grid;
-    grid-template-columns: auto 0px; 
-  }
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 5px;
-  }
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    margin-right: 150px;
-  }
-  .navbar-logo img {
-    width:auto;
-    height: 80px;
-  }
-  .navbar-links {
-    display: flex;
-    gap: 15px;
-    margin-right: 50px;
-  }
-  .navbar-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    padding: 20px 10px;
-    transition: color 0.3s ease;
-  }
-  .navbar-links a:hover {
-    color: #f56a00;
-  }
-  .dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: none;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    z-index: 10;
-  }
-  .dropdown a {
-    padding: 10px;
-    white-space: nowrap;
-    text-decoration: none;
-    color: #333;
-    font-size:  14px;
-    transition: background-color 0.3s;
-  }
-  .dropdown a:hover {
-    background-color: #f56a00;
-    color: white;
-  }
-  .navbar-item {
-    position: relative;
-    margin-top: 10px;
-  }
-  .navbar-item:hover .dropdown {
-    display: flex;
-  }
-  .navbar-register {
-    background-color: #f56a00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 13px;
-    cursor: pointer;
-    text-transform: uppercase;
-  }
-  .navbar-register:hover {
-    background-color: #ff7e26;
-  }
-  #runn {
-    background: url('10km.jpg') no-repeat center center/cover;
-    width: 100%;
-    height: 300px;
-    position: relative;
-  }
-  .info-text, .info-video, .info-winner {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px 0;
-  }
-  .banner-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f56a00;
-    color: white;
-    padding: 10px 20px;
-    font-size: 35px;
-    font-weight: 400;
-    text-transform: uppercase;
-    border-radius: 5px;
-    font-family: "Anton", serif;
-    font-style: normal;
-    text-align: center;
-    width: 80%;
-    max-width: 300px;
-  }
-  .info-text #title {
-  font-size: 40px;
-  font-family: 'Unbounded', serif;
-  font-weight: 400;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto; /* This centers the element horizontally */
-  padding: 20px 0; /* Add some vertical padding if needed */
-}
-  .button {
-    height: 50px;
-    width: 190px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-left: 50px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.5s ease-in-out;
-    font-family: "Noto Sans KR", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-  }
-
-  .button:hover {
-    box-shadow: .1px .1px 10px #252525;
-  }
-
-  .type1::after {
-    content: "THANK YOU!";
-    height: 50px;
-    width: 190px;
-    background-color: #4617ec;
-    color: #fff;
-    transform: translateY(100px);
-    font-size: 1.2rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s;
-  }
-
-  .type1::before {
-    content: "REGISTER NOW";
-    height: 50px;
-    width: 190px;
-    background-color: rgb(240, 9, 9);
-    color: #f5f8f8;
-    position: absolute;
-    transform: translateY(0px) scale(1.1);
-    font-size: 1.2rem;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s;
-  }
-
-  .type1:hover::after {
-    transform: translateY(-2px) scale(1.2) rotate(0deg);
-  }
-
-  .type1:hover::before {
-    transform: translateY(-50px)  rotate(290deg);
-  }
-
-  .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: #fafafa;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    flex-wrap: wrap;
-  }
-  .footer-logo img {
-    height: 98px;
-    margin-left: 50px;
-    margin-bottom: 50px;
-  }
-  .footer-info {
-    color: black;
-    font-size: 14px;
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 50px;
-  }
-  .footer-contact {
-    text-align: left;
-    color: black;
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-    margin-bottom: 50px;
-  }
-  .footer-contact p {
-    margin: 2px 0;
-    font-size: 14px;
-  }
-  .footer-contact a {
-    color: #f56a00;
-    text-decoration: none;
-  }
-  .footer-contact a:hover {
-    text-decoration: underline;
-  }
-  .top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    aspect-ratio: 1;
-    background: #ff8b24;
-    border-radius: 10px;
-    z-index: 1000;
-    display: none;
-  }
-  .top:before {
-    content: "";
-    position: absolute;
-    inset: 30%;
-    transform: translateY(20%) rotate(-45deg);
-    border-top: 5px solid #fff;
-    border-right: 5px solid #fff;
-  }
-  .cards {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-  }
-  .card {
-   flex: 0 0 30%;
-   position: relative;
-   display: inline-block;
-   margin-right: 50px;
- }
-
- .remove-when-use {
-  text-align: center;
-}
-
-.remove-when-use img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.details {
-  color: white;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  bottom: 0;
-  height: 2.6em;
-  transition: height .5s ease-in-out;
-  padding: 0.6em;
-  overflow: hidden;
-}
-
-.details > p {
-  font-size: 0.8em;
-  margin-top: 0.5em;
-}
-
-.card:hover > .details {
-  height: 6.7em;
-}
-
-.modale {
-  display: none;
-  position: fixed;
-  z-index: 10000;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.9);
-}
-
-.imazhe {
-  margin: auto;
-  display: block;
-  width: 70%;
-  max-width: 700px;
-}
-
-.clos {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.clos:hover,
-.clos:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}}
-
-#language-switcher {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    z-index: 1000;
-}
-
-#lang-select {
-    padding: 5px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Responsive Styles */
-@media (max-width: 1024px) {
-  .navbar-logo {
-    margin-right: 50px;
-  }
-  .navbar-links {
-    margin-right: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 10px;
-  }
-  .navbar-logo {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-  .navbar-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-right: 0;
-    gap: 5px;
-  }
-  .navbar-item {
-    margin-top: 5px;
-  }
-  .navbar-links a {
-    padding: 10px 5px;
-    font-size: 14px;
-  }
-  .navbar-register {
-    margin-top: 10px;
-  }
-  #runn {
-    height: 200px;
-  }
-  .banner-title {
-    font-size: 24px;
-    padding: 8px 15px;
-  }
-  .info-text {
-    flex-direction: column;
-    padding: 15px;
-  }
-  .info-text > div {
-    margin-left: 0;
-    width: 100%;
-  }
-  .w3-content {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-  .foto{
-margin-right: 100px;
-  }
-  .button {
-    margin-left: 0;
-    margin-top: 20px;
-  }
-  .footer {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-  .footer-logo img,
-  .footer-info,
-  .footer-contact {
-    margin: 10px 0;
-  }
-  .footer-contact {
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar-logo img {
-    height: 60px;
-  }
-  .navbar-links {
-    flex-direction: column;
-    align-items: center;
-  }
-  .navbar-item {
-    width: 100%;
-    text-align: center;
-  }
-  .dropdown {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    border: none;
-  }
-  #runn {
-    height: 150px;
-  }
-  .banner-title {
-    font-size: 20px;
-    padding: 5px 10px;
-  }
-  .info-text #title {
-    font-size: 25px;
-  }
-  .imazhe {
-    width: 90%;
-  }
-  .clos {
-    font-size: 30px;
-    top: 5px;
-    right: 15px;
-  }
-  #language-switcher {
-    top: 5px;
-    right: 5px;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10K Run - Kukës Marathon</title>
+    <link rel="icon" type="image/png" href="icona.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div>
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <a href="index.html"><img src="ben.jpg" alt="Kukës Marathon Logo"></a>
-      </div>
-      <div class="navbar-links">
-        <div class="navbar-item">
-          <a href="#" id="race">The Races</a>
-          <div class="dropdown">
-            <a href="Half Marathon.html" id="half">Half Marathon</a>
-            <a href="10Km.html" id="km">10Km</a>
-          </div>
-        </div>
-        <div class="navbar-item">
-          <a href="Sponsors.html" id="spon">Sponsors</a>
-          <a href="Volunteers.html" id="vol">Volunteers</a>
-        </div>
-        <div class="navbar-item">
-          <a href="#" onclick="openModal()" id="agend">Schedule of Events</a>
-        </div>
-        <button class="navbar-register"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;" id="reg">Register</a></button>
-      </div>
-      <div id="language-switcher">
-        <select id="lang-select">
-          <option value="">Select Language</option>
-          <option value="en">English</option>
-          <option value="sq">Shqip</option>
-          <option value="es">Español</option>
-          <option value="tr">Türkçe</option>
-        </select>
-      </div>
-    </nav>
-    <div class="info-text" id="runn">
-      <div class="banner-title" id="pjesa">10Km Race</div>
-    </div>
-    <div class="info-text">
-      <h2 id="title">Welcome to the Kukës 10Km Race!</h2>
-    </div>
-    <div class="info-text">
-      <div style="display:flex; justify-content:space-between; margin-left:100px; flex-wrap: wrap;" id="foto">
-        <div class="w3-content w3-section" style="max-width:500px; max-height:600px;">
-          <img class="mySlides" src="01.jpg" style="width:100%">
-          <img class="mySlides" src="02.jpg" style="width:100%">
-          <img class="mySlides" src="03.jpg" style="width:100%">
-          <img class="mySlides" src="04.jpg" style="width:100%">
-          <img class="mySlides" src="05.jpg" style="width:100%">
-        </div>
-        <div style="margin-left:20px; flex: 1; min-width: 300px;">
-          <h2 style="margin-left:50px; margin-top:20px; margin-bottom:10px;color:#f56a00; font-size:25px; font-family: 'Monoton', serif;
-          font-weight: 400; font-style: normal; word-spacing: 10px" id="vec">RACE FEATURES:</h2>
-          <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-            font-style: normal; font-size:13px; color:#282928;" id="p1">&#10139;Exclusive race t-shirt to commemorate your achievement</p>
-            <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-              font-style: normal; font-size:13px; color:#282928;" id="p2">&#10139;Collectable finishing medal as a token of your success</p>
-              <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-                font-style: normal; font-size:13px; color:#282928;" id="p3">&#10139;Post-race celebration with live music, delicious food, and local vendors</p>
-                  <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-                    font-style: normal; font-size:13px; color:#282928;" id="p4">&#10139;City and countryside race route at the foot of Mount Gjallica</p>
-                    <p style="  font-family: 'Rubik', serif; font-weight: <weight>;
-                      font-style: normal; font-size:13px; color:#282928;" id="p5">&#10139;Water stations along the race route to stay energized</p>
-                        <h4 style="margin-left:50px;margin-top:30px;color:#f56a00; font-size:15px; font-family:'Arvo', serif;
-                        font-weight: 700; font-style: normal;"><strong id="p6">Price:</strong><span style="font-size:30px; margin-left:10px;font-family:'Lumanosimo', serif; font-weight: 400; font-style: normal;color:#f56a00;">€5<a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank"><button class="button type1">
-                      </button></a></span></h4>
-                    </div>
-                  </div>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="icona.png" alt="RunNation Logo" class="logo-image">
+                </a>
+                <ul class="nav-links">
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">The Races <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="half.html">Half Marathon</a>
+                            <a href="10km.html">10K Run</a>
+                        </div>
+                    </li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfTJMP63aBrA4bjYBRiMiKkQ9twbwCxjx23KiwXm-9fWz2Zmw/viewform"
+                            class="nav-link">Sponsors</a></li>
+                    <li><a href="https://docs.google.com/forms/d/16tVKz1sx2DXGuwHuNN-TUMKST-CDLWnOOYC-Qi9EM88/closedform"
+                            class="nav-link">Volunteers</a></li>
+                    <li><a href="hi.html" class="nav-link">Schedule of Events</a></li>
+                    <li><a href="https://my.raceresult.com/342574/results" class="nav-link">Results</a></li>
+                    <li class="language-selector">
+                        <button class="language-btn">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="English">
+                            English
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="English">
+                                English
+                            </a>
+                            <a href="#" data-lang="es">
+                                <img src="https://flagcdn.com/w20/es.png" alt="Spanish">
+                                Español
+                            </a>
+                            <a href="#" data-lang="fr">
+                                <img src="https://flagcdn.com/w20/fr.png" alt="French">
+                                Français
+                            </a>
+                            <a href="#" data-lang="de">
+                                <img src="https://flagcdn.com/w20/de.png" alt="German">
+                                Deutsch
+                            </a>
+                            <a href="#" data-lang="it">
+                                <img src="https://flagcdn.com/w20/it.png" alt="Italian">
+                                Italiano
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
                 </div>
-                <footer class="footer">
-      <div class="footer-logo">
-        <img src="icona.png" alt="Kukës Marathon Logo">
-      </div>
-      <div class="footer-info">
-        <p id="fund">Kukës<br>May, 2025</p>
-        <p id="fundi">&copy; 2024 Kukës Marathon</p>
-      </div>
-      <div class="footer-contact">
-        <p id="kontakt">Contact Us:</p>
-        <p>
-          <a href="mailto:kukesmarathon@gmail.com">kukesmarathon@gmail.com</a><br>
-          <a href="mailto:orgcyp@hotmail.com">orgcyp@hotmail.com</a><br>
-          <a href="https://www.instagram.com/kukes_half_marathon_2025/" style="color: #e80778;">Instagram</a>
-        <a href="https://www.facebook.com/people/KUK%C3%8BS-Half-Marathon/61570543991137/" style="color: #17195e;">Facebook</a> <br>
-        <a href="https://www.gofundme.com/f/mbeshtes-maratonen-e-kukesit?attribution_id=sl%3Ac08c3037-05ae-47ae-b301-98e10be1addc&lang=en_US&utm_campaign=fp_sharesheet&utm_content=amp13_c&utm_medium=customer&utm_source=whatsapp&fbclid=PAY2xjawJaGWJleHRuA2FlbQIxMQABpg2DAybFMXjWvOpBOtQTo-ay-kl1hveAtMU2wRLFo8aMauwiskt-nNGv5Q_aem_SuOU8iXzGSp-g-0DRoQIQg" style="color: #008000;"> Contribute for the page</a>
-        </p>
-      </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="back (3).JPG" alt="10K Run">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Kukës 10K Run</h1>
+                <p>A perfect distance for beginners and experienced runners alike, set against the scenic backdrop of
+                    Kukës and its surrounding landscapes.</p>
+                <a href="https://dilemmasolution.net/product/regjistrim-half-marathon-10k/" class="btn" data-translate="register_now"
+                target="_blank" rel="noopener noreferrer">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Race Details Section -->
+    <section class="race-details">
+        <div class="container">
+            <div class="details-container">
+                <div class="race-info">
+                    <h2>Race Details</h2>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Distance</h3>
+                            <p>10 kilometers (6.2 miles)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Date</h3>
+                            <p>June 16, 2026</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Start Time</h3>
+                            <p>8:30 AM</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Location</h3>
+                            <p>Kukës City Center, Albania</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Time Limit</h3>
+                            <p>2 hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="race-info">
+                    <h2>What's Included</h2>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Race Shirt</h3>
+                            <p>High-quality technical t-shirt</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Finisher Medal</h3>
+                            <p>Medal awarded to all finishers, featuring Kukës city branding.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Aid Stations</h3>
+                            <p>3 well-stocked aid stations along the course</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Race Photos</h3>
+                            <p>Free digital race photos</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Awards</h3>
+                            <p>Awards for top finishers in each category</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Highlights Section -->
+    <section class="course-highlights">
+        <div class="container">
+            <h2>Course Highlights</h2>
+            <div class="highlights-container">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Scenic Views</h3>
+                    <p>Enjoy beautiful city and countryside views along the route.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>Paved Surfaces</h3>
+                    <p>The entire course is on paved roads, perfect for achieving your best time</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Crowd Support</h3>
+                    <p>Encouraging spectators along the route to keep you motivated</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Map Section -->
+    <section class="course-map">
+        <div class="container">
+            <h2>Course Map & Elevation</h2>
+            <div class="map-container">
+                <div class="map-image">
+                    <p>Course Map Will Be Available Soon</p>
+                </div>
+                <div class="map-details">
+                    <h3>Course Description</h3>
+                    <p>The 10K course offers a fantastic running experience through the beautiful surroundings of Kukës.
+                        Starting in the city center, the route takes you through scenic areas with minimal elevation
+                        gain, making it perfect for both beginners and those looking to set a personal best. The
+                        out-and-back course ensures you'll enjoy the beautiful landscapes from multiple perspectives.
+                    </p>
+
+                    <div class="elevation-profile elevation-margin">
+                        <h3>Elevation Profile</h3>
+                        <div class="elevation-chart"></div>
+                        <div class="elevation-markers">
+                            <span>Start: 350m</span>
+                            <span>Highest Point: 420m</span>
+                            <span>Finish: 350m</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Tips Section -->
+    <section class="training-tips">
+        <div class="container">
+            <div class="tips-container">
+                <h2>10K Training Tips</h2>
+
+                <div class="tip-item">
+                    <h3>For Beginners</h3>
+                    <p>If you're new to running, start with a run/walk strategy. Begin with 3-4 training sessions per
+                        week, gradually increasing your running time while decreasing walking intervals. A 8-10 week
+                        training plan is ideal to prepare for your first 10K.</p>
+                </div>
+
+                <div class="tip-item">
+                    <h3>For Experienced Runners</h3>
+                    <p>Focus on interval training and tempo runs to improve your speed. Include one long run per week
+                        that's slightly longer than the 10K distance to build endurance. Don't forget to incorporate
+                        rest days for recovery.</p>
+                </div>
+
+                <div class="tip-item">
+                    <h3>Nutrition & Hydration</h3>
+                    <p>Stay hydrated throughout your training. For the race itself, practice your nutrition strategy
+                        during training runs. For a 10K, most runners only need water during the race, but if you
+                        prefer, energy gels can be consumed about 15 minutes before the start.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <!-- <section class="registration" id="registration">
+        <div class="container">
+            <div class="registration-container">
+                <h2>Registration</h2>
+                <p>Secure your spot in the Kukës 10K Run. Prices increase as the race date approaches, so register
+                    early!</p>
+
+                <div class="pricing-table">
+                    <div class="pricing-tier">
+                        <h3 class="tier-name">Early Bird</h3>
+                        <div class="tier-price">€3</div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check"></i> Until Dec 31, 2025</li>
+                            <li><i class="fas fa-check"></i> Race Entry</li>
+                            <li><i class="fas fa-check"></i> Race Shirt</li>
+                            <li><i class="fas fa-check"></i> Finisher Medal</li>
+                        </ul>
+                        <a href="https://dilemmasolution.net/product/regjistrim-half-marathon-10k/" class="btn"
+                            target="_blank" rel="noopener noreferrer">Register Now</a>
+                    </div>
+
+                    <div class="pricing-tier popular">
+                        <h3 class="tier-name">Standard</h3>
+                        <div class="tier-price">€5</div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check"></i> Jan 1 - Mar 31, 2026</li>
+                            <li><i class="fas fa-check"></i> Race Entry</li>
+                            <li><i class="fas fa-check"></i> Race Shirt</li>
+                            <li><i class="fas fa-check"></i> Finisher Medal</li>
+                        </ul>
+                        <a href="#" class="btn">Register Now</a>
+                    </div>
+
+                    <div class="pricing-tier">
+                        <h3 class="tier-name">Late Registration</h3>
+                        <div class="tier-price">€10</div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check"></i> After Apr 1, 2026</li>
+                            <li><i class="fas fa-check"></i> Race Entry</li>
+                            <li><i class="fas fa-check"></i> Race Shirt (while supplies last)</li>
+                            <li><i class="fas fa-check"></i> Finisher Medal</li>
+                        </ul>
+                        <a href="#" class="btn">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the minimum age to participate? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Participants must be at least 14 years old on race day to compete in the 10K Run.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I walk the 10K? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, walkers are welcome! Please note that the course time limit is 2 hours, which requires
+                            maintaining a pace of approximately 12 minutes per kilometer.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Are strollers allowed on the course? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For safety reasons, strollers are not permitted on the 10K course.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the refund policy? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Entry fees are non-refundable and non-transferable. This policy applies to all participants
+                            regardless of circumstances.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there a bag check available? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide a secure bag check service at the start/finish area. Please use the clear bag
+                            provided at packet pickup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kukës Marathon</h3>
+                    <p>Creating unforgettable running experiences since 2025. Join our community of passionate runners
+                        today.</p>
+                    <br>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61570543991137"
+                            title="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@kukeshalfmarathon" title="Visit our TikTok page"><i
+                                class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/kukes_half_marathon_2025/"
+                            title="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Register NOW</a></li>
+                        <li><a href="#">Training Clubs</a></li>
+                        <li><a href="https://my.raceresult.com/342574/results">Results</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Events</h3>
+                    <ul class="footer-links">
+                        <li><a href="10km.html">10K Runs</a></li>
+                        <li><a href="half.html">Half Marathons</a></li>
+                        <li><a href="#">Kids Marathon</a></li>
+                        <li><a href="#">Marathons</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kukës Marathon. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
-  </div>
-  <a href="#" class="top"></a>
-  <div id="kasi" class="modale">
-  <span class="clos" onclick="closeModal()">&times;</span>
-  <img class="imazhe" id="img01" src="agenda.jpeg">
-</div>
-  <script>
-  var myIndex = 0;
-  carousel();
+    <button class="back-to-top" id="backToTop" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script>
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+    <script>
+        // Back to Top functionality
+        const backToTopButton = document.getElementById('backToTop');
 
-  function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-      x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000);
-  }
-  document.addEventListener("DOMContentLoaded", () => {
-    const topButton = document.querySelector(".top");
+        // Show or hide button when scrolling
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        topButton.style.display = "block";
-      } else {
-        topButton.style.display = "none";
-      }
-    });
+        // When button is clicked, scroll to top of page
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 
-    topButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  });
-  function openModal() {
-  document.getElementById("kasi").style.display = "block";
-}
+    <script>
+        // Translation Data
+        const translations = {
+            en: {
+                hero_title: "Challenge Yourself With Our Premier Running Events",
+                hero_subtitle: "Join thousands of runners in our world-class events across the country. Whether you're a beginner or an elite athlete, we have the perfect race for you.",
+                view_events: "View Events",
+                register_now: "Register Now",
+                upcoming_events: "Upcoming Events",
+                events_description: "Discover your next running challenge with our selection of premier events across various locations and distances.",
+                all_events: "All Events",
+                "5k_runs": "5K Runs",
+                "10k_runs": "10K Runs",
+                half_marathon: "Half Marathon",
+                marathon: "Marathon",
+                event1_title: "Metropolitan Marathon",
+                event1_description: "Experience the ultimate urban running challenge through the heart of the city with spectacular views and enthusiastic crowd support.",
+                event1_location: "New York City",
+                event2_title: "Coastal Half Marathon",
+                event2_description: "Run along breathtaking coastal views with ocean breezes pushing you forward in this unforgettable half marathon experience.",
+                event2_location: "San Diego",
+                event3_title: "Trailblazer 10K",
+                event3_description: "Challenge yourself on scenic trails through forests and hills in this exciting off-road running adventure.",
+                event3_location: "Boulder, CO",
+                register: "Register",
+                view_all_events: "View All Events",
+                stay_updated: "Stay Updated",
+                newsletter_description: "Subscribe to our newsletter for event announcements, training tips, and exclusive offers.",
+                email_placeholder: "Enter your email address",
+                subscribe: "Subscribe",
+                footer_description: "Creating unforgettable running experiences since 2010. Join our community of passionate runners today.",
+                quick_links: "Quick Links",
+                home: "Home",
+                events: "Events",
+                training_plans: "Training Plans",
+                charities: "Charities",
+                results: "Results",
+                support: "Support",
+                faqs: "FAQs",
+                contact_us: "Contact Us",
+                terms: "Terms & Conditions",
+                privacy: "Privacy Policy",
+                cookies: "Cookie Policy",
+                all_rights: "All rights reserved."
+            },
+            es: {
+                hero_title: "Desafíate con nuestros eventos de running de primer nivel",
+                hero_subtitle: "Únete a miles de corredores en nuestros eventos de clase mundial en todo el país. Ya seas principiante o atleta de élite, tenemos la carrera perfecta para ti.",
+                view_events: "Ver Eventos",
+                register_now: "Regístrate Ahora",
+                upcoming_events: "Próximos Eventos",
+                events_description: "Descubre tu próximo desafío de running con nuestra selección de eventos principales en varias ubicaciones y distancias.",
+                all_events: "Todos los Eventos",
+                "5k_runs": "Carreras 5K",
+                "10k_runs": "Carreras 10K",
+                half_marathon: "Media Maratón",
+                marathon: "Maratón",
+                event1_title: "Maratón Metropolitano",
+                event1_description: "Vive el desafío definitivo de running urbano a través del corazón de la ciudad con vistas espectaculares y el apoyo entusiasta del público.",
+                event1_location: "Nueva York",
+                event2_title: "Media Maratón Costera",
+                event2_description: "Corre junto a impresionantes vistas costeras con brisas marinas que te empujan hacia adelante en esta inolvidable experiencia de media maratón.",
+                event2_location: "San Diego",
+                event3_title: "Trailblazer 10K",
+                event3_description: "Desafíate en pintorescos senderos a través de bosques y colinas en esta emocionante aventura de running fuera de carretera.",
+                event3_location: "Boulder, CO",
+                register: "Registrarse",
+                view_all_events: "Ver Todos los Eventos",
+                stay_updated: "Mantente Actualizado",
+                newsletter_description: "Suscríbete a nuestro boletín para anuncios de eventos, consejos de entrenamiento y ofertas exclusivas.",
+                email_placeholder: "Ingresa tu dirección de correo",
+                subscribe: "Suscribirse",
+                footer_description: "Creando experiencias de running inolvidables desde 2010. Únete a nuestra comunidad de apasionados corredores hoy.",
+                quick_links: "Enlaces Rápidos",
+                home: "Inicio",
+                events: "Eventos",
+                training_plans: "Planes de Entrenamiento",
+                charities: "Organizaciones Benéficas",
+                results: "Resultados",
+                support: "Soporte",
+                faqs: "Preguntas Frecuentes",
+                contact_us: "Contáctanos",
+                terms: "Términos y Condiciones",
+                privacy: "Política de Privacidad",
+                cookies: "Política de Cookies",
+                all_rights: "Todos los derechos reservados."
+            },
+            fr: {
+                hero_title: "Défiez-vous avec nos événements de course de premier ordre",
+                hero_subtitle: "Rejoignez des milliers de coureurs dans nos événements de classe mondiale à travers le pays. Que vous soyez débutant ou athlète d'élite, nous avons la course parfaite pour vous.",
+                view_events: "Voir les Événements",
+                register_now: "S'inscrire Maintenant",
+                upcoming_events: "Événements à Venir",
+                events_description: "Découvrez votre prochain défi de course avec notre sélection d'événements principaux dans divers lieux et distances.",
+                all_events: "Tous les Événements",
+                "5k_runs": "Courses 5K",
+                "10k_runs": "Courses 10K",
+                half_marathon: "Demi-Marathon",
+                marathon: "Marathon",
+                event1_title: "Marathon Métropolitain",
+                event1_description: "Vivez le défi ultime de course urbaine à travers le cœur de la ville avec des vues spectaculaires et le soutien enthousiaste de la foule.",
+                event1_location: "New York",
+                event2_title: "Demi-Marathon Côtier",
+                event2_description: "Courez le long de vues côtières à couper le souffle avec des brises océaniques qui vous poussent vers l'avant dans cette expérience inoubliable de demi-marathon.",
+                event2_location: "San Diego",
+                event3_title: "Trailblazer 10K",
+                event3_description: "Défiez-vous sur des sentiers pittoresques à travers forêts et collines dans cette aventure passionnante de course hors route.",
+                event3_location: "Boulder, CO",
+                register: "S'inscrire",
+                view_all_events: "Voir Tous les Événements",
+                stay_updated: "Restez Informé",
+                newsletter_description: "Abonnez-vous à notre newsletter pour les annonces d'événements, des conseils d'entraînement et des offres exclusives.",
+                email_placeholder: "Entrez votre adresse email",
+                subscribe: "S'abonner",
+                footer_description: "Créant des expériences de course inoubliables depuis 2010. Rejoignez notre communauté de coureurs passionnés aujourd'hui.",
+                quick_links: "Liens Rapides",
+                home: "Accueil",
+                events: "Événements",
+                training_plans: "Plans d'Entraînement",
+                charities: "Organismes de Bienfaisance",
+                results: "Résultats",
+                support: "Support",
+                faqs: "FAQ",
+                contact_us: "Contactez-Nous",
+                terms: "Conditions Générales",
+                privacy: "Politique de Confidentialité",
+                cookies: "Politique de Cookies",
+                all_rights: "Tous droits réservés."
+            }
+        };
 
-function closeModal() {
-  document.getElementById("kasi").style.display = "none";
-}
+        // Current language
+        let currentLang = 'en';
 
-const translations = {
-  "sq": () => ({
-    "race": `Garat`,
-    "half": `Gjysmë maratona`,
-    "km": `10 km gara`,
-    "spon": `Sponsorët`,
-    "vol": `Vullnetarët`,
-    "agend": `Agjenda`,
-    "reg": `Regjistrohu`,
-    "pjesa": `Gara 10Km`,
-    "title": `Mirë se vini në gjysmëmaratonën e Kukësit!`,
-    "vec": `KARAKTERISTIKAT E GARAVE:`,
-    "p1": `&#10139;T-shirt ekskluzive garash për të përkujtuar arritjen tuaj`,
-    "p2": `&#10139;Medalje përfundimi e koleksionueshme si shenjë e suksesit tuaj`,
-    "p3": `&#10139;Festë pas garës me muzikë live, ushqime të shijshme dhe shitës vendas`,
-    "p4": `&#10139;Rruga e garave në qytet dhe fshat në rrëzë të malit Gjallicë`,
-    "p5": `&#10139;Stacione ujore përgjatë rrugës së garës për të qëndruar me energji`,
-    "p6": `Çmimi:`,
-    "fund": `Kukës<br>Maj, 2025`,
-    "fundi": `&copy; 2024 Kukës Maraton`,
-    "kontakt": `Na kontaktoni:`
-  }),
+        // Function to change language
+        function changeLanguage(lang) {
+            currentLang = lang;
+            document.querySelector('.language-btn img').src = `https://flagcdn.com/w20/${lang === 'en' ? 'gb' : lang}.png`;
+            document.querySelector('.language-btn').innerHTML = `
+                    <img src="https://flagcdn.com/w20/${lang === 'en' ? 'gb' : lang}.png" alt="${lang}">
+                    ${lang === 'en' ? 'English' : lang === 'es' ? 'Español' : 'Français'}
+                `;
 
-  "en": () => ({
-    "race": `The Races`,
-    "half": `Half Marathon`,
-    "km": `10Km`,
-    "spon": `Sponsors`,
-    "vol": `Volunteers`,
-    "agend": `Schedule of Events`,
-    "reg": `Register`,
-    "pjesa": `10Km Marathon`,
-    "title": `Welcome to the Kukës Half Marathon!`,
-    "vec": `RACE FEATURES:`,
-    "p1": `&#10139;Exclusive race t-shirt to commemorate your achievement`,
-    "p2": `&#10139;Collectable finishing medal as a token of your success`,
-    "p3": `&#10139;Post-race celebration with live music, delicious food, and local vendors`,
-    "p4": `&#10139;City and countryside race route at the foot of Mount Gjallica`,
-    "p5": `&#10139;Water stations along the race route to stay energized`,
-    "p6": `Price:`,
-    "fund": `Kukës<br>May, 2025`,
-    "fundi": `&copy; 2024 Kukës Marathon`,
-    "kontakt": `Contact Us:`
-  }),
-  "es": () => ({
-    "race": `Las razas`,
-    "half": `Media Maraton`,
-    "km": `10Km`,
-    "spon": `Patrocinadores`,
-    "vol": `Voluntarios`,
-    "agend": `Calendario de eventos`,
-    "reg": `Registro`,
-    "pjesa": `Maratón de 10 km`,
-    "title": `¡Bienvenidos a la Media Maratón de Kukës!`,
-    "vec": `CARACTERÍSTICAS DE LA CARRERA:`,
-    "p1": `&#10139;Camiseta de carrera exclusiva para conmemorar tu logro`,
-    "p2": `&#10139;Medalla de finalización coleccionable como muestra de tu éxito`,
-    "p3": `&#10139;Celebración posterior a la carrera con música en vivo, comida deliciosa y vendedores locales.`,
-    "p4": `&#10139;Ruta de carrera por la ciudad y el campo al pie del monte Gjallica`,
-    "p5": `&#10139;Puestos de agua a lo largo del recorrido de la carrera para mantener la energía.`,
-    "p6": `Precio:`,
-    "fund": `Kukës<br>Mayo de 2025`,
-    "fundi": `&copy; 2024 Maratón de Kukës`,
-    "kontakt": `Contáctenos:`
-  }),
-  "tr": () => ({
-    "race": `Yarışlar`,
-    "half": `Yari Maraton`,
-    "km": `10Km`,
-    "spon": `Sponsorlar`,
-    "vol": `Gönüllüler`,
-    "agend": `Etkinlik Takvimi`,
-    "reg": `Kayit olmak`,
-    "pjesa": `10Km Maraton`,
-    "title": `Kukës Yarı Maratonuna hoş geldiniz!`,
-    "vec": `YARIŞ ÖZELLİKLERİ:`,
-    "p1": `&#10139;Başarınızı anmak için özel yarış tişörtü`,
-    "p2": `&#10139;Başarınızın bir göstergesi olarak koleksiyonluk bitirme madalyası`,
-    "p3": `&#10139;Canlı müzik, lezzetli yemekler ve yerel satıcılarla yarış sonrası kutlama`,
-    "p4": `&#10139;Gjallica Dağı eteklerinde şehir ve kırsal yarış rotası`,
-    "p5": `&#10139;Yarış güzergahı boyunca enerjik kalmanızı sağlayacak su istasyonları`,
-    "p6": `Fiyat:`,
-    "fund": `Kukës<br>Mayıs 2025`,
-    "fundi": `&copy; 2024 Kukës Maratonu`,
-    "kontakt": `Bize Ulaşın:`
-  })
-};
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+        }
 
-function updateContent(language) {
-  const translation = translations[language]();
-  document.getElementById("race").innerHTML = translation.race;
-  document.getElementById("half").innerHTML = translation.half;
-  document.getElementById("km").innerHTML = translation.km;
-  document.getElementById("spon").innerHTML = translation.spon;
-  document.getElementById("vol").innerHTML = translation.vol;
-  document.getElementById("agend").innerHTML = translation.agend;
-  document.getElementById("reg").innerHTML = translation.reg;
-  document.getElementById("title").innerHTML = translation.title;
-  document.getElementById("pjesa").innerHTML = translation.pjesa;
-  document.getElementById("vec").innerHTML = translation.vec;
-  document.getElementById("p1").innerHTML = translation.p1;
-  document.getElementById("p2").innerHTML = translation.p2;
-  document.getElementById("p3").innerHTML = translation.p3;
-  document.getElementById("p4").innerHTML = translation.p4;
-  document.getElementById("p5").innerHTML = translation.p5;
-  document.getElementById("p6").innerHTML = translation.p6;
-  document.getElementById("fund").innerHTML = translation.fund;
-  document.getElementById("fundi").innerHTML = translation.fundi;
-  document.getElementById("kontakt").innerHTML = translation.kontakt;
-}
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li');
 
-function handleLanguageChange(event) {
-  const selectedLanguage = event.target.value;
-  if (selectedLanguage) {
-    updateContent(selectedLanguage);
-  }
-}
-document.getElementById("lang-select").addEventListener("change", handleLanguageChange);
-updateContent("en");
-  </script>
+        hamburger.addEventListener('click', () => {
+            // Toggle nav
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('toggle');
+
+            // Animate links
+            navItems.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+        });
+
+        // Language selector functionality
+        document.querySelectorAll('.language-dropdown a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = link.getAttribute('data-lang');
+                changeLanguage(lang);
+            });
+        });
+
+        // Simple filter functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const eventCards = document.querySelectorAll('.event-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    // Filter events
+                    eventCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        // Mobile dropdown toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggles = document.querySelectorAll('.nav-dropdown > .nav-link');
+
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+
+                        // Close other dropdowns
+                        document.querySelectorAll('.nav-dropdown').forEach(item => {
+                            if (item !== dropdown) {
+                                item.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768 && !e.target.closest('.nav-dropdown')) {
+                    document.querySelectorAll('.nav-dropdown').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
