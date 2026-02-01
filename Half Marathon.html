@@ -1,1183 +1,654 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kukës Half Marathon</title>
-  <link rel="icon" href="icona.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
-  <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: grid;
-    grid-template-columns: auto 0px; 
-  }
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 5px;
-  }
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    margin-right: 150px;
-  }
-  .navbar-logo img {
-    width:auto;
-    height: 80px;
-  }
-  .navbar-links {
-    display: flex;
-    gap: 15px;
-    margin-right: 50px;
-  }
-  .navbar-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    padding: 20px 10px;
-    transition: color 0.3s ease;
-
-  }
-  .navbar-links a:hover {
-    color: #f56a00;
-  }
-  .dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: none;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    z-index: 10;
-  }
-  .dropdown a {
-    padding: 10px;
-    white-space: nowrap;
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    transition: background-color 0.3s;
-  }
-  .dropdown a:hover {
-    background-color: #f56a00;
-    color: white;
-  }
-  .navbar-item {
-    position: relative;
-    margin-top: 10px;
-  }
-  .navbar-item:hover .dropdown {
-    display: flex;
-  }
-  .navbar-register {
-    background-color: #f56a00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 13px;
-    cursor: pointer;
-    text-transform: uppercase;
-  }
-  .navbar-register:hover {
-    background-color: #ff7e26;
-  }
-  #runn {
-    background: url('run.jpg') no-repeat center center/cover;
-    width: 100%;
-    height: 20%;
-  }
-  .info-text, .info-video, .info-winner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
-  .banner-title {
-    position: absolute;
-    top: 55%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    background-color: #f56a00;
-    color: white;
-    padding: 10px 20px;
-    font-size: 35px;
-    font-weight: 400;
-    text-transform: uppercase;
-    border-radius: 5px;
-    font-family: "Anton", serif;
-    font-style: normal;
-  }
-
-  .button {
-    height: 50px;
-    width: 190px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-left: 50px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.5s ease-in-out;
-    font-family: "Noto Sans KR", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  .button:hover {
-    box-shadow: .1px .1px 10px #252525;
-  }
-
-  .type1::after {
-    content: "THANK YOU!";
-    height: 50px;
-    width: 190px;
-    background-color: #4617ec;
-    color: #fff;
-    transform: translateY(100px);
-    font-size: 1.2rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s;
-  }
-
-  .type1::before {
-    content: "REGISTER NOW";
-    height: 50px;
-    width: 190px;
-    background-color: rgb(240, 9, 9);
-    color: #f5f8f8;
-    position: absolute;
-    transform: translateY(0px) scale(1.1);
-    font-size: 1.2rem;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s;
-  }
-
-  .type1:hover::after {
-    transform: translateY(-2px) scale(1.2) rotate(0deg);
-  }
-
-  .type1:hover::before {
-    transform: translateY(-50px)  rotate(290deg);
-  }
-
-
-  @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Petemoss&display=swap");
-
-  h1,h2,h3,h4,h5,p {
-    margin: 0;
-  }
-
-  @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700,900,400italic,700italic,900italic|Playfair+Display:400,700,900,400italic,700italic,900italic|Rock+Salt:400);
-
-  #wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 80em;
-    height: 80em;
-  }
-
-  #container {
-    float: left;
-    padding: 1em;
-    width: 100%;
-  }
-
-  .open-book {
-    background: #fff;
-    box-shadow: rgba(0,0,0,0.5) 0 1em 3em;
-    color: #000;
-    padding: 2em;
-  }
-
-  .open-book * {
-    position: relative;
-  }
-
-  .open-book *::-moz-selection {
-    background: rgba(222,255,0,0.75);
-  }
-
-  .open-book *::selection {
-    background: rgba(222,255,0,0.75);
-  }
-
-  .open-book header {
-    padding-bottom: 1em;
-  }
-
-  .open-book header *,
-  .open-book footer * {
-    font: 700 1em/1.25 'Playfair Display', sans-serif;
-    letter-spacing: 0.125em;
-    margin: 0;
-  }
-
-  .open-book header * {
-    font-size: 0.75em;
-    text-transform: uppercase;
-  }
-
-  .open-book footer {
-    padding-top: 1em;
-  }
-
-  .open-book footer #page-numbers {
-    display: none;
-    list-style: none;
-    padding: 0;
-    text-align: left;
-  }
-
-  .open-book footer #page-numbers > li:last-child {
-    text-align: right;
-  }
-
-  .open-book .chapter-title {
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA2NCA2NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjQgNjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCiAgICA8Zz4NCiAgICAJPHBhdGggZD0iTTAsMzJMMzIsMGwzMiwzMkwzMiw2NEwwLDMyeiBNOCwzMmwyNCwyNGwyNC0yNEwzMiw4TDgsMzJ6IE0xNiwzMmwxNi0xNmwxNiwxNkwzMiw0OEwxNiwzMnogTTI0LDMybDgsOGw4LThsLTgtOEwyNCwzMnoiIC8+DQogICAgPC9nPg0KPC9zdmc+) bottom center no-repeat;
-    background-size: 0.5em 0.5em;
-    font: 700 7vw/1.25 'Playfair Display', sans-serif;
-    letter-spacing: 0.125em;
-    margin: 0 0 1em 0;
-    padding: 1em 0;
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  .open-book .chapter-title:before,
-  .open-book .chapter-title:after {
-    border: solid 0 #000;
-    border-width: 0.05em 0;
-    bottom: calc((0.125em / 2) * 3);
-    content: '';
-    height: 0.15em;
-    position: absolute;
-    width: calc(50% - (1em / 2));
-  }
-
-  .open-book .chapter-title:before {
-    left: 0;
-  }
-
-  .open-book .chapter-title:after {
-    right: 0;
-  }
-  .open-book article {
-    line-height: 1.5;
-  }
-
-  .open-book article *:not(.chapter-title):not(hr):not(dl) {
-    margin: 0 auto;
-    max-width: 28.125em;
-  }
-
-  .open-book article p {
-    text-indent: 2em;
-  }
-
-  .open-book .chapter-title + p:first-of-type {
-    text-indent: 0;
-  }
-
-  .open-book .chapter-title + p:first-of-type:first-letter {
-    float: left;
-    font: 700 3em/0.65 'Playfair Display', sans-serif;
-    padding: 0.15em 0.05em 0 0;
-    text-transform: uppercase;
-  }
-
-  .open-book article > ul,
-  .open-book article > ol {
-    padding-left: 3em;
-  }
-
-  .open-book article > ul ul {
-    padding-left: 1em;
-  }
-
-  .open-book a {
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA4MDAgNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDgwMCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJCS5zdDB7ZmlsbDojMDAwMENDO30NCgk8L3N0eWxlPg0KCTxnIGlkPSJZMkJjMjcudGlmIj4NCgkJPGc+DQoJCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDMwLjksNDkuMmMtMSwwLTIsMC0zLDBjLTAuMS0wLjMtMC4yLTAuOC0wLjQtMC44Yy0xLjgtMC40LTQtMC4zLTUuNC0xLjNjLTEuOC0xLjQtNC4zLDAuMS01LjgtMS45Yy00LjMtMS04LjUtMi4zLTEyLjgtMi45Yy0zLjQtMC41LTYuOS0wLjEtMTAuMy0wLjFjLTAuMywwLjgtMC41LDEuNC0wLjcsMmMtMC41LTAuMy0wLjktMC42LTEuNC0xYy0wLjIsMS4yLTAuMywyLjEtMC42LDMuN2MtMS0xLjMtMS41LTIuMS0xLjktMi42Yy0yLjgsMC01LjMtMC41LTcuNCwwLjFjLTIuMiwwLjctMy43LDAuOC01LjktMC4xYy0yLjItMC45LTIuOS0yLjYtNC00Yy0yLjUsMS4yLTUuMSwxLjEtNy41LDAuMmMtMS4yLTAuNS0yLTAuNi0zLjEsMC4xYy0xLjIsMC43LTIuNiwxLTMuOSwxLjRjLTAuMiwwLjEtMC42LTAuMi0wLjgtMC4zYy0xLjItMS4zLDIuNC0yLjMsMC0zLjdjLTIuNiwxLjYtNS4yLDMuMy04LDVjLTAuOCwwLTEuOSwwLjMtMi43LTAuMWMtMi40LTEuMS00LjgtMi4zLTYuOS0zLjljLTEuOS0xLjUtMy45LTIuMi02LjItMmMtMSwwLjEtMiwwLTIuOCwwYy0wLjgtMS4xLTEuNC0yLTIuNy0zLjljMCwyLjMsMCwzLjYsMCw0LjljLTMuNywwLjgtNywxLjYtMTAuMywyLjNjLTEuNC0xLjgtMi42LTMuMi0zLjktNC45Yy0wLjQsMC44LTAuNiwxLjItMC43LDEuNmMtMC44LDMuMi0xLDMuMS00LjIsMi4zYy0yLjktMC43LTUuNC0yLjQtOC40LTMuNmMtMS42LDItMy4yLDQtNS4yLDYuNWMtMy44LTIuMi03LjgsMi0xMS45LDBjLTAuNCwwLjMtMC44LDAuNS0xLjIsMC44Yy0xLjQtMC45LTIuNy0xLjgtMy44LTIuNWMtMC44LTIuNy0xLjYtNS4yLTIuNC04LjJjLTEuMiwxLjMtMS45LDIuMi0zLDMuNGMwLDEsMCwyLjUsMCwzLjljLTUuMSwwLjYtOS45LDIuMS0xNS4xLDAuOWMwLTEsMC0xLjcsMC0yLjljLTEuMSwwLjUtMS45LDAuOS0yLjcsMS4zYy0xLjYtMC42LTMuMS0xLjItNC44LTEuOWMtMC42LDAuOC0xLjIsMS44LTEuOSwyLjhjLTAuNC0wLjktMC44LTEuNy0xLjItMi40YzAuMi0wLjQsMC40LTAuOSwxLjEtMi4yYy0zLDEuNS01LDIuNS03LjEsMy42Yy0xLTMtMy40LTQuNS02LTUuN2MtMC41LDAuNi0xLjEsMS4xLTEuNSwxLjZjMC41LDAuOSwwLjgsMS41LDEuMSwyLjJjLTAuOCwwLTEuMSwwLTEuNywwYy0wLjItMS0wLjQtMi0wLjctMy41Yy0xLjMsMC45LTIuMywxLjYtMy4zLDIuM2MtMC4yLTAuNi0wLjUtMS4yLTAuOC0yYy0xLjEsMS41LTIuMSwyLjktMyw0LjJjLTUuMywwLjQtNS45LTUtOS4xLTYuOWMtMC43LDEtMS40LDItMiwzYy0xLjgtMC40LTMuMy0wLjgtNC44LTEuMWMtMC4yLDAtMC40LDAuMy0wLjYsMC41YzAuMywwLjMsMC42LDAuNiwxLDFjLTAuOCwwLjYtMS42LDEuMS0yLjUsMS43Yy0wLjUtMS0wLjgtMS42LTEuMi0yLjVjLTEuNSwwLjgtMi44LDEuNi0zLjgsMi4yYy0wLjcsMS43LTEuMiwyLjktMS42LDQuMWMtMS40LTEuNy0yLjYtMy4yLTQuMS01YzAtMC40LDAtMS4yLDAtMS45Yy0xLjcsMC0zLjEsMC0zLjksMGMtMy4xLDEuOS01LjYsMy40LTguMiw1LjFjLTAuNC0wLjgtMC43LTEuNS0xLjEtMi4yYy0wLjYsMC0xLjMsMC0yLjEsMGMtMC42LDAuNi0xLjMsMS4zLTIsMS45Yy0wLjUtMC40LTEtMC43LTEuOC0xLjNjLTEsMS40LTEuOSwyLjctMi44LDMuOWMtMC4xLDAuMi0wLjQsMC4xLTAuNywwLjJjLTAuMi0xLTAuNC0xLjktMC42LTMuMmMtMC41LDEtMC44LDEuNy0xLjUsMy4zYzAtMi4yLDAtMy40LDAtMy41Yy0xLjktMS45LTMuMS0zLjEtNC4zLTQuM2MtMy41LDEuMS0zLDUuNC00LjgsNy42Yy00LjgsMC41LTkuMywwLjktMTMuOCwxLjRjLTAuMS0xLjEtMC4yLTEuOS0wLjMtMi45Yy0xLjUsMC0yLjksMC00LjIsMGMtMS40LDAuNy0yLjgsMS4zLTQuMiwyYy0wLjMtMC45LTAuNi0xLjQtMC45LTIuM2MtNi43LDAuNi0xMi41LDQuNC0xOSw2LjNjLTAuOS0xLjItMS45LTIuMy0yLjYtMy4zYy0zLDEuOC01LjYsMy4xLTguNywxLjJjLTAuNSwxLTEuMSwxLjktMS42LDIuN2MtMi43LDAuOC0zLjMtMS4yLTQtMi43Yy0yLjIsMC40LTQuMiwwLjctNS45LDFjLTAuOS0wLjktMS41LTEuNS0yLjEtMi4xYy0xLjIsMC42LTUuOSwxLjEtNi44LDEuMmMtMi41LDAuMi00LjksMC42LTguMSwxYy0wLjIsMC40LTAuNywxLjMtMS4xLDJjLTItMC42LTMuNS0xLjEtNS4zLTEuNmMtMC42LDAuOC0xLjEsMS42LTIuMSwyLjljLTAuNy0xLjktMS4yLTMuMi0xLjctNC44Yy0xLDEuMi0xLjgsMi40LTIuMywzYy0xLjgsMC0zLDAtNCwwYy0wLjEtMS0wLjEtMS44LTAuMi0yLjNjLTIsMC4zLTQuMSwwLTUuNSwwLjljLTIuMywxLjMtNC44LDEuMS02LjcsMC41Yy0yLjMtMC44LTQuNi0xLjMtNi41LTAuM2MtMi4xLDEuMS00LjctMC41LTYuNCwxLjVjMCwwLjEtMC41LTAuMy0xLTAuNWMwLjQtMSwwLjktMS45LDEuMy0yLjljLTAuOS0wLjctMS42LTEuMi0yLjgtMi4xYy0xLjYsMy4xLTMsNS44LTQuNCw4LjVjLTEsMC0yLDAtMywwYy0wLjEtMC4zLTAuMi0wLjgtMC40LTAuOGMtMS44LTAuNC00LTAuMy01LjQtMS4zYy0xLjgtMS4zLTQuMywwLTUuOC0xLjlDMTAuOSw0NC4xLDUuNiw0Mi45LDAsNDEuN2MwLTguMSwwLTE2LjYsMC0yNS4yYzEtMC45LDIuMy0xLjcsMS44LTMuOGMtMC42LTAuNy0wLjYtMS41LTEuNS0yLjZDMS45LDguMSwyLjYsNiw0LjQsMy44YzEuMywwLjYsMi41LDEuMSwzLjcsMS42QzcuNSw4LDcuOCwxMC4yLDkuMywxMi4yYzAuNiwwLDEuMywwLDIuNCwwYzAuNy0wLjgsMS42LTIsMi43LTMuNGMwLjQsMS4xLDAuNiwxLjcsMC44LDIuMmMyLjYsMCw1LjEsMCw3LjksMGMwLTEuNCwwLTIuNSwwLTMuNWMxLTAuNCwxLjgtMC43LDIuOC0xLjJjMi4yLDEuOSw0LjYsMy45LDYuNyw1LjhjMS4yLDAsMi4xLDAsMi41LDBjMS4zLTEuNiwyLjMtMi43LDMuMy0zLjljMC41LDAuOSwwLjksMS42LDEuNiwyLjZjMS0xLjUsMS42LTIuNSwyLjMtMy41YzIuOSwwLDMtMC4xLDUuNSwxLjJjNC4xLDIuMiw4LjYsMi40LDEyLjcsMS4zYzMuMi0wLjgsNi4xLTAuMyw5LjItMC42YzMuMi0wLjQsNi4zLDAuMiw5LjQsMS41YzIuNywxLjEsNS41LDEsNy43LTAuOWMyLjctMi4zLDUuNC00LjQsOC42LTUuM2MxLjIsMC40LDIuMywwLjcsNCwxLjJjMC42LDEuNiwxLjQsMy40LDIuMiw1LjVjMC42LTEsMS4zLTIsMS43LTIuN2MxLjUtMC41LDIuOS0wLjksNC4xLTEuM2MwLjYsMS40LDEuMiwyLjcsMiw0LjRjMi42LTYuMiw4LTYuOSwxMy4yLTguNWMyLjEsMy40LDQuMiw2LjksNi42LDEwLjdjMS0xLjksMS42LTMuMywyLjMtNC42YzAuNywwLDEuNCwwLDIsMGMtMC4zLTAuMy0wLjYtMC42LTAuOS0xYzAuOC0wLjEsMS43LTAuMywyLjUtMC40Yy0wLjEtMC4yLTAuMy0wLjQtMC40LTAuNWMtMS41LDAtMi45LDAtNCwwYy0wLjgtMC43LTEuMy0xLjEtMS40LTEuMmMwLjQtMS44LDAuNy0zLjMsMS00LjdjMC45LDAsMS43LDAsMi40LDBjMC4yLDAuNywwLjQsMS4zLDAuNSwxLjZjMi4xLDAuNiwzLjksMS4xLDUuNSwxLjZjMC4yLDAuNywwLjUsMS4yLDAuNywxLjhjMS4yLTAuNSwyLjQtMC43LDMuMi0xLjRjMS40LTEuMiwyLjUtMi42LDMuOS00LjJjMC42LDIuNCwxLjEsNC4zLDEuNiw2LjNjLTIuNCwwLjEtNC4zLDAuMi02LjMsMC40YzAuNiwwLjcsMC45LDEsMS4xLDEuNWMwLjIsMC40LDAuMiwwLjksMC4zLDEuM2MxLjYtMC4xLDMsMC40LDQuMy0wLjljMC43LTAuNywyLTAuOCwzLTFjMC40LTAuMSwwLjksMC4yLDEuMiwwLjJjMC4yLDEuMSwwLjMsMS45LDAuNiwzLjRjMS4zLTEuMSwyLjItMS44LDMuMy0yLjdjMC44LDEuMSwxLjcsMi4yLDIuMSwyLjhjMy40LDEsMy44LTEuMyw0LjktMy40YzAuOSwxLjMsMS40LDIsMi4xLDMuMWMxLTAuOSwxLjgtMS43LDIuNi0yLjRjMC4zLDAuNywwLjcsMS40LDEsMi4xYzEuNC0wLjQsMi41LTEsMi40LTIuNmMxLjYsMC4xLDEuOC0xLjUsMi42LTIuN2MwLjQsMS4xLDAuNiwxLjcsMC43LDJjMi4xLTEuMiw0LjEtMi40LDYuMi0zLjdjMC4zLDAuMywwLjcsMC42LDEuMiwxYzAuNy0xLDEuMy0yLDEuOS0zYzEuNywwLDMuMywwLDUuMiwwYzAuNSwwLjksMS4xLDEuOCwxLjYsMi42YzUtMS42LDkuOC0wLjUsMTQuNSwxLjdjMC41LDEuNSwxLjEsMywxLjgsNS4yYzEuNy0zLjYsMy4yLTYuNiw0LjYtOS41YzIsMS42LDQsMC42LDUuOSwxYzIsMC40LDMuOSwwLjgsNiwxLjNjMCwxLjQsMCwyLjUsMCwzLjljMS41LTEuMSwyLjgtMiw0LTIuOWMwLjQtMC4yLDAuOS0wLjIsMS4yLTAuM2MwLjYsMS4xLDEuMiwyLDEuOCwzYzEuOSwwLDQsMC42LDUuNS0wLjFjMi45LTEuMyw1LjgtMC42LDktMWMwLjQsMC41LDAuOSwxLjIsMS41LDEuN2MwLjcsMC42LDEuNSwxLDIuOCwxLjljMC0yLjYsMC00LjUsMC02LjVjMS44LDAsMy4zLDAsNC41LDBjMi44LDEuNCwwLjgsNC4xLDIuMiw2LjJjMS44LTAuOCwzLjYtMS42LDUuMi0yLjNjMC4yLTEuNCwwLjQtMi4yLDAuNS0yLjljMy42LDAuNiw2LjgsMS40LDEwLjEsMS43YzIuMSwwLjIsNC4xLDAuMyw1LjgsMS43YzEuMiwxLDIuNiwxLjYsNC4xLDIuNWM1LjgtMS44LDEwLjYtNi43LDE2LjktNi4xYzEuOCwxLjMsMy4yLDIuMiw0LjYsMy4zYzEuNCwxLjEsMi42LDIuMyw0LjQsMy44YzAsMC4yLDAsMSwwLDEuOWMxLjgtMC44LDIuNC0yLjcsNC4zLTMuMWMxLjYtMC4zLDIuOS0xLjgsNC41LTIuOWMxLjIsMC4xLDIuNywwLjIsNC4zLDAuM2MtMC41LDEuMS0wLjgsMS45LTEuMywzLjFjMi0wLjksMy40LTEuNSw0LjctMi4xYzAuMywwLjgsMC41LDEuMywwLjgsMmMwLjktMC40LDEuNS0wLjcsMi4yLTEuMWMwLjIsMC42LDAuNCwxLjIsMC43LDEuOWMxLjgtMC4zLDMuNywwLjQsNS4zLTAuOGMwLjMsMC4zLDAuNiwwLjUsMC45LDAuOGMwLjctMSwxLjQtMi4xLDIuMS0zLjFjMC4yLDAsMC40LTAuMSwwLjUsMGMwLjUsMC4zLDEuMSwwLjcsMSwwLjZjMi45LTAuMyw1LjItMC41LDcuNS0wLjhjMC4yLDEuMywwLjQsMi4yLDAuNiwzLjRjMy01LjgsMTAuNS01LjksMTMuOC0zLjZjMC44LDEuMiwxLjUsMi4zLDIuMSwzLjFjMS41LDAsMi42LDAsMy44LDBjLTAuNy0xLjMtMS4zLTIuMy0xLjktMy40YzEuMS0wLjUsMi4yLTEuMSwzLjYtMS43YzAuMywxLjMsMC41LDIuMywwLjYsMi45YzAuOSwwLjUsMS40LDAuNywyLDFjLTAuNiwxLjEtMSwxLjktMS41LDNjMS40LDAuOSwyLjcsMS42LDQuMSwyLjRjMC43LTEuMSwxLjItMiwxLjgtMi45YzAuMiwxLjYsMCwzLjYtMC41LDQuOWMtMC4xLDAuMiwwLjIsMC42LDAuMywwLjljMC4xLDAuMSwwLjMsMC4yLDAuNCwwLjJjMC4zLDAsMC42LTAuMSwwLjktMC4yYzAuNi0yLjksMC42LTIuOSwzLjMtNC41Yy0wLjQtMS0wLjctMS45LTEuMy0zLjNjMS4xLDAsMS43LTAuMSwyLjQsMGMwLjYsMC4xLDEuMiwwLjMsMS44LDAuNGM0LjgsMC44LDkuNCw0LDE0LjcsMS4yYzEsMS4yLDEuOSwyLjQsMi43LDMuM2MyLjYsMC4yLDMuOS0wLjcsMy43LTMuM2MtMC42LTAuOC0xLjQtMS43LTIuMy0yLjhjMS43LTIuMiwzLjMtNC4xLDUtNi4yYzEuMywwLjYsMi4zLDEsMi44LDEuM2MwLjcsMi44LDEuMiw1LDEuNyw3YzMuMSwwLjksMy43LTIsNS42LTIuN2MwLjMsMC43LDAuNSwxLjMsMC42LDEuN2MyLjYsMCw1LjEsMCw3LjcsMGMwLTEuMywwLTIuNCwwLTMuNGMxLTAuNSwxLjgtMC45LDMtMS41YzIuMSwxLjksNC40LDQsNi42LDZjMSwwLDIsMCwyLjYsMGMxLjItMS41LDIuMi0yLjcsMy4xLTMuOWMwLjgsMC45LDEuMywxLjUsMS45LDIuMmMwLjktMS40LDEuNS0yLjQsMi4zLTMuN2MxLjgsMC42LDMuNiwwLjgsNSwxLjZjNC4xLDIuNCw4LjUsMi4yLDEyLjgsMS42YzYuNi0wLjksMTIuNS0xLjQsMTcuMiwwLjJjMi4zLDAuOCw0LjYsMS4yLDYuNiwwLjljNC0yLjUsNy42LTQuOCwxMC42LTYuOGMyLDAuNiwzLjIsMC45LDQuNSwxLjNjMC43LDEuOCwxLjUsMy42LDIuMyw1LjZjMC43LTEuMSwxLjItMiwxLjgtMi45YzEuNC0wLjQsMi44LTAuOSw0LjEtMS4yYzAuNiwxLjUsMS4xLDIuOCwxLjgsNC41YzIuNy02LjMsOC4yLTcuMSwxMy41LTguNWMyLDMuNCw0LDYuOCw2LjQsMTAuN2MwLjktMS45LDEuNi0zLjMsMi4xLTQuM2MxLjQtMC42LDIuNi0xLjIsNC44LTIuMWMtMy0wLjgtNS41LDAuNi02LjctMS40YzAuNC0xLjgsMC43LTMuMywxLTQuOWMwLjgsMCwxLjYsMCwyLjUsMGMwLjEsMC41LDAuMiwxLDAuMywxLjZjMS44LDAuNSwzLjgsMS4xLDUuNywxLjZjMC4zLDAuNiwwLjUsMS4zLDEsMi4zYzIuNi0yLDQuOC0zLjcsNy01LjRjMC41LDEuOSwwLjksMy43LDEuNSw1LjljLTIuMywwLTQuMywwLTYuMiwwYzAuNSwxLjEsMC45LDEuOSwxLjMsMi44YzIuNCwwLjYsNC4zLTAuMyw2LjEtMS43YzAuNS0wLjQsMS41LTAuMSwyLjMtMC4xYzAuMiwxLjIsMC40LDIuMSwwLjcsMy40YzEuMy0wLjksMi4yLTEuNiwzLjctMi43YzAuOSwxLDEuOSwyLjEsMywzLjNjMS45LDAuMiwyLjctMS4xLDMuMS0yLjdjMC0wLjIsMC42LTAuMiwxLjEtMC4zYzAuMiwwLjMsMC40LDAuNiwwLjcsMWMwLjMsMC40LDAuNiwwLjksMS40LDIuMWMwLjktMS4zLDEuNC0yLjEsMi0zYzAsMCwwLjIsMC4xLDAuMywwLjJjMC4yLDAuNiwwLjQsMS4yLDAuNiwxLjhjMS43LTAuOSwzLjctMi43LDUuMy00LjljMC4yLDAuNiwwLjUsMS4xLDAuNiwxLjZjMi4xLTEuMiw0LjItMi40LDYuMi0zLjdjMC40LDAuMywwLjcsMC42LDEuMiwxYzAuNi0xLjEsMS4yLTIsMS43LTIuOWMxLjgsMCwzLjYsMCw1LjQsMGMwLjYsMSwxLjEsMS45LDEuNCwyLjNjNS4yLTEsMTAtMC42LDE0LjcsMi4xYzAuNSwxLjMsMSwyLjksMS43LDUuMWMxLjctMy41LDMuMS02LjUsNC42LTkuNmMwLjQsMC4zLDAuNiwwLjcsMC44LDAuN2MyLjQsMC4yLDQuOSwwLjQsNi44LDAuNWMxLjcsMC41LDIuOCwwLjksNCwxLjNjMC4xLDEuMiwwLjMsMi40LDAuNCwzLjdjMS45LTEuMiwzLjQtMi4zLDUtMy4zYzAuOCwxLjMsMS41LDIuMywyLjIsMy40YzQuOC0wLjUsOS41LTEsMTMuNy0xLjRjMS43LDEuNCwyLjksMi41LDQuNyw0LjFjMC4xLTIuNCwwLjEtNCwwLjItNS42YzAtMC40LDAuMi0wLjksMC40LTEuM2MxLjUsMCwyLjgsMCw0LjEsMGMwLjUsMC41LDEsMSwxLjYsMS42YzAsMS4zLDAsMi43LDAsNC4yYzIuNSwwLjYsNC4xLTAuNiw1LjctMi4xYzAuMi0wLjksMC4zLTEuOCwwLjUtMi44YzQuNSwxLjIsOC44LDIuNCwxMy4yLDJjMi4zLDEuNCw0LjQsMi43LDcsNC4yYzIuMy0xLjEsNS0yLjQsNy42LTMuN2MzLTEuNSw2LTIuOSw5LjQtMi41YzIuOSwyLjIsNS43LDQuNSw4LjUsNi43YzAuMSwwLjgsMC4yLDEuNSwwLjMsMmMyLjktMiw1LjctMy44LDguMy01LjZjMS41LDAsMywwLDQuNiwwYy0wLjEsMC43LTAuMiwxLjEtMC40LDEuNmMtMC4xLDAuMy0wLjQsMC42LTEuNCwxLjljMi42LTEuMiw0LTEuOCw1LjQtMi41YzAuMiwwLjcsMC40LDEuMywwLjcsMi4xYzAuOC0wLjUsMS41LTAuOCwyLjItMS4yYzAuMiwwLjYsMC40LDEuMSwwLjYsMS43YzIuMiwxLjEsNC4zLTEsNi42LDBjMC42LTEsMS4zLTIsMi0zYzAuOSwwLjUsMS42LDAuOSwyLjIsMS4zYzIuMy0xLjYsNC42LTEuMSw3LjEtMC45YzAsMS4xLDAsMS45LDAsMi43YzEuMi0zLDMuNi0zLjcsNi40LTMuOWMyLjctMi43LDUsMC42LDcuMywwLjJjMC45LDEuNSwxLjcsMi43LDIuMywzLjdjMS40LDAsMi41LDAsMy43LDBjLTAuNi0xLjMtMS4yLTIuNC0xLjgtMy42YzEuMy0wLjUsMi40LTEsMy42LTEuNWMwLjIsMS4zLDAuMywyLjIsMC41LDIuOWMwLjgsMC4zLDEuMywwLjUsMi4xLDAuOGMtMC41LDEuMS0wLjksMS45LTEuNSwzYzEuMywwLjksMi42LDEuNywzLjksMi41YzAuNy0xLDEuMy0yLDEuOS0yLjljMC4yLDAuMSwwLjQsMC4yLDAuNiwwLjNjLTAuMywxLjgtMC42LDMuNi0xLDUuNWMwLjUsMC4xLDAuOSwwLjEsMS40LDAuMmMwLjQtMS4xLDAuNS0yLjMsMS4xLTMuMWMwLjYtMC44LDEuNi0xLjIsMi41LTEuN2MtMC41LTEuMS0wLjktMS45LTEuMy0yLjljMy4xLTEsNS41LDAuNyw4LjEsMS4xYzEuOCwwLjMsMy41LDEuNCw1LjMsMS41YzEuNywwLjEsMy40LTAuNiw1LjEtMC45YzEuNywwLjgsMi4yLDMuNCw0LjcsM2MwLDguNywwLDE3LjMsMCwyNmMtMi4zLDAtNC42LDAtNi43LDBjLTAuMywwLjktMC41LDEuNC0wLjcsMmMtMC41LTAuNC0wLjgtMC43LTEuNC0xLjFjLTAuMiwxLjEtMC4zLDItMC40LDIuN2MtMC42LTAuNi0xLjMtMS4zLTEuOC0xLjhjLTMsMC4yLTUuNSwwLTcuOCwwLjVjLTUuMSwxLjItNy4xLDAuNS05LjUtNC4xYy0yLjcsMS01LjIsMS4xLTcuOSwwLjFjLTAuNy0wLjMtMS42LTAuNS0yLjMtMC4zYy0xLjUsMC41LTIuOCwxLjMtNC4yLDEuOWMtMC4zLDAuMS0wLjktMC4yLTEuNC0wLjNjMC40LTEuMiwwLjgtMi4zLDEuNS00LjRjLTMuNywyLjMtNi41LDMuOS05LjYsNS45Yy00LjctMC40LTguMy0zLjktMTIuOC02LjJjLTEuOCwwLTMuOCwwLTUuMywwYy0wLjgtMS4xLTEuNS0yLTIuNy0zLjZjMCwyLjEsMCwzLjIsMCw0LjNjLTMuOCwxLjYtNy42LDIuNC0xMC44LDIuM2MtMS4xLTEuMy0yLjMtMi43LTMuNi00LjNjLTEsMS44LTAuNCw0LjItMy40LDQuNWMtMi45LTEuMi02LjMtMi43LTkuOS00LjJjLTEuNiwyLTMuMiw0LTUsNi4zYy00LTEuNS04LDEuOC0xMi4xLDAuMmMtMC41LDAuMy0wLjksMC41LTEuMywwLjdjLTEuNC0xLTIuNy0xLjgtMy42LTIuNWMtMC45LTIuOC0xLjctNS4yLTIuNS03LjljLTEuMiwxLjItMiwyLTMsM2MwLDEuMywwLDIuOCwwLDQuMWMtNSwwLjUtOS43LDItMTQuNiwwLjljLTAuMi0wLjktMC4zLTEuOC0wLjYtM2MtMS4xLDAuNS0xLjksMC45LTIuNiwxLjNjLTEuNy0wLjYtMy4yLTEuMi00LjktMS44Yy0wLjUsMC45LTEuMSwxLjgtMS43LDIuOGMtMC40LTAuOS0wLjktMS44LTEuMi0yLjRjMC4yLTAuNywwLjMtMS4xLDAuNy0yLjFjLTIuNywxLjQtNC43LDIuNC02LjcsMy40Yy0xLjgtMy4zLTQuOC02LjEtNi4xLTUuNmMtMC40LDAuNC0wLjksMC45LTEuMywxLjVjMC4zLDAuNywwLjYsMS4zLDEuMSwyLjNjLTAuOC0wLjEtMS4zLTAuMS0xLjgtMC4xYy0wLjItMS4yLTAuMy0yLTAuNi0zLjVjLTEuNCwxLjEtMi4zLDEuOC0zLjMsMi41Yy0wLjMtMC44LTAuNS0xLjMtMC44LTIuMmMtMS4xLDEuNi0yLjEsMi45LTMuMSw0LjRjLTIuMy0wLjgtNC43LTAuOC01LjYtMy44Yy0wLjUtMS40LTIuMS0yLjMtMy4xLTMuNGMtMC44LDEuMS0xLjUsMi4xLTIuMiwzLjFjLTEuOS0wLjUtMy41LTAuOS01LjUtMS40YzAuNSwxLDAuNywxLjQsMSwyYy0wLjgsMC41LTEuNiwwLjktMi40LDEuM2MtMC40LTEtMC43LTEuNi0xLjEtMi40Yy0xLjUsMC44LTIuNywxLjQtMy44LDJjLTAuNywxLjYtMS4yLDMtMS44LDQuM2MtMS40LTEuOC0yLjYtMy4zLTMuOC00LjhjLTAuMS0wLjctMC4xLTEuNS0wLjItMi4xYy0xLjgsMC0zLjMsMC00LDBjLTMuMSwxLjktNS42LDMuNC04LjMsNWMtMC40LTAuOC0wLjctMS41LTEuMy0yLjZjLTEuNCwwLjctMi43LDEuNC00LjEsMi4xYy0wLjMtMC4yLTAuOS0wLjUtMS42LTFjLTEsMS40LTEuOSwyLjctMi44LDMuOWMtMC4xLDAuMS0wLjQsMC4xLTAuNywwLjFjLTAuMi0xLTAuMy0xLjgtMC41LTMuMWMtMC41LDEuMS0wLjgsMS43LTEuNiwzLjNjMC0yLjIsMC0zLjUsMC00LjdjLTAuMywwLjItMC42LDAuMy0wLjgsMC41Yy0xLjEtMS4yLTIuMy0yLjMtMy42LTMuNmMtMy4zLDEuMi0yLjksNS40LTQuNyw3LjZjLTQuOSwwLjUtOS4zLDAuOS0xMy44LDEuNGMtMC4xLTEuMi0wLjItMi0wLjMtMi45Yy0xLjUsMC0yLjksMC00LjIsMGMtMS41LDAuNy0yLjksMS4zLTQuMiwyYy0wLjMtMC45LTAuNi0xLjUtMC45LTIuNGMtNi43LDEtMTIuNSw0LjQtMTkuMSw2LjZjLTAuOS0xLjItMS45LTIuNC0yLjYtMy40Yy0yLjksMS45LTUuNSwyLjktOC43LDEuMmMtMC41LDAuOS0xLjEsMS45LTEuNiwyLjhjLTAuNywwLTEuMywwLTIuMiwwYy0wLjYtMC45LTEuMy0yLTEuOC0yLjhjLTIuMSwwLjMtNC4xLDAuNy01LjgsMC45Yy0wLjktMC45LTEuNS0xLjUtMi4xLTIuMWMtMS4zLDAuNi01LjgsMS4xLTYuOCwxLjJjLTIuNSwwLjItNC45LDAuNi04LjEsMWMtMC4yLDAuNC0wLjYsMS4zLTEsMmMtMi0wLjYtMy41LTEuMS01LjMtMS42Yy0wLjYsMC44LTEuMSwxLjYtMiwzYy0wLjctMi0xLjItMy4zLTEuNy00LjdjLTEsMS4xLTEuOSwyLjItMi40LDIuOGMtMS45LDAtMi45LDAtNCwwYy0wLjEtMS0wLjEtMS44LTAuMi0yLjRjLTIsMC4zLTQuMSwwLTUuNiwwLjljLTIuMywxLjMtNC44LDEuMS02LjcsMC41Yy0yLjMtMC44LTQuNS0xLjMtNi41LTAuM2MtMi4xLDEuMS00LjctMC41LTYuNCwxLjVjMCwwLjEtMC41LTAuMy0xLTAuNWMwLjQtMC45LDAuOS0xLjksMS4zLTIuOWMtMC45LTAuNy0xLjYtMS4yLTIuOC0yLjFDNDMzLjgsNDMuOCw0MzIuNCw0Ni41LDQzMC45LDQ5LjJ6Ii8+DQoJCTwvZz4NCgk8L2c+DQo8L3N2Zz4=) bottom repeat-x;
-    background-size: auto 0.25em;
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .open-book strike {
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA4MDAgNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDgwMCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KCTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJCS5zdDB7ZmlsbDojQ0MwMDAwO30NCgk8L3N0eWxlPg0KCTxnIGlkPSJZMkJjMjcudGlmIj4NCgkJPGc+DQoJCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDMwLjksNDkuMmMtMSwwLTIsMC0zLDBjLTAuMS0wLjMtMC4yLTAuOC0wLjQtMC44Yy0xLjgtMC40LTQtMC4zLTUuNC0xLjNjLTEuOC0xLjQtNC4zLDAuMS01LjgtMS45Yy00LjMtMS04LjUtMi4zLTEyLjgtMi45Yy0zLjQtMC41LTYuOS0wLjEtMTAuMy0wLjFjLTAuMywwLjgtMC41LDEuNC0wLjcsMmMtMC41LTAuMy0wLjktMC42LTEuNC0xYy0wLjIsMS4yLTAuMywyLjEtMC42LDMuN2MtMS0xLjMtMS41LTIuMS0xLjktMi42Yy0yLjgsMC01LjMtMC41LTcuNCwwLjFjLTIuMiwwLjctMy43LDAuOC01LjktMC4xYy0yLjItMC45LTIuOS0yLjYtNC00Yy0yLjUsMS4yLTUuMSwxLjEtNy41LDAuMmMtMS4yLTAuNS0yLTAuNi0zLjEsMC4xYy0xLjIsMC43LTIuNiwxLTMuOSwxLjRjLTAuMiwwLjEtMC42LTAuMi0wLjgtMC4zYy0xLjItMS4zLDIuNC0yLjMsMC0zLjdjLTIuNiwxLjYtNS4yLDMuMy04LDVjLTAuOCwwLTEuOSwwLjMtMi43LTAuMWMtMi40LTEuMS00LjgtMi4zLTYuOS0zLjljLTEuOS0xLjUtMy45LTIuMi02LjItMmMtMSwwLjEtMiwwLTIuOCwwYy0wLjgtMS4xLTEuNC0yLTIuNy0zLjljMCwyLjMsMCwzLjYsMCw0LjljLTMuNywwLjgtNywxLjYtMTAuMywyLjNjLTEuNC0xLjgtMi42LTMuMi0zLjktNC45Yy0wLjQsMC44LTAuNiwxLjItMC43LDEuNmMtMC44LDMuMi0xLDMuMS00LjIsMi4zYy0yLjktMC43LTUuNC0yLjQtOC40LTMuNmMtMS42LDItMy4yLDQtNS4yLDYuNWMtMy44LTIuMi03LjgsMi0xMS45LDBjLTAuNCwwLjMtMC44LDAuNS0xLjIsMC44Yy0xLjQtMC45LTIuNy0xLjgtMy44LTIuNWMtMC44LTIuNy0xLjYtNS4yLTIuNC04LjJjLTEuMiwxLjMtMS45LDIuMi0zLDMuNGMwLDEsMCwyLjUsMCwzLjljLTUuMSwwLjYtOS45LDIuMS0xNS4xLDAuOWMwLTEsMC0xLjcsMC0yLjljLTEuMSwwLjUtMS45LDAuOS0yLjcsMS4zYy0xLjYtMC42LTMuMS0xLjItNC44LTEuOWMtMC42LDAuOC0xLjIsMS44LTEuOSwyLjhjLTAuNC0wLjktMC44LTEuNy0xLjItMi40YzAuMi0wLjQsMC40LTAuOSwxLjEtMi4yYy0zLDEuNS01LDIuNS03LjEsMy42Yy0xLTMtMy40LTQuNS02LTUuN2MtMC41LDAuNi0xLjEsMS4xLTEuNSwxLjZjMC41LDAuOSwwLjgsMS41LDEuMSwyLjJjLTAuOCwwLTEuMSwwLTEuNywwYy0wLjItMS0wLjQtMi0wLjctMy41Yy0xLjMsMC45LTIuMywxLjYtMy4zLDIuM2MtMC4yLTAuNi0wLjUtMS4yLTAuOC0yYy0xLjEsMS41LTIuMSwyLjktMyw0LjJjLTUuMywwLjQtNS45LTUtOS4xLTYuOWMtMC43LDEtMS40LDItMiwzYy0xLjgtMC40LTMuMy0wLjgtNC44LTEuMWMtMC4yLDAtMC40LDAuMy0wLjYsMC41YzAuMywwLjMsMC42LDAuNiwxLDFjLTAuOCwwLjYtMS42LDEuMS0yLjUsMS43Yy0wLjUtMS0wLjgtMS42LTEuMi0yLjVjLTEuNSwwLjgtMi44LDEuNi0zLjgsMi4yYy0wLjcsMS43LTEuMiwyLjktMS42LDQuMWMtMS40LTEuNy0yLjYtMy4yLTQuMS01YzAtMC40LDAtMS4yLDAtMS45Yy0xLjcsMC0zLjEsMC0zLjksMGMtMy4xLDEuOS01LjYsMy40LTguMiw1LjFjLTAuNC0wLjgtMC43LTEuNS0xLjEtMi4yYy0wLjYsMC0xLjMsMC0yLjEsMGMtMC42LDAuNi0xLjMsMS4zLTIsMS45Yy0wLjUtMC40LTEtMC43LTEuOC0xLjNjLTEsMS40LTEuOSwyLjctMi44LDMuOWMtMC4xLDAuMi0wLjQsMC4xLTAuNywwLjJjLTAuMi0xLTAuNC0xLjktMC42LTMuMmMtMC41LDEtMC44LDEuNy0xLjUsMy4zYzAtMi4yLDAtMy40LDAtMy41Yy0xLjktMS45LTMuMS0zLjEtNC4zLTQuM2MtMy41LDEuMS0zLDUuNC00LjgsNy42Yy00LjgsMC41LTkuMywwLjktMTMuOCwxLjRjLTAuMS0xLjEtMC4yLTEuOS0wLjMtMi45Yy0xLjUsMC0yLjksMC00LjIsMGMtMS40LDAuNy0yLjgsMS4zLTQuMiwyYy0wLjMtMC45LTAuNi0xLjQtMC45LTIuM2MtNi43LDAuNi0xMi41LDQuNC0xOSw2LjNjLTAuOS0xLjItMS45LTIuMy0yLjYtMy4zYy0zLDEuOC01LjYsMy4xLTguNywxLjJjLTAuNSwxLTEuMSwxLjktMS42LDIuN2MtMi43LDAuOC0zLjMtMS4yLTQtMi43Yy0yLjIsMC40LTQuMiwwLjctNS45LDFjLTAuOS0wLjktMS41LTEuNS0yLjEtMi4xYy0xLjIsMC42LTUuOSwxLjEtNi44LDEuMmMtMi41LDAuMi00LjksMC42LTguMSwxYy0wLjIsMC40LTAuNywxLjMtMS4xLDJjLTItMC42LTMuNS0xLjEtNS4zLTEuNmMtMC42LDAuOC0xLjEsMS42LTIuMSwyLjljLTAuNy0xLjktMS4yLTMuMi0xLjctNC44Yy0xLDEuMi0xLjgsMi40LTIuMywzYy0xLjgsMC0zLDAtNCwwYy0wLjEtMS0wLjEtMS44LTAuMi0yLjNjLTIsMC4zLTQuMSwwLTUuNSwwLjljLTIuMywxLjMtNC44LDEuMS02LjcsMC41Yy0yLjMtMC44LTQuNi0xLjMtNi41LTAuM2MtMi4xLDEuMS00LjctMC41LTYuNCwxLjVjMCwwLjEtMC41LTAuMy0xLTAuNWMwLjQtMSwwLjktMS45LDEuMy0yLjljLTAuOS0wLjctMS42LTEuMi0yLjgtMi4xYy0xLjYsMy4xLTMsNS44LTQuNCw4LjVjLTEsMC0yLDAtMywwYy0wLjEtMC4zLTAuMi0wLjgtMC40LTAuOGMtMS44LTAuNC00LTAuMy01LjQtMS4zYy0xLjgtMS4zLTQuMywwLTUuOC0xLjlDMTAuOSw0NC4xLDUuNiw0Mi45LDAsNDEuN2MwLTguMSwwLTE2LjYsMC0yNS4yYzEtMC45LDIuMy0xLjcsMS44LTMuOGMtMC42LTAuNy0wLjYtMS41LTEuNS0yLjZDMS45LDguMSwyLjYsNiw0LjQsMy44YzEuMywwLjYsMi41LDEuMSwzLjcsMS42QzcuNSw4LDcuOCwxMC4yLDkuMywxMi4yYzAuNiwwLDEuMywwLDIuNCwwYzAuNy0wLjgsMS42LTIsMi43LTMuNGMwLjQsMS4xLDAuNiwxLjcsMC44LDIuMmMyLjYsMCw1LjEsMCw3LjksMGMwLTEuNCwwLTIuNSwwLTMuNWMxLTAuNCwxLjgtMC43LDIuOC0xLjJjMi4yLDEuOSw0LjYsMy45LDYuNyw1LjhjMS4yLDAsMi4xLDAsMi41LDBjMS4zLTEuNiwyLjMtMi43LDMuMy0zLjljMC41LDAuOSwwLjksMS42LDEuNiwyLjZjMS0xLjUsMS42LTIuNSwyLjMtMy41YzIuOSwwLDMtMC4xLDUuNSwxLjJjNC4xLDIuMiw4LjYsMi40LDEyLjcsMS4zYzMuMi0wLjgsNi4xLTAuMyw5LjItMC42YzMuMi0wLjQsNi4zLDAuMiw5LjQsMS41YzIuNywxLjEsNS41LDEsNy43LTAuOWMyLjctMi4zLDUuNC00LjQsOC42LTUuM2MxLjIsMC40LDIuMywwLjcsNCwxLjJjMC42LDEuNiwxLjQsMy40LDIuMiw1LjVjMC42LTEsMS4zLTIsMS43LTIuN2MxLjUtMC41LDIuOS0wLjksNC4xLTEuM2MwLjYsMS40LDEuMiwyLjcsMiw0LjRjMi42LTYuMiw4LTYuOSwxMy4yLTguNWMyLjEsMy40LDQuMiw2LjksNi42LDEwLjdjMS0xLjksMS42LTMuMywyLjMtNC42YzAuNywwLDEuNCwwLDIsMGMtMC4zLTAuMy0wLjYtMC42LTAuOS0xYzAuOC0wLjEsMS43LTAuMywyLjUtMC40Yy0wLjEtMC4yLTAuMy0wLjQtMC40LTAuNWMtMS41LDAtMi45LDAtNCwwYy0wLjgtMC43LTEuMy0xLjEtMS40LTEuMmMwLjQtMS44LDAuNy0zLjMsMS00LjdjMC45LDAsMS43LDAsMi40LDBjMC4yLDAuNywwLjQsMS4zLDAuNSwxLjZjMi4xLDAuNiwzLjksMS4xLDUuNSwxLjZjMC4yLDAuNywwLjUsMS4yLDAuNywxLjhjMS4yLTAuNSwyLjQtMC43LDMuMi0xLjRjMS40LTEuMiwyLjUtMi42LDMuOS00LjJjMC42LDIuNCwxLjEsNC4zLDEuNiw2LjNjLTIuNCwwLjEtNC4zLDAuMi02LjMsMC40YzAuNiwwLjcsMC45LDEsMS4xLDEuNWMwLjIsMC40LDAuMiwwLjksMC4zLDEuM2MxLjYtMC4xLDMsMC40LDQuMy0wLjljMC43LTAuNywyLTAuOCwzLTFjMC40LTAuMSwwLjksMC4yLDEuMiwwLjJjMC4yLDEuMSwwLjMsMS45LDAuNiwzLjRjMS4zLTEuMSwyLjItMS44LDMuMy0yLjdjMC44LDEuMSwxLjcsMi4yLDIuMSwyLjhjMy40LDEsMy44LTEuMyw0LjktMy40YzAuOSwxLjMsMS40LDIsMi4xLDMuMWMxLTAuOSwxLjgtMS43LDIuNi0yLjRjMC4zLDAuNywwLjcsMS40LDEsMi4xYzEuNC0wLjQsMi41LTEsMi40LTIuNmMxLjYsMC4xLDEuOC0xLjUsMi42LTIuN2MwLjQsMS4xLDAuNiwxLjcsMC43LDJjMi4xLTEuMiw0LjEtMi40LDYuMi0zLjdjMC4zLDAuMywwLjcsMC42LDEuMiwxYzAuNy0xLDEuMy0yLDEuOS0zYzEuNywwLDMuMywwLDUuMiwwYzAuNSwwLjksMS4xLDEuOCwxLjYsMi42YzUtMS42LDkuOC0wLjUsMTQuNSwxLjdjMC41LDEuNSwxLjEsMywxLjgsNS4yYzEuNy0zLjYsMy4yLTYuNiw0LjYtOS41YzIsMS42LDQsMC42LDUuOSwxYzIsMC40LDMuOSwwLjgsNiwxLjNjMCwxLjQsMCwyLjUsMCwzLjljMS41LTEuMSwyLjgtMiw0LTIuOWMwLjQtMC4yLDAuOS0wLjIsMS4yLTAuM2MwLjYsMS4xLDEuMiwyLDEuOCwzYzEuOSwwLDQsMC42LDUuNS0wLjFjMi45LTEuMyw1LjgtMC42LDktMWMwLjQsMC41LDAuOSwxLjIsMS41LDEuN2MwLjcsMC42LDEuNSwxLDIuOCwxLjljMC0yLjYsMC00LjUsMC02LjVjMS44LDAsMy4zLDAsNC41LDBjMi44LDEuNCwwLjgsNC4xLDIuMiw2LjJjMS44LTAuOCwzLjYtMS42LDUuMi0yLjNjMC4yLTEuNCwwLjQtMi4yLDAuNS0yLjljMy42LDAuNiw2LjgsMS40LDEwLjEsMS43YzIuMSwwLjIsNC4xLDAuMyw1LjgsMS43YzEuMiwxLDIuNiwxLjYsNC4xLDIuNWM1LjgtMS44LDEwLjYtNi43LDE2LjktNi4xYzEuOCwxLjMsMy4yLDIuMiw0LjYsMy4zYzEuNCwxLjEsMi42LDIuMyw0LjQsMy44YzAsMC4yLDAsMSwwLDEuOWMxLjgtMC44LDIuNC0yLjcsNC4zLTMuMWMxLjYtMC4zLDIuOS0xLjgsNC41LTIuOWMxLjIsMC4xLDIuNywwLjIsNC4zLDAuM2MtMC41LDEuMS0wLjgsMS45LTEuMywzLjFjMi0wLjksMy40LTEuNSw0LjctMi4xYzAuMywwLjgsMC41LDEuMywwLjgsMmMwLjktMC40LDEuNS0wLjcsMi4yLTEuMWMwLjIsMC42LDAuNCwxLjIsMC43LDEuOWMxLjgtMC4zLDMuNywwLjQsNS4zLTAuOGMwLjMsMC4zLDAuNiwwLjUsMC45LDAuOGMwLjctMSwxLjQtMi4xLDIuMS0zLjFjMC4yLDAsMC40LTAuMSwwLjUsMGMwLjUsMC4zLDEuMSwwLjcsMSwwLjZjMi45LTAuMyw1LjItMC41LDcuNS0wLjhjMC4yLDEuMywwLjQsMi4yLDAuNiwzLjRjMy01LjgsMTAuNS01LjksMTMuOC0zLjZjMC44LDEuMiwxLjUsMi4zLDIuMSwzLjFjMS41LDAsMi42LDAsMy44LDBjLTAuNy0xLjMtMS4zLTIuMy0xLjktMy40YzEuMS0wLjUsMi4yLTEuMSwzLjYtMS43YzAuMywxLjMsMC41LDIuMywwLjYsMi45YzAuOSwwLjUsMS40LDAuNywyLDFjLTAuNiwxLjEtMSwxLjktMS41LDNjMS40LDAuOSwyLjcsMS42LDQuMSwyLjRjMC43LTEuMSwxLjItMiwxLjgtMi45YzAuMiwxLjYsMCwzLjYtMC41LDQuOWMtMC4xLDAuMiwwLjIsMC42LDAuMywwLjljMC4xLDAuMSwwLjMsMC4yLDAuNCwwLjJjMC4zLDAsMC42LTAuMSwwLjktMC4yYzAuNi0yLjksMC42LTIuOSwzLjMtNC41Yy0wLjQtMS0wLjctMS45LTEuMy0zLjNjMS4xLDAsMS43LTAuMSwyLjQsMGMwLjYsMC4xLDEuMiwwLjMsMS44LDAuNGM0LjgsMC44LDkuNCw0LDE0LjcsMS4yYzEsMS4yLDEuOSwyLjQsMi43LDMuM2MyLjYsMC4yLDMuOS0wLjcsMy43LTMuM2MtMC42LTAuOC0xLjQtMS43LTIuMy0yLjhjMS43LTIuMiwzLjMtNC4xLDUtNi4yYzEuMywwLjYsMi4zLDEsMi44LDEuM2MwLjcsMi44LDEuMiw1LDEuNyw3YzMuMSwwLjksMy43LTIsNS42LTIuN2MwLjMsMC43LDAuNSwxLjMsMC42LDEuN2MyLjYsMCw1LjEsMCw3LjcsMGMwLTEuMywwLTIuNCwwLTMuNGMxLTAuNSwxLjgtMC45LDMtMS41YzIuMSwxLjksNC40LDQsNi42LDZjMSwwLDIsMCwyLjYsMGMxLjItMS41LDIuMi0yLjcsMy4xLTMuOWMwLjgsMC45LDEuMywxLjUsMS45LDIuMmMwLjktMS40LDEuNS0yLjQsMi4zLTMuN2MxLjgsMC42LDMuNiwwLjgsNSwxLjZjNC4xLDIuNCw4LjUsMi4yLDEyLjgsMS42YzYuNi0wLjksMTIuNS0xLjQsMTcuMiwwLjJjMi4zLDAuOCw0LjYsMS4yLDYuNiwwLjljNC0yLjUsNy42LTQuOCwxMC42LTYuOGMyLDAuNiwzLjIsMC45LDQuNSwxLjNjMC43LDEuOCwxLjUsMy42LDIuMyw1LjZjMC43LTEuMSwxLjItMiwxLjgtMi45YzEuNC0wLjQsMi44LTAuOSw0LjEtMS4yYzAuNiwxLjUsMS4xLDIuOCwxLjgsNC41YzIuNy02LjMsOC4yLTcuMSwxMy41LTguNWMyLDMuNCw0LDYuOCw2LjQsMTAuN2MwLjktMS45LDEuNi0zLjMsMi4xLTQuM2MxLjQtMC42LDIuNi0xLjIsNC44LTIuMWMtMy0wLjgtNS41LDAuNi02LjctMS40YzAuNC0xLjgsMC43LTMuMywxLTQuOWMwLjgsMCwxLjYsMCwyLjUsMGMwLjEsMC41LDAuMiwxLDAuMywxLjZjMS44LDAuNSwzLjgsMS4xLDUuNywxLjZjMC4zLDAuNiwwLjUsMS4zLDEsMi4zYzIuNi0yLDQuOC0zLjcsNy01LjRjMC41LDEuOSwwLjksMy43LDEuNSw1LjljLTIuMywwLTQuMywwLTYuMiwwYzAuNSwxLjEsMC45LDEuOSwxLjMsMi44YzIuNCwwLjYsNC4zLTAuMyw2LjEtMS43YzAuNS0wLjQsMS41LTAuMSwyLjMtMC4xYzAuMiwxLjIsMC40LDIuMSwwLjcsMy40YzEuMy0wLjksMi4yLTEuNiwzLjctMi43YzAuOSwxLDEuOSwyLjEsMywzLjNjMS45LDAuMiwyLjctMS4xLDMuMS0yLjdjMC0wLjIsMC42LTAuMiwxLjEtMC4zYzAuMiwwLjMsMC40LDAuNiwwLjcsMWMwLjMsMC40LDAuNiwwLjksMS40LDIuMWMwLjktMS4zLDEuNC0yLjEsMi0zYzAsMCwwLjIsMC4xLDAuMywwLjJjMC4yLDAuNiwwLjQsMS4yLDAuNiwxLjhjMS43LTAuOSwzLjctMi43LDUuMy00LjljMC4yLDAuNiwwLjUsMS4xLDAuNiwxLjZjMi4xLTEuMiw0LjItMi40LDYuMi0zLjdjMC40LDAuMywwLjcsMC42LDEuMiwxYzAuNi0xLjEsMS4yLTIsMS43LTIuOWMxLjgsMCwzLjYsMCw1LjQsMGMwLjYsMSwxLjEsMS45LDEuNCwyLjNjNS4yLTEsMTAtMC42LDE0LjcsMi4xYzAuNSwxLjMsMSwyLjksMS43LDUuMWMxLjctMy41LDMuMS02LjUsNC42LTkuNmMwLjQsMC4zLDAuNiwwLjcsMC44LDAuN2MyLjQsMC4yLDQuOSwwLjQsNi44LDAuNWMxLjcsMC41LDIuOCwwLjksNCwxLjNjMC4xLDEuMiwwLjMsMi40LDAuNCwzLjdjMS45LTEuMiwzLjQtMi4zLDUtMy4zYzAuOCwxLjMsMS41LDIuMywyLjIsMy40YzQuOC0wLjUsOS41LTEsMTMuNy0xLjRjMS43LDEuNCwyLjksMi41LDQuNyw0LjFjMC4xLTIuNCwwLjEtNCwwLjItNS42YzAtMC40LDAuMi0wLjksMC40LTEuM2MxLjUsMCwyLjgsMCw0LjEsMGMwLjUsMC41LDEsMSwxLjYsMS42YzAsMS4zLDAsMi43LDAsNC4yYzIuNSwwLjYsNC4xLTAuNiw1LjctMi4xYzAuMi0wLjksMC4zLTEuOCwwLjUtMi44YzQuNSwxLjIsOC44LDIuNCwxMy4yLDJjMi4zLDEuNCw0LjQsMi43LDcsNC4yYzIuMy0xLjEsNS0yLjQsNy42LTMuN2MzLTEuNSw2LTIuOSw5LjQtMi41YzIuOSwyLjIsNS43LDQuNSw4LjUsNi43YzAuMSwwLjgsMC4yLDEuNSwwLjMsMmMyLjktMiw1LjctMy44LDguMy01LjZjMS41LDAsMywwLDQuNiwwYy0wLjEsMC43LTAuMiwxLjEtMC40LDEuNmMtMC4xLDAuMy0wLjQsMC42LTEuNCwxLjljMi42LTEuMiw0LTEuOCw1LjQtMi41YzAuMiwwLjcsMC40LDEuMywwLjcsMi4xYzAuOC0wLjUsMS41LTAuOCwyLjItMS4yYzAuMiwwLjYsMC40LDEuMSwwLjYsMS43YzIuMiwxLjEsNC4zLTEsNi42LDBjMC42LTEsMS4zLTIsMi0zYzAuOSwwLjUsMS42LDAuOSwyLjIsMS4zYzIuMy0xLjYsNC42LTEuMSw3LjEtMC45YzAsMS4xLDAsMS45LDAsMi43YzEuMi0zLDMuNi0zLjcsNi40LTMuOWMyLjctMi43LDUsMC42LDcuMywwLjJjMC45LDEuNSwxLjcsMi43LDIuMywzLjdjMS40LDAsMi41LDAsMy43LDBjLTAuNi0xLjMtMS4yLTIuNC0xLjgtMy42YzEuMy0wLjUsMi40LTEsMy42LTEuNWMwLjIsMS4zLDAuMywyLjIsMC41LDIuOWMwLjgsMC4zLDEuMywwLjUsMi4xLDAuOGMtMC41LDEuMS0wLjksMS45LTEuNSwzYzEuMywwLjksMi42LDEuNywzLjksMi41YzAuNy0xLDEuMy0yLDEuOS0yLjljMC4yLDAuMSwwLjQsMC4yLDAuNiwwLjNjLTAuMywxLjgtMC42LDMuNi0xLDUuNWMwLjUsMC4xLDAuOSwwLjEsMS40LDAuMmMwLjQtMS4xLDAuNS0yLjMsMS4xLTMuMWMwLjYtMC44LDEuNi0xLjIsMi41LTEuN2MtMC41LTEuMS0wLjktMS45LTEuMy0yLjljMy4xLTEsNS41LDAuNyw4LjEsMS4xYzEuOCwwLjMsMy41LDEuNCw1LjMsMS41YzEuNywwLjEsMy40LTAuNiw1LjEtMC45YzEuNywwLjgsMi4yLDMuNCw0LjcsM2MwLDguNywwLDE3LjMsMCwyNmMtMi4zLDAtNC42LDAtNi43LDBjLTAuMywwLjktMC41LDEuNC0wLjcsMmMtMC41LTAuNC0wLjgtMC43LTEuNC0xLjFjLTAuMiwxLjEtMC4zLDItMC40LDIuN2MtMC42LTAuNi0xLjMtMS4zLTEuOC0xLjhjLTMsMC4yLTUuNSwwLTcuOCwwLjVjLTUuMSwxLjItNy4xLDAuNS05LjUtNC4xYy0yLjcsMS01LjIsMS4xLTcuOSwwLjFjLTAuNy0wLjMtMS42LTAuNS0yLjMtMC4zYy0xLjUsMC41LTIuOCwxLjMtNC4yLDEuOWMtMC4zLDAuMS0wLjktMC4yLTEuNC0wLjNjMC40LTEuMiwwLjgtMi4zLDEuNS00LjRjLTMuNywyLjMtNi41LDMuOS05LjYsNS45Yy00LjctMC40LTguMy0zLjktMTIuOC02LjJjLTEuOCwwLTMuOCwwLTUuMywwYy0wLjgtMS4xLTEuNS0yLTIuNy0zLjZjMCwyLjEsMCwzLjIsMCw0LjNjLTMuOCwxLjYtNy42LDIuNC0xMC44LDIuM2MtMS4xLTEuMy0yLjMtMi43LTMuNi00LjNjLTEsMS44LTAuNCw0LjItMy40LDQuNWMtMi45LTEuMi02LjMtMi43LTkuOS00LjJjLTEuNiwyLTMuMiw0LTUsNi4zYy00LTEuNS04LDEuOC0xMi4xLDAuMmMtMC41LDAuMy0wLjksMC41LTEuMywwLjdjLTEuNC0xLTIuNy0xLjgtMy42LTIuNWMtMC45LTIuOC0xLjctNS4yLTIuNS03LjljLTEuMiwxLjItMiwyLTMsM2MwLDEuMywwLDIuOCwwLDQuMWMtNSwwLjUtOS43LDItMTQuNiwwLjljLTAuMi0wLjktMC4zLTEuOC0wLjYtM2MtMS4xLDAuNS0xLjksMC45LTIuNiwxLjNjLTEuNy0wLjYtMy4yLTEuMi00LjktMS44Yy0wLjUsMC45LTEuMSwxLjgtMS43LDIuOGMtMC40LTAuOS0wLjktMS44LTEuMi0yLjRjMC4yLTAuNywwLjMtMS4xLDAuNy0yLjFjLTIuNywxLjQtNC43LDIuNC02LjcsMy40Yy0xLjgtMy4zLTQuOC02LjEtNi4xLTUuNmMtMC40LDAuNC0wLjksMC45LTEuMywxLjVjMC4zLDAuNywwLjYsMS4zLDEuMSwyLjNjLTAuOC0wLjEtMS4zLTAuMS0xLjgtMC4xYy0wLjItMS4yLTAuMy0yLTAuNi0zLjVjLTEuNCwxLjEtMi4zLDEuOC0zLjMsMi41Yy0wLjMtMC44LTAuNS0xLjMtMC44LTIuMmMtMS4xLDEuNi0yLjEsMi45LTMuMSw0LjRjLTIuMy0wLjgtNC43LTAuOC01LjYtMy44Yy0wLjUtMS40LTIuMS0yLjMtMy4xLTMuNGMtMC44LDEuMS0xLjUsMi4xLTIuMiwzLjFjLTEuOS0wLjUtMy41LTAuOS01LjUtMS40YzAuNSwxLDAuNywxLjQsMSwyYy0wLjgsMC41LTEuNiwwLjktMi40LDEuM2MtMC40LTEtMC43LTEuNi0xLjEtMi40Yy0xLjUsMC44LTIuNywxLjQtMy44LDJjLTAuNywxLjYtMS4yLDMtMS44LDQuM2MtMS40LTEuOC0yLjYtMy4zLTMuOC00LjhjLTAuMS0wLjctMC4xLTEuNS0wLjItMi4xYy0xLjgsMC0zLjMsMC00LDBjLTMuMSwxLjktNS42LDMuNC04LjMsNWMtMC40LTAuOC0wLjctMS41LTEuMy0yLjZjLTEuNCwwLjctMi43LDEuNC00LjEsMi4xYy0wLjMtMC4yLTAuOS0wLjUtMS42LTFjLTEsMS40LTEuOSwyLjctMi44LDMuOWMtMC4xLDAuMS0wLjQsMC4xLTAuNywwLjFjLTAuMi0xLTAuMy0xLjgtMC41LTMuMWMtMC41LDEuMS0wLjgsMS43LTEuNiwzLjNjMC0yLjIsMC0zLjUsMC00LjdjLTAuMywwLjItMC42LDAuMy0wLjgsMC41Yy0xLjEtMS4yLTIuMy0yLjMtMy42LTMuNmMtMy4zLDEuMi0yLjksNS40LTQuNyw3LjZjLTQuOSwwLjUtOS4zLDAuOS0xMy44LDEuNGMtMC4xLTEuMi0wLjItMi0wLjMtMi45Yy0xLjUsMC0yLjksMC00LjIsMGMtMS41LDAuNy0yLjksMS4zLTQuMiwyYy0wLjMtMC45LTAuNi0xLjUtMC45LTIuNGMtNi43LDEtMTIuNSw0LjQtMTkuMSw2LjZjLTAuOS0xLjItMS45LTIuNC0yLjYtMy40Yy0yLjksMS45LTUuNSwyLjktOC43LDEuMmMtMC41LDAuOS0xLjEsMS45LTEuNiwyLjhjLTAuNywwLTEuMywwLTIuMiwwYy0wLjYtMC45LTEuMy0yLTEuOC0yLjhjLTIuMSwwLjMtNC4xLDAuNy01LjgsMC45Yy0wLjktMC45LTEuNS0xLjUtMi4xLTIuMWMtMS4zLDAuNi01LjgsMS4xLTYuOCwxLjJjLTIuNSwwLjItNC45LDAuNi04LjEsMWMtMC4yLDAuNC0wLjYsMS4zLTEsMmMtMi0wLjYtMy41LTEuMS01LjMtMS42Yy0wLjYsMC44LTEuMSwxLjYtMiwzYy0wLjctMi0xLjItMy4zLTEuNy00LjdjLTEsMS4xLTEuOSwyLjItMi40LDIuOGMtMS45LDAtMi45LDAtNCwwYy0wLjEtMS0wLjEtMS44LTAuMi0yLjRjLTIsMC4zLTQuMSwwLTUuNiwwLjljLTIuMywxLjMtNC44LDEuMS02LjcsMC41Yy0yLjMtMC44LTQuNS0xLjMtNi41LTAuM2MtMi4xLDEuMS00LjctMC41LTYuNCwxLjVjMCwwLjEtMC41LTAuMy0xLTAuNWMwLjQtMC45LDAuOS0xLjksMS4zLTIuOWMtMC45LTAuNy0xLjYtMS4yLTIuOC0yLjFDNDMzLjgsNDMuOCw0MzIuNCw0Ni41LDQzMC45LDQ5LjJ6Ii8+DQoJCTwvZz4NCgk8L2c+DQo8L3N2Zz4=) center repeat-x;
-    background-size: auto 0.5em;
-    color: rgba(0,0,0,0.5);
-    text-decoration: none;
-  }
-
-  .open-book sup {
-    color: #cc0000;
-    font-family: 'Rock Salt', cursive;
-    left: 0;
-    margin-top: -1em!important;
-    max-width: 100%!important;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-  }
-
-  .open-book mark {
-    background: linear-gradient(to bottom, rgba(222,255,0,1) 0%,rgba(222,255,0,0.5) 60%,rgba(222,255,0,1) 100%);
-  }
-
-  .open-book hr {
-    background-color: #000;
-    border: 0;
-    height: 2px;
-    margin: 1em 0;
-  }
-
-  .open-book dl {
-    border: solid 0 #ccc;
-    border-width: 0.0625em 0;
-    break-inside: avoid-column;
-    margin: 1em auto;
-    padding: 1em 0;
-  }
-
-  @media only screen {
-
-    .open-book {
-      margin: 1em;
-      position: relative;
-    }
-
-    .open-book:before {
-      background-color: #8B4513;
-      border-radius: 0.25em;
-      bottom: -1em;
-      content: '';
-      left: -1em;
-      position: absolute;
-      right: -1em;
-      top: -1em;
-      z-index: -1;
-    }
-
-    .open-book:after {
-      background: linear-gradient(to right, transparent 0%,rgba(0,0,0,0.2) 46%,rgba(0,0,0,0.5) 49%,rgba(0,0,0,0.6) 50%,rgba(0,0,0,0.5) 51%,rgba(0,0,0,0.2) 52%,transparent 100%);
-      bottom: -1em;
-      content: '';
-      left: 50%;
-      position: absolute;
-      top: -1em;
-      transform: translate(-50%,0);
-      width: 4em;
-      z-index: 1;
-    }
-
-    .open-book > * {
-      column-count: 2;
-      column-gap: 6em;
-      position: relative;
-      z-index: 1;
-    }
-
-    .open-book header:before,
-    .open-book header:after,
-    .open-book footer:before,
-    .open-book footer:after {
-      background: #fff;
-      border-radius: 25%;
-      content: '';
-      height: 2em;
-      position: absolute;
-      z-index: -1;
-      width: calc(50% + 2em);
-    }
-
-    .open-book header:before,
-    .open-book footer:before,
-    .open-book footer:after {
-      border-top-left-radius: 0;
-    }
-
-    .open-book header:after,
-    .open-book footer:before,
-    .open-book footer:after {
-      border-top-right-radius: 0;
-    }
-
-    .open-book header:before,
-    .open-book header:after,
-    .open-book footer:after {
-      border-bottom-right-radius: 0;
-    }
-
-    .open-book header:before,
-    .open-book header:after,
-    .open-book footer:before {
-      border-bottom-left-radius: 0;
-    }
-
-    .open-book header:before,
-    .open-book header:after {
-      top: -2.65em;
-    }
-
-    .open-book header:before,
-    .open-book footer:before {
-      right: 50%;
-    }
-
-    .open-book header:before {
-      transform: rotate(-2deg);
-    }
-
-    .open-book header:after,
-    .open-book footer:after {
-      left: 50%;
-    }
-
-    .open-book header:after {
-      transform: rotate(2deg);
-    }
-
-    .open-book footer:before,
-    .open-book footer:after {
-      bottom: -2.65em;
-    }
-
-    .open-book footer:before {
-      transform: rotate(2deg);
-    }
-
-    .open-book footer:after {
-      transform: rotate(-2deg);
-    }
-
-    .open-book header > *:last-child,
-    .open-book footer > *:last-child {
-      text-align: right;
-    }
-
-    .open-book footer #page-numbers {
-      display: block;
-    }
-
-    .open-book .chapter-title {
-      font-size: 3em;
-    }
-
-    .open-book .chapter-title:before,
-    .open-book .chapter-title:after {
-      height: 0.125em;
-    }
-
-    .open-book article p {
-      text-indent: 3em;
-    }
-
-    .open-book article > ul,
-    .open-book article > ol {
-      padding-left: 4em;
-    }
-
-  }
-  .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: #fafafa;
-    color: #fff;
-    font-family: Arial, sans-serif;
-  }
-  .footer-logo img {
-    height: 98px;
-    margin-left: 50px;
-    margin-bottom: 50px;
-  }
-  .footer-info {
-    color: black;
-    font-size: 14px;
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 50px;
-  }
-  .footer-contact {
-    text-align: left;
-    color: black;
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-    margin-bottom: 50px;
-  }
-  .footer-contact p {
-    margin: 2px 0;
-    font-size: 14px;
-  }
-  .footer-contact a {
-    color: #f56a00;
-    text-decoration: none;
-  }
-  .footer-contact a:hover {
-    text-decoration: underline;
-  }
-  .top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    aspect-ratio: 1;
-    background: #ff8b24;
-    border-radius: 10px;
-    z-index: 1000;
-    display: none;
-  }
-  .top:before {
-    content: "";
-    position: absolute;
-    inset: 30%;
-    transform: translateY(20%) rotate(-45deg);
-    border-top: 5px solid #fff;
-    border-right: 5px solid #fff;
-  }
-
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1000; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgba(0, 0, 0, 0.9); 
-  text-align: center;
-}
-
-.modal video {
-  max-width: 100%;
-  max-height: 99%;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-  .cards {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-  }
-  .card {
-   flex: 0 0 30%;
-   position: relative;
-   display: inline-block;
-   margin-right: 50px;
- }
-
- .remove-when-use {
-  text-align: center;
-}
-
-.remove-when-use img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.details {
-  color: white;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  bottom: 0;
-  height: 2.6em;
-  transition: height .5s ease-in-out;
-  padding: 0.6em;
-  overflow: hidden;
-}
-
-.details > p {
-  font-size: 0.8em;
-  margin-top: 0.5em;
-}
-
-.card:hover > .details {
-  height: 6.7em;
-}
-
-.modale {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black with transparency */
-}
-
-.imazhe {
-  margin: auto;
-  display: block;
-  width: 70%;
-}
-
-.clos {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.clos:hover,
-.clos:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-#language-switcher {
-    position: relative;
-    top: 10px;
-    right: 20px;
-    z-index: 1000;
-}
-
-#lang-select {
-    padding: 5px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Half Marathon - Kukës Marathon</title>
+    <link rel="icon" type="image/png" href="icona.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div>
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <a href="index.html"><img src="ben.jpg" alt="Kukës Marathon Logo"></a>
-      </div>
-      <div class="navbar-links">
-        <div class="navbar-item">
-          <a href="#" id="race">The Races</a>
-          <div class="dropdown">
-            <a href="Half Marathon.html" id="half">Half Marathon</a>
-            <a href="10Km.html" id="km">10Km</a>
-          </div>
-        </div>
-        <div class="navbar-item">
-          <a href="Sponsors.html" id="spon">Sponsors</a>
-          <a href="Volunteers.html" id="vol">Volunteers</a>
-        </div>
-        <div class="navbar-item">
-          <a href="#" onclick="openModal()" id="agend">Schedule of Events</a>
-        </div>
-        <div class="navbar-item">
-          <a href="https://my.raceresult.com/342574/results" target="_blank" >Results</a>
-        </div>
-        <button class="navbar-register"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;" id="reg">Register</a></button>
-      </div>
-                <div id="language-switcher">
-            <select id="lang-select">
-                <option value="">Select Language</option>
-                <option value="en">English</option>
-                <option value="sq">Shqip</option>
-                <option value="es">Español</option>
-                <option value="tr">Türkçe</option>
-            </select>
-          </div>
-    </nav>
-    <div class="info-text" id="runn">
-      <div class="banner-title" id="pjesa">Half Marathon</div>
-    </div>
-    <div class="info-text">
-      <h2 style="margin-left:200px;  font-size:40px; font-family: 'Unbounded', serif; font-weight: 400;" id="title">Welcome to the Kukës Half Marathon!</h2>
-    </div>
-    <div class="info-text">
-      <div style="display:flex; justify-content:space-between; margin-left:100px;">
-
-        <div class="w3-content w3-section" style="max-width:500px; max-height:600px;">
-          <img class="mySlides" src="1.jpg" style="width:100%">
-          <img class="mySlides" src="2.jpg" style="width:100%">
-          <img class="mySlides" src="3.jpeg" style="width:100%">
-          <img class="mySlides" src="4.jpeg" style="width:100%">
-          <img class="mySlides" src="5.jpg" style="width:100%">
-        </div>
-        <div style="margin-left:20px;">
-          <h2 style="margin-left:50px; margin-top:20px; margin-bottom:10px;color:#f56a00; font-size:25px; font-family: 'Monoton', serif;
-          font-weight: 400; font-style: normal; word-spacing: 10px;" id="vec">RACE FEATURES:</h2>
-          <p style="  font-family: 'Rubik', serif; font-weight: 400;
-            font-style: normal; font-size:13px; color:#282928;" id="p1">&#10139;Exclusive race t-shirt to commemorate your achievement</p>
-            <p style="  font-family: 'Rubik', serif; font-weight: 400;
-              font-style: normal; font-size:13px; color:#282928;" id="p2">&#10139;Collectable finishing medal as a token of your success</p>
-              <p style="  font-family: 'Rubik', serif; font-weight: 400;
-                font-style: normal; font-size:13px; color:#282928;" id="p3">&#10139;Post-race celebration with live music, delicious food, and local vendors</p>
-                  <p style="  font-family: 'Rubik', serif; font-weight: 400;
-                    font-style: normal; font-size:13px; color:#282928;" id="p4">&#10139;City and countryside race route at the foot of Mount Gjallica</p>
-                    <p style="  font-family: 'Rubik', serif; font-weight: 400;
-                      font-style: normal; font-size:13px; color:#282928;" id="p5">&#10139;Water stations along the race route to stay energized</p>
-                        <h4 style="margin-left:50px;margin-top:30px;color:#f56a00; font-size:15px; font-family:'Arvo', serif;
-                        font-weight: 700; font-style: normal;">
-                        <strong id="p6">Price:</strong><span style="font-size:30px; margin-left:10px;font-family:'Lumanosimo', serif; font-weight: 400; font-style: normal;color:#f56a00;">€10<a href="https://docs.google.com/forms/d/e/1FAIpQLSdIwyFRIjScGLJqbSq3-ufkJwbsB-YQHBQQH2Bd1CWrFiNIOQ/viewform" target="_blank" style="text-decoration: none; color:white;"><button class="button type1">
-                      </button></a></span></h4>
-                    </div>
-                  </div>
-                </div><!--
-                <div class="info-video">
-                  <div>
-                    <h2 style="text-align:center; margin-top:20px; margin-bottom:10px;color:#f56a00; font-size:55px; font-family: 'Nothing You Could Do', serif;
-                    font-weight: 700;
-                    font-style: normal;">AWARDS and MEDALS</h2>
-                    <div class="cards" style="width:100vw; margin-bottom:20px;">
-                      <div class="card" style="position:relative;">
-                        <div class="remove-when-use" style="position:absolute;bottom:0;">
-                          <img src="1000euro.jpg" style="width:30vw"/>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="icona.png" alt="RunNation Logo" class="logo-image">
+                </a>
+                <ul class="nav-links">
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">The Races <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="half.html">Half Marathon</a>
+                            <a href="10km.html">10K Run</a>
                         </div>
-                        <div class="details">
-                          <label>Prize for 1st Winner</label>
-                          <p>
-                           The top reward for the 21km champion.
-                           <br>
-                           <i>Kukës, AL</i>
-                         </p>
-                       </div>
-                     </div>
-                     <div class="card">
-                      <div class="remove-when-use" >
-                        <img src="500euro.png"  style="width:30vw"/>
-                      </div>
-                      <div class="details">
-                        <label>Prize for 2nd Winner</label>
-                        <p>
-                         Celebrate your incredible 21km finish with this fantastic prize:
-                         <br>
-                         <i>Kukës, AL</i>
-                       </p>
-                     </div>
-                   </div>
-                   <div class="card" style="position:relative">
-                    <div class="remove-when-use" style="position:absolute;bottom:0">
-                      <img src="200euro.png" style="width:30vw" />
-                    </div>
-                    <div class="details">
-                      <label>Prize for 3rd Winner</label>
-                      <p>
-                        A special prize for the 3rd Place 21km finisher.
-                        <br>
-                        <i>Kukës, AL</i>
-                      </p>
-                    </div>
-                  </div>
+                    </li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfTJMP63aBrA4bjYBRiMiKkQ9twbwCxjx23KiwXm-9fWz2Zmw/viewform"
+                            class="nav-link">Sponsors</a></li>
+                    <li><a href="https://docs.google.com/forms/d/16tVKz1sx2DXGuwHuNN-TUMKST-CDLWnOOYC-Qi9EM88/closedform"
+                            class="nav-link">Volunteers</a></li>
+                    <li><a href="schedule.html" class="nav-link">Schedule of Events</a></li>
+                    <li><a href="https://my.raceresult.com/342574/results" class="nav-link">Results</a></li>
+                    <li class="language-selector">
+                        <button class="language-btn">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="English">
+                            English
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="English">
+                                English
+                            </a>
+                            <a href="#" data-lang="es">
+                                <img src="https://flagcdn.com/w20/es.png" alt="Spanish">
+                                Español
+                            </a>
+                            <a href="#" data-lang="fr">
+                                <img src="https://flagcdn.com/w20/fr.png" alt="French">
+                                Français
+                            </a>
+                            <a href="#" data-lang="de">
+                                <img src="https://flagcdn.com/w20/de.png" alt="German">
+                                Deutsch
+                            </a>
+                            <a href="#" data-lang="it">
+                                <img src="https://flagcdn.com/w20/it.png" alt="Italian">
+                                Italiano
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
                 </div>
-                <div class="cards" style="width:100vw">
-                  <div class="card" style="position:relative;">
-                    <div class="remove-when-use" style="position:absolute;bottom:0;">
-                      <img src="first.jpg" style="width:30vw"/>
-                    </div>
-                    <div class="details">
-                      <label>Medal for 1st Winner</label>
-                      <p>
-                       1st Place 21km Medal: The pinnacle of achievement.
-                       <br>
-                       <i>Kukës, AL</i>
-                     </p>
-                   </div>
-                 </div>
-                 <div class="card">
-                  <div class="remove-when-use" >
-                    <img src="second.jpg"  style="width:30vw"/>
-                  </div>
-                  <div class="details">
-                    <label>Medal for 2nd Winner</label>
-                    <p>
-                     Awarded for a truly remarkable 21km run.
-                     <br>
-                     <i>Kukës, AL</i>
-                   </p>
-                 </div>
-               </div>
-               <div class="card" style="position:relative">
-                <div class="remove-when-use" style="position:absolute;bottom:0">
-                  <img src="third.jpg" style="width:30vw" />
-                </div>
-                <div class="details">
-                  <label>Medal for 3rd Winner</label>
-                  <p>
-                   Honoring a fantastic 21km achievement.
-                   <br>
-                   <i>Kukës, AL</i>
-                 </p>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>-->
-       <div class="info-video">
-        <div id="wrapper">
-          <div id="container">
-
-            <section class="open-book">
-              <header>
-                <h1 id="tit">Kukës 1/2 Marathon</h1>
-                <h6 id="nga">by ORGCYP</h6>
-              </header>
-              <article>
-                <h2 class="chapter-title" id="chap">COURSE INFORMATION</h2>
-                <p >
-                  <a href="https://www.instagram.com/kukes_half_marathon_2025/" target="_blank" id="ppp1">The Kukës Half Marathon</a>
-                  <span id="pp1">offers a challenging and scenic 21-kilometer race set in the beautiful region of Kukës.</span>
-                </p>
-                <p id="pp2">
-                  The course is designed to showcase the area’s stunning natural landscapes, rich cultural heritage, and vibrant local community. Participants will experience an inspiring event that promotes health, wellness, and tourism while enjoying the unique charm of the Kukës region. A shorter 10-kilometer option is also available, ensuring a race for everyone.
-                </p>
-                <p>
-                  <img src="bora.jpg" style="margin-left:-45px;" >
-                </p>                <dl>
-                <dt><strong id="fjal">half-marathon</strong></dt>
-                <dd>
-                  <em id="emer">noun</em><br>
-                  <span id="per">a long-distance running race, strictly one of 13 miles 192 yards (21.0975 km).</span>
-                </dd>
-              </dl>
-              <p><strong id="fjali">Map of movement for competitors:</strong>
-                <img src="Race_Route_Map.jpeg" style="cursor: zoom-in;">
-                <span id="pp3">
-                The race will start in the square in front of the former New Tourism Hotel, moving through Gostil, the road to the Kukes Airport, to return to the village of Shtiqen (to the Mosque), continuing the movement along the road that passes by the school to Kodër-Lumë, to return to Kukës by the old Prizren road, to Shote Galica, Lugi i Prizrenit, Lagje Zabel – 6-storey, R. Spahui until closing at 9-storey. This will give participants a wonderful view of the Gjallica mountain and the villages they pass through.</span>
-              </p><br><!--
-              <p>
-                <ol type="1">
-                  <strong>Competition Day:</strong>
-                  <li>Fair for local artisans and small businesses to showcase their products, highlighting the traditional heritage of the Kukes region such as clothing, handicrafts and agricultural products.</li>
-                  <li>Live music with traditional Kukes songs and giving a platform to regional performers</li>
-                </ol>
-              </p>-->
-              <br><br>
-            </article>
-            <footer>
-              <ol id="page-numbers">
-                <li>1</li>
-                <li>2</li>
-              </ol>
-            </footer>
-          </section>
+            </nav>
         </div>
-      </div>
-    </div>
-    <script>
-const translations = {
-  "sq": () => ({
-    "race": `Garat`,
-    "half": `Gjysmë maratona`,
-    "km": `10 km gara`,
-    "spon": `Sponsorët`,
-    "vol": `Vullnetarët`,
-    "agend": `Agjenda`,
-    "reg": `Regjistrohu`,
-    "pjesa": `Gjysmë maratona`,
-    "title": `Mirë se vini në gjysmëmaratonën e Kukësit!`,
-    "vec": `KARAKTERISTIKAT E GARAVE:`,
-    "p1": `&#10139;T-shirt ekskluzive garash për të përkujtuar arritjen tuaj`,
-    "p2": `&#10139;Medalje përfundimi e koleksionueshme si shenjë e suksesit tuaj`,
-    "p3": `&#10139;Festë pas garës me muzikë live, ushqime të shijshme dhe shitës vendas`,
-    "p4": `&#10139;Rruga e garave në qytet dhe fshat në rrëzë të malit Gjallicë`,
-    "p5": `&#10139;Stacione ujore përgjatë rrugës së garës për të qëndruar me energji`,
-    "p6": `Çmimi:`,
-    "tit": `Kukës 1/2 Maraton`,
-    "nga": `nga QPR`,
-    "chap": `INFORMACION I GARËS`,
-    "pp1": `ofron një garë sfiduese dhe piktoreske prej 21 kilometrash në rajonin e bukur të Kukësit.`,
-    "ppp1": `Gjysma Maratona e Kukësit`,
-    "pp2": `Kursi është krijuar për të shfaqur peizazhet natyrore mahnitëse të zonës, trashëgiminë e pasur kulturore dhe komunitetin e gjallë lokal. Pjesëmarrësit do të përjetojnë një ngjarje frymëzuese që promovon shëndetin, mirëqenien dhe turizmin duke shijuar bukurinë unike të rajonit të Kukësit. Një opsion më i shkurtër prej 10 kilometrash është gjithashtu i disponueshëm, duke siguruar një garë për të gjithë.`,
-    "pp3": `Gara do të nisë në sheshin përballë ish-Hotel Turizmit të Ri, duke lëvizur përmes Gostilit, rruga për në Aeroportin e Kukësit, për tu kthyer në fshatin Shtiqen (në Xhami), duke vazhduar lëvizjen përgjatë rrugës që kalon nga shkolla për në Kodër-Lumë, për tu kthyer në Kukës nga rruga e vjetër, në Shotegi i Prizrenit, Rr. Prizrenit, Rr. Spahui deri në mbyllje në 9-katëshe. Kjo do tu japë pjesëmarrësve një pamje të mrekullueshme të malit të Gjallicës dhe fshatrave nëpër të cilat kalojnë.`,
-    "fjal": `gjysmë-maratonë`,
-    "emer": `emër`,
-    "per": `një garë vrapimi në distanca të gjata, rreptësisht një nga 13 milje 192 jardë (21,0975 km).`,
-    "fjali": `Harta e lëvizjes për garuesit:`,
-    "fund": `Kukës<br>Maj, 2025`,
-    "fundi": `&copy; 2024 Kukës Maraton`,
-    "kontakt": `Na kontaktoni:`
-  }),
+    </header>
 
-  "en": () => ({
-    "race": `The Races`,
-    "half": `Half Marathon`,
-    "km": `10Km`,
-    "spon": `Sponsors`,
-    "vol": `Volunteers`,
-    "agend": `Schedule of Events`,
-    "reg": `Register`,
-    "pjesa": `Half Marathon`,
-    "title": `Welcome to the Kukës Half Marathon!`,
-    "vec": `RACE FEATURES:`,
-    "p1": `&#10139;Exclusive race t-shirt to commemorate your achievement`,
-    "p2": `&#10139;Collectable finishing medal as a token of your success`,
-    "p3": `&#10139;Post-race celebration with live music, delicious food, and local vendors`,
-    "p4": `&#10139;City and countryside race route at the foot of Mount Gjallica`,
-    "p5": `&#10139;Water stations along the race route to stay energized`,
-    "p6": `Price:`,
-    "tit": `Kukës 1/2 Marathon`,
-    "nga": `by ORGCYP`,
-    "chap": `COURSE INFORMATION`,
-    "pp1": `offers a challenging and scenic 21-kilometer race set in the beautiful region of Kukës.`,
-    "ppp1": `The Kukës Half Marathon`,
-    "pp2": `The course is designed to showcase the area’s stunning natural landscapes, rich cultural heritage, and vibrant local community. Participants will experience an inspiring event that promotes health, wellness, and tourism while enjoying the unique charm of the Kukës region. A shorter 10-kilometer option is also available, ensuring a race for everyone.`,
-    "pp3": `The race will start in the square in front of the former New Tourism Hotel, moving through Gostil, the road to the Kukes Airport, to return to the village of Shtiqen (to the Mosque), continuing the movement along the road that passes by the school to Kodër-Lumë, to return to Kukës by the old Prizren road, to Shote Galica, Lugi i Prizrenit, Lagje Zabel – 6-storey, R. Spahui until closing at 9-storey. This will give participants a wonderful view of the Gjallica mountain and the villages they pass through.`,
-    "fjal": `half-marathon`,
-    "emer": `noun`,
-    "per": `a long-distance running race, strictly one of 13 miles 192 yards (21.0975 km).`,
-    "fjali": `Map of movement for competitors:`,
-    "fund": `Kukës<br>May, 2025`,
-    "fundi": `&copy; 2024 Kukës Marathon`,
-    "kontakt": `Contact Us:`
-  }),
-  "es": () => ({
-    "race": `Las razas`,
-    "half": `Media Maraton`,
-    "km": `10Km`,
-    "spon": `Patrocinadores`,
-    "vol": `Voluntarios`,
-    "agend": `Calendario de eventos`,
-    "reg": `Registro`,
-    "pjesa": `Media Maratón`,
-    "title": `¡Bienvenidos a la Media Maratón de Kukës!`,
-    "vec": `CARACTERÍSTICAS DE LA CARRERA:`,
-    "p1": `&#10139;Camiseta de carrera exclusiva para conmemorar tu logro`,
-    "p2": `&#10139;Medalla de finalización coleccionable como muestra de tu éxito`,
-    "p3": `&#10139;Celebración posterior a la carrera con música en vivo, comida deliciosa y vendedores locales.`,
-    "p4": `&#10139;Ruta de carrera por la ciudad y el campo al pie del monte Gjallica`,
-    "p5": `&#10139;Puestos de agua a lo largo del recorrido de la carrera para mantener la energía.`,
-    "p6": `Precio:`,
-    "tit": `Media Maratón de Kukës`,
-    "nga": `por ORGCYP`,
-    "chap": `INFORMACIÓN DEL CURSO`,
-    "pp1": `ofrece una carrera desafiante y pintoresca de 21 kilómetros ambientada en la hermosa región de Kukës.`,
-    "ppp1": `La media maratón de Kukës `,
-    "pp2": `El recorrido está diseñado para mostrar los impresionantes paisajes naturales de la zona, el rico patrimonio cultural y la vibrante comunidad local. Los participantes vivirán una experiencia inspiradora que promueve la salud, el bienestar y el turismo mientras disfrutan del encanto único de la región de Kukës. También está disponible una opción más corta de 10 kilómetros, lo que garantiza una carrera para todos.`,
-    "pp3": `La carrera comenzará en la plaza frente al antiguo New Tourism Hotel, pasando por Gostil, la carretera que lleva al aeropuerto de Kukes, para regresar al pueblo de Shtiqen (a la mezquita), continuando el recorrido por la carretera que pasa por la escuela hasta Kodër-Lumë, para regresar a Kukës por la antigua carretera de Prizren, hasta Shote Galica, Lugi i Prizrenit, Lagje Zabel – 6 pisos, R. Spahui hasta el cierre en el 9 piso. Esto brindará a los participantes una vista maravillosa de la montaña Gjallica y los pueblos por los que pasan.`,
-    "fjal": `media maratón`,
-    "emer": `sustantivo`,
-    "per": `una carrera de larga distancia, estrictamente una de 13 millas 192 yardas (21,0975 km).`,
-    "fjali": `Mapa de movimiento para los competidores:`,
-    "fund": `Kukës<br>Mayo de 2025`,
-    "fundi": `&copy; 2024 Maratón de Kukës`,
-    "kontakt": `Contáctenos:`
-  }),
-  "tr": () => ({
-    "race": `Yarışlar`,
-    "half": `Yari Maraton`,
-    "km": `10Km`,
-    "spon": `Sponsorlar`,
-    "vol": `Gönüllüler`,
-    "agend": `Etkinlik Takvimi`,
-    "reg": `Kayit olmak`,
-    "pjesa": `Yarı Maraton`,
-    "title": `Kukës Yarı Maratonuna hoş geldiniz!`,
-    "vec": `YARIŞ ÖZELLİKLERİ:`,
-    "p1": `&#10139;Başarınızı anmak için özel yarış tişörtü`,
-    "p2": `&#10139;Başarınızın bir göstergesi olarak koleksiyonluk bitirme madalyası`,
-    "p3": `&#10139;Canlı müzik, lezzetli yemekler ve yerel satıcılarla yarış sonrası kutlama`,
-    "p4": `&#10139;Gjallica Dağı eteklerinde şehir ve kırsal yarış rotası`,
-    "p5": `&#10139;Yarış güzergahı boyunca enerjik kalmanızı sağlayacak su istasyonları`,
-    "p6": `Fiyat:`,
-    "tit": `Kukës 1/2 Maratonu`,
-    "nga": `ORGCYP tarafından`,
-    "chap": `KURS BİLGİLERİ`,
-    "pp1": `muhteşem Kukës bölgesinde düzenlenen 21 kilometrelik zorlu ve manzaralı bir yarış sunuyor.`,
-    "ppp1": `Kukës Yarı Maratonu,`,
-    "pp2": `Parkur, bölgenin çarpıcı doğal manzaralarını, zengin kültürel mirasını ve canlı yerel topluluğunu sergilemek için tasarlanmıştır. Katılımcılar, Kukës bölgesinin eşsiz cazibesinin tadını çıkarırken sağlık, zindelik ve turizmi teşvik eden ilham verici bir etkinlik deneyimleyecekler. Ayrıca, herkes için bir yarış sağlayan daha kısa 10 kilometrelik bir seçenek de mevcuttur.`,
-    "pp3": `Yarış, eski Yeni Turizm Otelinin önündeki meydandan başlayacak, Gostilden geçerek Kukes Havaalanına giden yol, Shtiqen köyüne (Camiye) geri dönecek, okuldan geçen yol boyunca Kodër-Lumë ye doğru hareket etmeye devam edecek, eski Prizren yolu üzerinden Kukës e geri dönecek, Shote Galica, Lugi i Prizrenit, Lagje Zabel - 6 katlı, R. Spahuiye doğru 9 katta kapanana kadar devam edecek. Bu, katılımcılara Gjallica Dağının ve geçtikleri köylerin harika bir manzarasını sunacaktır.`,
-    "fjal": `yarı maraton`,
-    "emer": `isim`,
-    "per": `13 mil 192 yard (21.0975 km) uzunluğundaki uzun mesafe koşu yarışı.`,
-    "fjali": `Yarışmacılar için hareket haritası:`,
-    "fund": `Kukës<br>Mayıs 2025`,
-    "fundi": `&copy; 2024 Kukës Maratonu`,
-    "kontakt": `Bize Ulaşın:`
-  })
-};
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="https://prapaskena.com/wp-content/uploads/2025/05/a97afc43-5dcb-44a0-817b-f1cb2251de91.jpeg"
+                alt="Half Marathon">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Kukës Half Marathon</h1>
+                <p>Challenge yourself with 21.1 km through the vibrant streets of Kukës and its stunning surroundings.
+                </p>
+                <a href="https://dilemmasolution.net/product/regjistrim-half-marathon-10k/" class="btn"
+                    data-translate="register_now" target="_blank" rel="noopener noreferrer">Register Now</a>
+            </div>
+        </div>
+    </section>
 
-function updateContent(language) {
-  const translation = translations[language]();
-  document.getElementById("race").innerHTML = translation.race;
-  document.getElementById("half").innerHTML = translation.half;
-  document.getElementById("km").innerHTML = translation.km;
-  document.getElementById("spon").innerHTML = translation.spon;
-  document.getElementById("vol").innerHTML = translation.vol;
-  document.getElementById("agend").innerHTML = translation.agend;
-  document.getElementById("reg").innerHTML = translation.reg;
-  document.getElementById("title").innerHTML = translation.title;
-  document.getElementById("pjesa").innerHTML = translation.pjesa;
-  document.getElementById("vec").innerHTML = translation.vec;
-  document.getElementById("p1").innerHTML = translation.p1;
-  document.getElementById("p2").innerHTML = translation.p2;
-  document.getElementById("p3").innerHTML = translation.p3;
-  document.getElementById("p4").innerHTML = translation.p4;
-  document.getElementById("p5").innerHTML = translation.p5;
-  document.getElementById("p6").innerHTML = translation.p6;
-  document.getElementById("tit").innerHTML = translation.tit;
-  document.getElementById("nga").innerHTML = translation.nga;
-  document.getElementById("chap").innerHTML = translation.chap;
-  document.getElementById("pp1").innerHTML = translation.pp1;
-  document.getElementById("pp2").innerHTML = translation.pp2;
-  document.getElementById("ppp1").innerHTML = translation.ppp1;
-  document.getElementById("pp3").innerHTML = translation.pp3;
-  document.getElementById("fjal").innerHTML = translation.fjal;
-  document.getElementById("emer").innerHTML = translation.emer;
-  document.getElementById("per").innerHTML = translation.per;
-  document.getElementById("fjali").innerHTML = translation.fjali;
-  document.getElementById("fund").innerHTML = translation.fund;
-  document.getElementById("fundi").innerHTML = translation.fundi;
-  document.getElementById("kontakt").innerHTML = translation.kontakt;
+    <!-- Race Details Section -->
+    <section class="race-details">
+        <div class="container">
+            <div class="details-container">
+                <div class="race-info">
+                    <h2>Race Details</h2>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Distance</h3>
+                            <p>21.1 kilometers (13.1 miles)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Date</h3>
+                            <p>June 16, 2026</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Start Time</h3>
+                            <p>7:30 AM</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Location</h3>
+                            <p>Kukës City Center, Albania</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Time Limit</h3>
+                            <p>3.5 hours</p>
+                        </div>
+                    </div>
+                </div>
 
-}
+                <div class="race-info">
+                    <h2>What's Included</h2>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Race Shirt</h3>
+                            <p>High-quality technical t-shirt</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Finisher Medal</h3>
+                            <p>Medal awarded to all finishers, featuring Kukës city branding.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Aid Stations</h3>
+                            <p>6 well-stocked aid stations along the course</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Race Photos</h3>
+                            <p>Free digital race photos</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Awards</h3>
+                            <p>Awards for top finishers in each category</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-function handleLanguageChange(event) {
-  const selectedLanguage = event.target.value;
-  updateContent(selectedLanguage);
-}
-document.getElementById("lang-select").addEventListener("change", handleLanguageChange);
-updateContent("en");
+    <!-- Course Map Section -->
+    <section class="course-map">
+        <div class="container">
+            <h2>Course Map & Elevation</h2>
+            <div class="map-container">
+                <div class="map-image">
+                    <p>Course Map Will Be Available Soon</p>
+                </div>
+                <div class="map-details">
+                    <h3>Course Description</h3>
+                    <p>The Half Marathon course takes you through the beautiful landscapes surrounding Kukës. Starting
+                        in the city center, the route follows paved roads through picturesque villages, with stunning
+                        views of the mountains. The course is challenging but rewarding with a mix of flat sections
+                        and rolling hills.</p>
 
-    </script>
-    <footer class="footer">
-      <div class="footer-logo">
-        <img src="icona.png" alt="Kukës Marathon Logo">
-      </div>
-      <div class="footer-info">
-        <p id="fund">Kukës<br>May, 2025</p>
-        <p id="fundi">&copy; 2024 Kukës Marathon</p>
-      </div>
-      <div class="footer-contact">
-        <p id="kontakt">Contact Us:</p>
-        <p>
-          <a href="mailto:kukesmarathon@gmail.com">kukesmarathon@gmail.com</a><br>
-          <a href="mailto:orgcyp@hotmail.com">orgcyp@hotmail.com</a><br>
-          <a href="https://www.instagram.com/kukes_half_marathon_2025/" style="color: #e80778;">Instagram</a>
-        <a href="https://www.facebook.com/people/KUK%C3%8BS-Half-Marathon/61570543991137/" style="color: #17195e;">Facebook</a> <br>
-        <a href="https://www.gofundme.com/f/mbeshtes-maratonen-e-kukesit?attribution_id=sl%3Ac08c3037-05ae-47ae-b301-98e10be1addc&lang=en_US&utm_campaign=fp_sharesheet&utm_content=amp13_c&utm_medium=customer&utm_source=whatsapp&fbclid=PAY2xjawJaGWJleHRuA2FlbQIxMQABpg2DAybFMXjWvOpBOtQTo-ay-kl1hveAtMU2wRLFo8aMauwiskt-nNGv5Q_aem_SuOU8iXzGSp-g-0DRoQIQg" style="color: #008000;"> Contribute for the page</a>
-        </p>
-      </div>
+                    <div class="elevation-profile margin-top-10">
+                        <h3>Elevation Profile</h3>
+                        <div class="elevation-chart"></div>
+                        <div class="elevation-markers">
+                            <span>Start: 350m</span>
+                            <span>Highest Point: 600m</span>
+                            <span>Finish: 400m</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <!--<section class="registration" id="registration">
+        <div class="container">
+            <div class="registration-container">
+                <h2>Registration</h2>
+                <p>Secure your spot in the Kukës Half Marathon. Prices increase as the race date approaches, so register
+                    early!</p>
+
+                <div class="pricing-table">
+                    <div class="pricing-tier">
+                        <h3 class="tier-name">Early Bird</h3>
+                        <div class="tier-price">€5</div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check"></i> Until Dec 31, 2025</li>
+                            <li><i class="fas fa-check"></i> Race Entry</li>
+                            <li><i class="fas fa-check"></i> Race Shirt</li>
+                            <li><i class="fas fa-check"></i> Finisher Medal</li>
+                        </ul>
+                        <a href="https://dilemmasolution.net/product/regjistrim-half-marathon-10k/" class="btn"
+                            target="_blank" rel="noopener noreferrer">Register Now</a>
+                    </div>
+
+                    <div class="pricing-tier popular">
+                        <h3 class="tier-name">Standard</h3>
+                        <div class="tier-price">€10</div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check"></i> Jan 1 - Mar 31, 2026</li>
+                            <li><i class="fas fa-check"></i> Race Entry</li>
+                            <li><i class="fas fa-check"></i> Race Shirt</li>
+                            <li><i class="fas fa-check"></i> Finisher Medal</li>
+                        </ul>
+                        <a href="#" class="btn">Register Now</a>
+                    </div>
+
+                    <div class="pricing-tier">
+                        <h3 class="tier-name">Late Registration</h3>
+                        <div class="tier-price">€15</div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check"></i> After Apr 1, 2026</li>
+                            <li><i class="fas fa-check"></i> Race Entry</li>
+                            <li><i class="fas fa-check"></i> Race Shirt (while supplies last)</li>
+                            <li><i class="fas fa-check"></i> Finisher Medal</li>
+                        </ul>
+                        <a href="#" class="btn">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the minimum age to participate? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Participants must be at least 16 years old on race day to compete in the Half Marathon.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there a bag check available? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide a secure bag check service at the start/finish area. Please use the clear bag
+                            provided at packet pickup.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Are headphones allowed during the race? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For your safety and the safety of others, we recommend against using headphones. If you
+                            choose to wear them, please keep the volume low and remain aware of your surroundings.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the refund policy? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Entry fees are non-refundable and non-transferable. This policy applies to all participants
+                            regardless of circumstances.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Will there be pace groups? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we will have pace leaders for the following finish times: 1:45, 2:00, 2:15, 2:30, and
+                            2:45.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kukës Marathon</h3>
+                    <p>Creating unforgettable running experiences since 2025. Join our community of passionate runners
+                        today.</p>
+                    <br>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61570543991137"
+                            title="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@kukeshalfmarathon" title="Visit our TikTok page"><i
+                                class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/kukes_half_marathon_2025/"
+                            title="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Register NOW</a></li>
+                        <li><a href="#">Training Clubs</a></li>
+                        <li><a href="https://my.raceresult.com/342574/results">Results</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Events</h3>
+                    <ul class="footer-links">
+                        <li><a href="10km.html">10K Runs</a></li>
+                        <li><a href="half.html">Half Marathons</a></li>
+                        <li><a href="#">Kids Marathon</a></li>
+                        <li><a href="#">Marathons</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kukës Marathon. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
-  </div>
-  <a href="#" class="top"></a>
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <video id="modalVideo" controls>
-    <source src="map.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-<div id="kasi" class="modale">
-  <span class="clos" onclick="closeModal()">&times;</span>
-  <img class="imazhe" id="img01" src="agenda.jpeg">
-</div>
-  <script>
-  var myIndex = 0;
-  carousel();
+    <button class="back-to-top" id="backToTop" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script>
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+    <script>
+        // Back to Top functionality
+        const backToTopButton = document.getElementById('backToTop');
 
-  function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-      x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000);
-  }
-  document.addEventListener("DOMContentLoaded", () => {
-    const topButton = document.querySelector(".top");
+        // Show or hide button when scrolling
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        topButton.style.display = "block";
-      } else {
-        topButton.style.display = "none";
-      }
-    });
+        // When button is clicked, scroll to top of page
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script>
+        // Translation Data
+        const translations = {
+            en: {
+                hero_title: "Challenge Yourself With Our Premier Running Events",
+                hero_subtitle: "Join thousands of runners in our world-class events across the country. Whether you're a beginner or an elite athlete, we have the perfect race for you.",
+                view_events: "View Events",
+                register_now: "Register Now",
+                upcoming_events: "Upcoming Events",
+                events_description: "Discover your next running challenge with our selection of premier events across various locations and distances.",
+                all_events: "All Events",
+                "5k_runs": "5K Runs",
+                "10k_runs": "10K Runs",
+                half_marathon: "Half Marathon",
+                marathon: "Marathon",
+                event1_title: "Metropolitan Marathon",
+                event1_description: "Experience the ultimate urban running challenge through the heart of the city with spectacular views and enthusiastic crowd support.",
+                event1_location: "New York City",
+                event2_title: "Coastal Half Marathon",
+                event2_description: "Run along breathtaking coastal views with ocean breezes pushing you forward in this unforgettable half marathon experience.",
+                event2_location: "San Diego",
+                event3_title: "Trailblazer 10K",
+                event3_description: "Challenge yourself on scenic trails through forests and hills in this exciting off-road running adventure.",
+                event3_location: "Boulder, CO",
+                register: "Register",
+                view_all_events: "View All Events",
+                stay_updated: "Stay Updated",
+                newsletter_description: "Subscribe to our newsletter for event announcements, training tips, and exclusive offers.",
+                email_placeholder: "Enter your email address",
+                subscribe: "Subscribe",
+                footer_description: "Creating unforgettable running experiences since 2010. Join our community of passionate runners today.",
+                quick_links: "Quick Links",
+                home: "Home",
+                events: "Events",
+                training_plans: "Training Plans",
+                charities: "Charities",
+                results: "Results",
+                support: "Support",
+                faqs: "FAQs",
+                contact_us: "Contact Us",
+                terms: "Terms & Conditions",
+                privacy: "Privacy Policy",
+                cookies: "Cookie Policy",
+                all_rights: "All rights reserved."
+            },
+            es: {
+                hero_title: "Desafíate con nuestros eventos de running de primer nivel",
+                hero_subtitle: "Únete a miles de corredores en nuestros eventos de clase mundial en todo el país. Ya seas principiante o atleta de élite, tenemos la carrera perfecta para ti.",
+                view_events: "Ver Eventos",
+                register_now: "Regístrate Ahora",
+                upcoming_events: "Próximos Eventos",
+                events_description: "Descubre tu próximo desafío de running con nuestra selección de eventos principales en varias ubicaciones y distancias.",
+                all_events: "Todos los Eventos",
+                "5k_runs": "Carreras 5K",
+                "10k_runs": "Carreras 10K",
+                half_marathon: "Media Maratón",
+                marathon: "Maratón",
+                event1_title: "Maratón Metropolitano",
+                event1_description: "Vive el desafío definitivo de running urbano a través del corazón de la ciudad con vistas espectaculares y el apoyo entusiasta del público.",
+                event1_location: "Nueva York",
+                event2_title: "Media Maratón Costera",
+                event2_description: "Corre junto a impresionantes vistas costeras con brisas marinas que te empujan hacia adelante en esta inolvidable experiencia de media maratón.",
+                event2_location: "San Diego",
+                event3_title: "Trailblazer 10K",
+                event3_description: "Desafíate en pintorescos senderos a través de bosques y colinas en esta emocionante aventura de running fuera de carretera.",
+                event3_location: "Boulder, CO",
+                register: "Registrarse",
+                view_all_events: "Ver Todos los Eventos",
+                stay_updated: "Mantente Actualizado",
+                newsletter_description: "Suscríbete a nuestro boletín para anuncios de eventos, consejos de entrenamiento y ofertas exclusivas.",
+                email_placeholder: "Ingresa tu dirección de correo",
+                subscribe: "Suscribirse",
+                footer_description: "Creando experiencias de running inolvidables desde 2010. Únete a nuestra comunidad de apasionados corredores hoy.",
+                quick_links: "Enlaces Rápidos",
+                home: "Inicio",
+                events: "Eventos",
+                training_plans: "Planes de Entrenamiento",
+                charities: "Organizaciones Benéficas",
+                results: "Resultados",
+                support: "Soporte",
+                faqs: "Preguntas Frecuentes",
+                contact_us: "Contáctanos",
+                terms: "Términos y Condiciones",
+                privacy: "Política de Privacidad",
+                cookies: "Política de Cookies",
+                all_rights: "Todos los derechos reservados."
+            },
+            fr: {
+                hero_title: "Défiez-vous avec nos événements de course de premier ordre",
+                hero_subtitle: "Rejoignez des milliers de coureurs dans nos événements de classe mondiale à travers le pays. Que vous soyez débutant ou athlète d'élite, nous avons la course parfaite pour vous.",
+                view_events: "Voir les Événements",
+                register_now: "S'inscrire Maintenant",
+                upcoming_events: "Événements à Venir",
+                events_description: "Découvrez votre prochain défi de course avec notre sélection d'événements principaux dans divers lieux et distances.",
+                all_events: "Tous les Événements",
+                "5k_runs": "Courses 5K",
+                "10k_runs": "Courses 10K",
+                half_marathon: "Demi-Marathon",
+                marathon: "Marathon",
+                event1_title: "Marathon Métropolitain",
+                event1_description: "Vivez le défi ultime de course urbaine à travers le cœur de la ville avec des vues spectaculaires et le soutien enthousiaste de la foule.",
+                event1_location: "New York",
+                event2_title: "Demi-Marathon Côtier",
+                event2_description: "Courez le long de vues côtières à couper le souffle avec des brises océaniques qui vous poussent vers l'avant dans cette expérience inoubliable de demi-marathon.",
+                event2_location: "San Diego",
+                event3_title: "Trailblazer 10K",
+                event3_description: "Défiez-vous sur des sentiers pittoresques à travers forêts et collines dans cette aventure passionnante de course hors route.",
+                event3_location: "Boulder, CO",
+                register: "S'inscrire",
+                view_all_events: "Voir Tous les Événements",
+                stay_updated: "Restez Informé",
+                newsletter_description: "Abonnez-vous à notre newsletter pour les annonces d'événements, des conseils d'entraînement et des offres exclusives.",
+                email_placeholder: "Entrez votre adresse email",
+                subscribe: "S'abonner",
+                footer_description: "Créant des expériences de course inoubliables depuis 2010. Rejoignez notre communauté de coureurs passionnés aujourd'hui.",
+                quick_links: "Liens Rapides",
+                home: "Accueil",
+                events: "Événements",
+                training_plans: "Plans d'Entraînement",
+                charities: "Organismes de Bienfaisance",
+                results: "Résultats",
+                support: "Support",
+                faqs: "FAQ",
+                contact_us: "Contactez-Nous",
+                terms: "Conditions Générales",
+                privacy: "Politique de Confidentialité",
+                cookies: "Politique de Cookies",
+                all_rights: "Tous droits réservés."
+            }
+        };
 
-    topButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  });
+        // Current language
+        let currentLang = 'en';
 
-document.addEventListener("DOMContentLoaded", function () {
-  var modal = document.getElementById("myModal");
-  var modalVideo = document.getElementById("modalVideo");
-  var closeBtn = document.getElementsByClassName("close")[0];
+        // Function to change language
+        function changeLanguage(lang) {
+            currentLang = lang;
+            document.querySelector('.language-btn img').src = `https://flagcdn.com/w20/${lang === 'en' ? 'gb' : lang}.png`;
+            document.querySelector('.language-btn').innerHTML = `
+                        <img src="https://flagcdn.com/w20/${lang === 'en' ? 'gb' : lang}.png" alt="${lang}">
+                        ${lang === 'en' ? 'English' : lang === 'es' ? 'Español' : 'Français'}
+                    `;
 
-  document.querySelector('img[src="Race_Route_Map.jpeg"]').addEventListener("click", function () {
-    modal.style.display = "block";
-    modalVideo.play();
-  });
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+        }
 
-  closeBtn.onclick = function () {
-    modal.style.display = "none";
-    modalVideo.pause();
-    modalVideo.currentTime = 0;
-  };
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li');
 
-  modal.onclick = function (event) {
-    if (event.target === modal) {
-      modal.style.display = "none";
-      modalVideo.pause();
-      modalVideo.currentTime = 0;
-    }
-  };
-});
-function openModal() {
-  document.getElementById("kasi").style.display = "block";
-}
+        hamburger.addEventListener('click', () => {
+            // Toggle nav
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('toggle');
 
-function closeModal() {
-  document.getElementById("kasi").style.display = "none";
-}
+            // Animate links
+            navItems.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+        });
 
-  </script>
+        // Language selector functionality
+        document.querySelectorAll('.language-dropdown a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = link.getAttribute('data-lang');
+                changeLanguage(lang);
+            });
+        });
 
+        // Simple filter functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const eventCards = document.querySelectorAll('.event-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    // Filter events
+                    eventCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        // Mobile dropdown toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggles = document.querySelectorAll('.nav-dropdown > .nav-link');
+
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+
+                        // Close other dropdowns
+                        document.querySelectorAll('.nav-dropdown').forEach(item => {
+                            if (item !== dropdown) {
+                                item.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768 && !e.target.closest('.nav-dropdown')) {
+                    document.querySelectorAll('.nav-dropdown').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
