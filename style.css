@@ -1607,4 +1607,73 @@
         #viewMoreBtn:hover {
             background: #c1121f;
             transform: translateY(-2px);
+
         }
+
+
+        /* Kids Marathon Floating Ad */
+        .kids-ad {
+            position: fixed;
+            right: 90px;
+            /* places it next to back-to-top */
+            bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            padding: 10px 14px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+            color: #111;
+            z-index: 999;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .kids-ad:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Badge */
+        .kids-badge {
+            background: #e63946;
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 4px 6px;
+            border-radius: 6px;
+        }
+
+        /* Text */
+        .kids-text strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+          }
+          
+          .kids-text small {
+            font-size: 14px;
+            font-weight: 700;
+            color: #e63946; /* highlight Kids Marathon */
+          }
+          
+
+        /* Responsive: hide on very small screens */
+
+
+        @media (max-width: 600px) {
+            .kids-ad {
+              right: 20px;
+              bottom: 90px;   /* stack ABOVE back-to-top button */
+              padding: 8px 12px;
+            }
+          
+            .kids-text strong {
+              font-size: 12px;
+            }
+          
+            .kids-text small {
+              font-size: 13px;
+            }
+          }
